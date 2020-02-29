@@ -1,10 +1,9 @@
-score = input("Please enter your number score: ")
+x = int(input("Please enter your number score: "))
 
 grade_output = "Your letter grade is: "
 
-x = int(score)
-
 y = "1"
+z = "1"
 
 if x %10>6:
     z = "+"
