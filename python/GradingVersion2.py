@@ -26,8 +26,6 @@ if 59 < x < 70:
 if 0 <= x < 60:
     y = "F"
 
-b = y + z
-
-print(grade_output + b)
+print(grade_output + y + z)
 
 
