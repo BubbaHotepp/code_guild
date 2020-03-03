@@ -28,7 +28,7 @@ while True:
                 print('Please enter only y/n to continue:')
     
     elif user_input == 'n':
-        print('Maybe next time, have a good day.')
+        print('Maybe next time.')
         break
 
     else:
