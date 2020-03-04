@@ -25,10 +25,3 @@ def main():
         counter = counter - 1
             
 main()
-
-
-
-        
-
-    
-main()
