@@ -16,7 +16,7 @@ def main():
     
     counter = 0
 
-    while counter < 6:
+    while counter < 5:
         counter = counter + 1
         print(f'Your random password is: {password(x)}')
 
