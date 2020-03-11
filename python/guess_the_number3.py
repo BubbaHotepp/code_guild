@@ -22,6 +22,12 @@ def main():
         
         elif user_choice != x:
             print('You have chosen poorly!')
+            
+            if user_choice > x:
+                print('Your guess is too high, guess again.')
+            
+            elif user_choice < x:
+                print('Your guess is too low, guess again.')
             count += 1
         
 main()
