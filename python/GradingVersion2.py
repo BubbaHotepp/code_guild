@@ -27,5 +27,3 @@ if 0 <= x < 60:
     y = "F"
 
 print(grade_output + y + z)
-
-
