@@ -1,7 +1,5 @@
 import random
 
-
-
 while True:
     user_input = input('Would you like to play?: ')
 
