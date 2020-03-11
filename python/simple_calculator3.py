@@ -4,7 +4,7 @@ def eval_func(x):
 def main():
     user_input = input('Please enter a simple math problem to solve: ')
 
-    print(eval_func(user_input))
+    print(f'The answer is: {eval_func(user_input)}')
 
 main()
 

@@ -15,7 +15,7 @@ def main():
 
     while x != 'done':
         first_input = input('Please enter the first number: ')
-        second_input = input('Please enter the operation: ')
+        second_input = input('Please enter the operation, + for addition \n- for subtraction \n* for multiplication or \n/ for division: ')
         third_input = input('Please enter the second number: ')
 
         x = int(first_input)
