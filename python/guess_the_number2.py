@@ -6,22 +6,22 @@ def comp_choice():
 
 def main():
 
-    print('The Computer has chosen a number between 1 and 10. \nYou have 10 tries to guess the correct number.')
+    print('The Computer has chosen a number between 1 and 10. Try to guess the number.')
     
-    countdown = 0
+    count = 0
 
     x = comp_choice()
 
-    while countdown < 10:
+    while True:
 
         user_choice = int(input('Please enter your guess: '))
         
         if user_choice == x:
-            print('You guessed correctly, congratulations!!')
+            print('You guessed correctly, congratulations!! \nIt took you ' + str(count) + ' tries to guess correctly.')
             break
         
         elif user_choice != x:
             print('You have chosen poorly!')
-            countdown += 1
-
+            count += 1
+        
 main()
