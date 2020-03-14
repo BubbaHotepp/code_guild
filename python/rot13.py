@@ -1,34 +1,23 @@
 import string
 
-# def main():
-#     user_input = input('Please enter plain text to encode: ')
-
-#     code_chart = string.ascii_letters
-
-#     print(code_chart)
-
-#     x = 13
-
-#     y = [code_chart[(code_chart.find(i) + x) % 26] for i in user_input]
-
-#     encode = "".join(y)
+def main():
     
-#     print(encode)
+    cypher_text = []
 
-# main()  
+    user_input = input('Please enter plain text to encode: ')
 
-def encode(x):
-   
-    def convert(x):
-        
-        y, i = ord(x), x.lower()
-        
-        return chr((y + 13)%26)
-        
-        
-        return x
-    
-    return ''.join(map(convert, x))
+    alphabet = string.ascii_letters
 
-print(encode('Hello World'))
+    x = 13
 
+    for chr in user_input:
+
+        if chr in alphabet:
+            cypher_text += alphabet[(alphabet.find(chr)+x)%52]
+
+        elif chr not in alphabet:
+            cypher_text.append(chr)
+        
+    print(''.join(cypher_text))
+
+main()
