@@ -1,40 +1,34 @@
 import string
 
-def split(x):
-    return [char for char in x]
+# def main():
+#     user_input = input('Please enter plain text to encode: ')
 
-def int_conv(x):
-    for i in range(0, len(x)):
-        x[i] = int(x[i])
+#     code_chart = string.ascii_letters
+
+#     print(code_chart)
+
+#     x = 13
+
+#     y = [code_chart[(code_chart.find(i) + x) % 26] for i in user_input]
+
+#     encode = "".join(y)
+    
+#     print(encode)
+
+# main()  
 
 def encode(x):
-    x 
-
-def main():
-    user_input = input('Please enter plain text to encode: ')
-
-    input_split = (split(user_input))
-
-    print(input_split)
-
-    ascii_conv = []
-    for ele in input_split: 
-        ascii_conv.extend(ord(num) for num in ele)
-
-    print(ascii_conv)
+   
+    def convert(x):
+        
+        y, i = ord(x), x.lower()
+        
+        return chr((y + 13)%26)
+        
+        
+        return x
     
-    x = 13
+    return ''.join(map(convert, x))
 
-    encode = [i for i in ascii_conv]
+print(encode('Hello World'))
 
-    print(encode)
-
-    char_conv = [chr(ascii) for ascii in encode]
-
-    print(char_conv)
-    
-    
-
-    
-
-main()
