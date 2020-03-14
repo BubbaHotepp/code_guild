@@ -17,6 +17,9 @@ def pick_six():
     
     return numbers
 
+def roi(x,y):
+    return  (x - y)/y
+
 def num_compare():
 
     x = 1
@@ -105,7 +108,7 @@ def main():
     print(f'You have matched 4 number {match_4} times.')
     print(f'You have matched 5 number {match_5} times.')
     print(f'You have matched 6 number {match_6} times.')
-    
+    print(f'\nYou\'re return on invest is {roi(total_winnings, ticket_cost)}.')
 
 main()
 
