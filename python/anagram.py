@@ -1,27 +1,30 @@
-def reverse_string(x):
-    return x[::-1]
+import string
 
-def compare(x,y):
-    if x == y:
-        return True
+def lower(x):
+    return x.lower()
 
-    else:
-        return False
+def space(x):
+    return x.replace(' ','')
+
+def sort_str(x):
+    return sorted(x)
 
 def main():
+    first_input = input('Please input first anagram word or words to compare: ')
+    second_input = input('Please input second anagram word or words to compare: ')
 
-    user_input = input('Please enter a word you think is an anagram: ')
-    print(user_input)
-    input_reversed = reverse_string(user_input)
-    print(input_reversed)
-    x = compare(user_input, input_reversed)
-    print(x)
+    first_word = lower(first_input)
+    first_word = space(first_word)
+    first_word = sort_str(first_word)
 
-    if x is True:
+    second_word = lower(second_input)
+    second_word = space(second_word)
+    second_word = sort_str(second_word)
 
-        print(f'{user_input} is a palindrome.')
-
+    if first_word == second_word:
+        print(f'{first_input} and {second_input} are anagrams.')
+        
     else:
-        print(f'{user_input} is not a palindrome.')
-
+        print(f'{first_input} and {second_input} are not anagrams.')
+    
 main()
