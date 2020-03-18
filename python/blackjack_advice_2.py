@@ -32,52 +32,46 @@ def main():
     user_card1 = int(card_value[user_input1])
     user_card2 = int(card_value[user_input2])
 
+    card_total = 0
+
     if user_card1 == 1 or user_card2 == 1:
-        if (user_card1 + user_card2) == 11:
+        
+        if card_total == 11:
             print('Blackjack, you win.')
 
-        elif user_card1 = 1:
-            if user_card2 < 10:
-                user_card1 = 11
-            else:
-                user_card2 = 1
-                
-        
-        elif user_card2 = 1:            
-        
-        # elif (user_card1 + user_card2) < 11:
+        if user_card1 == 1 and user_card2 == 1:
+            card_total = 12
+                    
+        elif user_card1 == 1:
+            card_total = user_card2 + 11
 
-
+        else:
+            card_total = user_card1 + 11
+            
     else:
         
-        if user_card1 or user_card2 == 1:
-            
-            if 
-            card_total = user_card1 + user_card2
+        card_total = user_card1 + user_card2
+                  
+    while card_total < 21:
 
-        while card_total < 21:
-
-            
-
-            
-            if card_total < 17:
-                print(f'{card_total} You should hit.')
-                x = input('Enter your next card: ')
-                y = int(card_value[x])
-                card_total += y   
-                        
-            if card_total > 21:
-                print(f'{card_total} You\'ve busted.')
-                break
+        if card_total > 21:
+            print(f'{card_total} You\'ve busted.')
+            break
                 
-            elif card_total == 21:
-                print(f'{card_total}, you can\'t hit anymore.')
-                break
+        elif card_total == 21:
+            print(f'{card_total}, you can\'t hit anymore.')
+            break
                 
-            elif card_total > 17:
-                print(f'{card_total} you should hold.')
-                break
-            
+        elif card_total >= 17:
+            print(f'{card_total} you should hold.')
+            break
+        
+        else:
+            print(f'{card_total} You should hit.')
+            x = input('Enter your next card: ')
+            y = int(card_value[x])
+            card_total += y  
+           
 main()
 
             
