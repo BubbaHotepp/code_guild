@@ -21,24 +21,22 @@ def main():
     card_number = [int(i) for i in user_input]
     
     check_digit = card_number[-1]
-
+    
     del card_number[-1]
     
     card_number.reverse()
     
-    doubled = [i*2 for i in card_number[::2]]
-    non_doubled = [i * 1 for i in card_number[1::2]]
         
-    mixed = [None]*(len(doubled)+len(non_doubled))
-    mixed[::2] = doubled
-    mixed[1::2] = non_doubled
+    for i in card_number[::2]:
+        x = card_number.index(i)
+        card_number[x] = i * 2
     
-    for i in mixed:
+    for i in card_number:
         if i > 9:
-            a = mixed.index(i)
-            mixed[a] = i - 9
+            x = card_number.index(i)
+            card_number[x] = i - 9
     
-    total = sum(mixed)
+    total = sum(card_number)
     total_check_digit = total%10
     if check_digit == total_check_digit:
         print('That is a valid credit card number.')
