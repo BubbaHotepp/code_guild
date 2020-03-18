@@ -37,6 +37,11 @@ def main():
             print('Blackjack, you win.')
 
         elif user_card1 = 1:
+            if user_card2 < 10:
+                user_card1 = 11
+            else:
+                user_card2 = 1
+                
         
         elif user_card2 = 1:            
         
