@@ -40,13 +40,7 @@ def main():
         card_total = user_card1 + user_card2
         
         while card_total < 21:
-            
-            if card_total < 17:
-                print(f'{card_total} You should hit.')
-                x = input('Enter your next card: ')
-                y = int(card_value[x])
-                card_total += y   
-                        
+                                   
             if card_total > 21:
                 print(f'{card_total} You\'ve busted.')
                 break
@@ -59,6 +53,11 @@ def main():
                 print(f'{card_total} you should hold.')
                 break
             
+            else:
+                print(f'{card_total} You should hit.')
+                x = input('Enter your next card: ')
+                y = int(card_value[x])
+                card_total += y  
 main()
 
             
