@@ -68,9 +68,16 @@ def main():
         
         else:
             print(f'{card_total} You should hit.')
-            x = input('Enter your next card: ')
+            next_card = input('Enter your next card: ')
+            x = str.lower(next_card)
             y = int(card_value[x])
-            card_total += y  
+            if y > 1:
+                card_total += y
+            else:
+                if card_total <= 10:
+                    card_total += 11
+                else:
+                    card_total += 1 
            
 main()
 
