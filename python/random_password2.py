@@ -1,23 +1,24 @@
 import random
 import string
 
+def password_length():
+    length = int(input('Please enter the number of characters \nto be used in your password: '))
+    return length
+
+def character_choice(x):
+    characters = string.punctuation + string.digits + string.ascii_letters
+    return x.append(random.choice(characters))
+
 def main():
-    
-    def passwrd_length():
-        length = input('Please enter the number of characters \nto be used in your password: ')
-        x = int(length)
-        return x
-    
-    x = passwrd_length()
-    
-    def password(x):
-        characters = string.punctuation + string.digits + string.ascii_letters
-        return ''.join(random.choice(characters) for i in range(0, x))
-    
+    password_characters = []
+    x = password_length()  
     counter = 0
 
-    while counter < 5:
-        counter = counter + 1
-        print(f'Your random password is: {password(x)}')
+    while counter <= x:
+        character_choice(password_characters)
+        counter += 1
+
+    password = ''.join(password_characters)
+    print(f'Your random password is: {password}')
 
 main()

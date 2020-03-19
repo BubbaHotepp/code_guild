@@ -1,11 +1,17 @@
 import random
 import string
 
-def main():
-    def password(length = 10):
-        characters = string.punctuation + string.digits + string.ascii_letters
-        return ''.join(random.choice(characters) for i in range(0, length))
+def character_choice(x):
+    characters = string.punctuation + string.digits + string.ascii_letters
+    return x.append(random.choice(characters))
 
-    print(f'Your random password is: {password()}')
+def main():
+    password_characters = []
+    counter = 0
+    while counter < 10:
+        character_choice(password_characters)
+        counter += 1
+    password = ''.join(password_characters)
+    print(f'Your random password is: {password}')
     
 main()
