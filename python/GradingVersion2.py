@@ -1,29 +1,24 @@
-x = int(input("Please enter your number score: "))
+def grade_conversion(x):
+    if 89 < x <= 100:
+        return 'A'
+    elif 79 < x < 90:
+        return 'B'
+    elif 69 < x < 80:
+        return 'C'
+    elif 59 < x < 70:
+        return 'D'
+    else:
+        return 'F'
 
-grade_output = "Your letter grade is: "
+def grade_qualifier(x):
+    if (x % 10) > 6:
+        return '+'
+    if (x % 10) < 4:
+        return '-'
 
-y = "1"
-z = "1"
+def main():
+    score_input = int(input('Please enter your number score: '))
 
-if x %10>6:
-    z = "+"
+    print(f'Your letter grade is: {grade_conversion(score_input)}{grade_qualifier(score_input)}.')
 
-if x %10<4:
-    z = "-"
-
-if 89 < x <= 100:
-    y = "A"
-
-if 79 < x < 90:
-    y = "B"
-
-if 69 < x < 80:
-    y = "C"
-
-if 59 < x < 70:
-    y = "D"
-
-if 0 <= x < 60:
-    y = "F"
-
-print(grade_output + y + z)
+main()

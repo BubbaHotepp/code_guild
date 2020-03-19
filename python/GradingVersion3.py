@@ -1,30 +1,31 @@
-def score():
-    x = int(input('Please enter your grade score: '))
-    return x
-
-def letter_grade(x):
-       
+def grade_conversion(x):
     if 89 < x <= 100:
-        x = 'A'
+        return 'A'
     elif 79 < x < 90:
-        x = 'B'
+        return 'B'
     elif 69 < x < 80:
-        x = 'C'
+        return 'C'
     elif 59 < x < 70:
-        x = 'D'
+        return 'D'
     else:
-        x = 'F'
-    return x
-
-def qualifier(x):
-    if 3 < x < 7:
-        x = ' '
-    elif x >= 7:
-        x = '+'
+        return 'F'
+    
+def grade_qualifier(x):
+    if (x % 10) >= 7:
+        return '+'
+    elif 7 > (x % 10) > 3:
+        return ''
     else:
-        x = '-'
-    return x
+        return '-'
+        
+def main():
+    while True:
+        score_input = int(input('Please enter your grade score: '))
+        print(f'Your letter grade is: {grade_conversion(score_input)}{grade_qualifier(score_input)}')
+        repeat_input = input('Would you like to convert another grade score? (y/n): ')
+        if repeat_input in ('y','Y'):
+            continue
+        else:
+            break
 
-z = score()
-
-print(f'Your grade is: {letter_grade(z)}{qualifier(z)}')
+main()
