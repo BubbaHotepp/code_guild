@@ -18,7 +18,7 @@ def game(x,y):
     if x == 'r' and y == 'p':
         winner = 'Computer wins'
         return rock_v_paper(winner)
-    
+   
     elif x == 'p' and y == 'r':
         winner = 'You win'
         return rock_v_paper(winner)
