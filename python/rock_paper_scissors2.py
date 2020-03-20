@@ -6,62 +6,64 @@ def comp_choice():
     return x
 
 def rock_v_scissors(x):
-    print(f'\nRock smashes scissors, {x}!!')
+    return f'\nRock smashes scissors, {x}!!'
 
 def rock_v_paper(x):
-    print(f'\nPaper covers rock, {x}!!')
+    return f'\nPaper covers rock, {x}!!'
 
 def scissors_v_paper(x):
-    print(f'\nScissors cuts paper, {x}!!')
+    return f'\nScissors cuts paper, {x}!!'
 
+def game(x,y):
+    if x == 'r' and y == 'p':
+        winner = 'Computer wins'
+        return rock_v_paper(winner)
+    
+    elif x == 'p' and y == 'r':
+        winner = 'You win'
+        return rock_v_paper(winner)
+    
+    elif x == 's' and y == 'p':
+        winner = 'You win'
+        return scissors_v_paper(winner)
+    
+    elif x == 'p' and y == 's':
+        winner = 'Computer wins'
+        return scissors_v_paper(winner)
+
+    elif x == 's' and y == 'r':
+        winner = 'Computer wins'
+        return rock_v_scissors(winner)
+
+    elif x == 'r' and y == 's':
+        winner = 'You win'
+        return rock_v_scissors(winner)
+    
+    else:
+        return 'It\'s a tie, nobody wins.'
 
 def main():
-    print('Welcome to Rock Paper Scissors.\n')
-
-    repeat = 'y'
-
+    print('Welcome to Rock Paper Scissors. \nMake your choice and try to beat the computer.')
+    
     while True:
-        
-        user_choice = input('Please enter the letter of your choice [r]ock, [p]aper, or [s]cissors: ')
-
-        if repeat == 'y':
-                
-                x = comp_choice()
-
-                if user_choice == 'r' and x == 'p':
-                    winner = 'Computer wins'
-                    rock_v_paper(winner)
+ 
+        while True:
+            user_choice = input('Please enter the letter of your choice [r]ock, [p]aper, or [s]cissors: ')
+            if user_choice not in ('R','r','P','p','S','s'):
+                print('Please ONLY enter \'R\'/\'r\', \'P\'/\'p\', or \'S\'/\'s\': ')
+            else:
+                break
     
-                elif user_choice == 'p' and x == 'r':
-                    winner = 'You win'
-                    rock_v_paper(winner)
-    
-                elif user_choice == 's' and x == 'p':
-                    winner = 'You win'
-                    scissors_v_paper(winner)
-    
-                elif user_choice == 'p' and x == 's':
-                    winner = 'Computer wins'
-                    scissors_v_paper(winner)
+        computer = comp_choice()
+        print(f'{game(user_choice,computer)}') 
 
-                elif user_choice == 's' and x == 'r':
-                    winner = 'Computer wins'
-                    rock_v_scissors(winner)
-
-                elif user_choice == 'r' and x == 's':
-                    winner = 'You win'
-                    rock_v_scissors(winner)
-    
-                else:
-                    print('It\'s a tie, nobody wins.')
-        
-                repeat = input('Would you like to play again [y]es or [n]o?')
-        
-        elif repeat == 'n':
+        play_again = input('Would you like to play again?(y/n): ')
+        play_again = str.lower(play_again)
+        if play_again not in ('y','Y','n','N'):
+            print('Please enter only y or n.')
+        elif play_again == 'n':
             break
-
         else:
-            print('Please only enter y or n.')
+            continue
 
 main()
-        
