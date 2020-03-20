@@ -11,32 +11,35 @@ def subtract(x,y):
     return x - y
 
 def main():
-    x = ''
-
-    while x != 'done':
+    
+    while True:
         first_input = input('Please enter the first number: ')
-        second_input = input('Please enter the operation, + for addition \n- for subtraction \n* for multiplication or \n/ for division: ')
+        second_input = input('Please enter the operation, \n+ for addition \n- for subtraction \n* for multiplication or \n/ for division: ')
         third_input = input('Please enter the second number: ')
-
-        x = int(first_input)
-        y = int(third_input)
+        x = float(first_input)
+        y = float(third_input)
 
         if second_input == '*':
             z = multiply(x,y)
-            print(str(first_input) + str(second_input) + str(third_input) + ' = ' + str(z))
+            print(f'{first_input} {second_input} {third_input} = {z}')
     
         elif second_input == '/':
             z = divide(x,y)
-            print(str(first_input) + str(second_input) + str(third_input) + ' = ' + str(z))
+            print(f'{first_input} {second_input} {third_input} = {z}')
 
         elif second_input == '+':
             z = add(x,y)
-            print(str(first_input) + str(second_input) + str(third_input) + ' = ' + str(z))
+            print(f'{first_input} {second_input} {third_input} = {z}')
 
         elif second_input == '-':
             z = subtract(x,y)
-            print(str(first_input) + str(second_input) + str(third_input) + ' = ' + str(z))
+            print(f'{first_input} {second_input} {third_input} = {z}')
 
-        x = input('Type \'done\' if you are finished or press enter to continue: ')
+        repeat = input('Type \'done\' if you are finished or press enter to continue: ')
+        
+        if repeat == 'done':
+            break
+        else:
+            continue
         
 main()
