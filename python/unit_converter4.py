@@ -82,10 +82,9 @@ def main():
             break
   
     distance = float(input('\nPlease enter the distance: '))
-    
     x = float(meters(unit_from))
-    
     y = distance * x
 
     print(f'{str(distance)} {str(unit_from)} equals {str(convert_output(x))} {str(unit_to)}')
+
 main()
