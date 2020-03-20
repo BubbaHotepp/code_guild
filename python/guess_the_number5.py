@@ -4,20 +4,19 @@ def main():
 
     x = int(input('Please choose a number between 1 and 10: '))
     
-    count = 1
+    count = 0
 
     while True:
 
         y = random.randint(1,10)
-    
-        print('Computer guesses: ' + str(y) )
+        count += 1
+        print(f'Computer guesses: {y}')
               
         if y == x:
-            print('Yay, the computer got it! \nThe computer guessed correctly in ' + str(count) + ' tries.')
+            print(f'Yay, the computer got it! \nThe computer guessed correctly in {count} tries.')
             break
         
-        elif y != x:
+        else:
             print('The computer has chosen poorly.')
-            count += 1
-        
+            
 main()

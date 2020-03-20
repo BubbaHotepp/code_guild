@@ -7,21 +7,19 @@ def comp_choice():
 def main():
 
     print('The Computer has chosen a number between 1 and 10. Try to guess the number.')
-    
-    count = 1
-
     x = comp_choice()
+    count = 0
 
     while True:
 
         user_choice = int(input('Please enter your guess: '))
-        
+        count += 1
         if user_choice == x:
-            print('You guessed correctly, congratulations!! \nIt took you ' + str(count) + ' tries to guess correctly.')
+            print(f'Your guess: {user_choice} \nYou guessed correctly, congratulations!! \nIt took you {count} tries to guess correctly.')
             break
         
-        elif user_choice != x:
-            print('You have chosen poorly!')
-            count += 1
+        else:
+            print(f'Your guess: {user_choice} \nYou have chosen poorly!')
+            continue
         
 main()
