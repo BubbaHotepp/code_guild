@@ -85,6 +85,6 @@ def main():
     x = float(meters(unit_from))
     y = distance * x
 
-    print(f'{str(distance)} {str(unit_from)} equals {str(convert_output(x))} {str(unit_to)}')
+    print(f'{distance} {unit_from} equals {convert_output(x)} {unit_to}')
 
 main()

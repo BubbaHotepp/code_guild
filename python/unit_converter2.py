@@ -19,6 +19,6 @@ def main():
     conversion = float(meters(unit))
     x = float(distance) * conversion
     
-    print(f'{distance} {unit} equals {str(x)} meters.' )
+    print(f'{distance} {unit} equals {x} meters.' )
 
 main()
