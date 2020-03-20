@@ -3,19 +3,18 @@ import string
 def main():
     
     cypher_text = []
-
     user_input = input('Please enter plain text to encode: ')
-
-    alphabet = string.ascii_letters
-
+    alphabet_lower = string.ascii_lowercase
+    alphabet_upper = string.ascii_uppercase
     x = 13
 
     for chr in user_input:
 
-        if chr in alphabet:
-            cypher_text += alphabet[(alphabet.find(chr)+x)%52]
-
-        elif chr not in alphabet:
+        if chr in alphabet_lower:
+            cypher_text += alphabet_lower[(alphabet_lower.find(chr) + x) % 26]
+        elif chr in alphabet_upper:
+            cypher_text += alphabet_upper[(alphabet_upper.find(chr) + x) % 26]
+        else:
             cypher_text.append(chr)
         
     print(''.join(cypher_text))
