@@ -80,7 +80,7 @@ def main():
         print(winning_ticket)
         print(match_count)
 
-    print(f'You\'re winning total amount is: {total_winnings}')
+    print(f'\nYou\'re winning total amount is: {total_winnings}')
     print(f'Your\'re total ticket cost is: {ticket_cost}')
     print(f'You have matched 1 number {match_1} times.')
     print(f'You have matched 2 number {match_2} times.')
