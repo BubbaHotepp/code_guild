@@ -19,7 +19,8 @@ def meters(x):
     elif x == 'in':
         x = 0.0254
         return x
-    elif x == 'm':
+    
+    else:
         x = 1
         return x
 
@@ -43,12 +44,42 @@ def kilometers(x):
     x = float(x / 1000)
     return x
 
+def convert_output(x):
+    if x == 'km':
+        return kilometers(y)
+                
+    elif x == 'mi':
+        return miles(y)
+
+    elif x == 'yd':
+        return yards(y)
+    
+    elif x == 'ft':
+        return feet(y)
+
+    elif x == 'in':
+        return inches(y)
+
+    else:
+        return x
+
 
 def main():
+    while True:
+        unit_from = input('\nWhat is the unit you wish to convert from \n[mi] miles, [km] kilometers, [yd] yards, [m] meters, [ft] feet or [in] inches? \nPlease enter the appropriate letter: ')
         
-    unit_from = input('\nWhat is the unit you wish to convert from \n[mi] miles, [km] kilometers, [yd] yards, [m] meters, [ft] feet or [in] inches? \nPlease enter the appropriate letter: ')
+        if unit_from not in ('mi','km','yd','m','ft','in'):
+            print('Please only enter \'mi\', \'km\',\'yd\',\'m\',\'ft\', or \'in\'.')
+        else:
+            break
     
-    unit_to = input('\nWhat is the unit you wish to convert to \n[mi] miles, [km] kilometers, [yd] yards, [m] meters, [ft] feet or [in] inches? \nPlease enter the appropriate letter: ')
+    while True:
+        unit_to = input('\nWhat is the unit you wish to convert to \n[mi] miles, [km] kilometers, [yd] yards, [m] meters, [ft] feet or [in] inches? \nPlease enter the appropriate letter: ')
+
+        if unit_to not in ('mi,','km','yd','m','ft','in'):
+            print('Please only enter \'mi\', \'km\',\'yd\',\'m\',\'ft\', or \'in\'.')
+        else:
+            break
   
     distance = float(input('\nPlease enter the distance: '))
     
@@ -56,29 +87,5 @@ def main():
     
     y = distance * x
 
-    if unit_to == 'km':
-
-        output = kilometers(y)
-                
-    if unit_to == 'mi':
-
-        output = miles(y)
-
-    if unit_to == 'yd':
-        
-        output = yards(y)
-    
-    if unit_to == 'ft':
-
-        output = feet(y)
-
-    if unit_to == 'in':
-
-        output = inches(y)
-
-    if unit_to == 'm':
-
-        output = x
-    
-    print(str(distance) + ' ' + str(unit_from) + ' equals ' + str(output) + ' ' + str(unit_to))
+    print(f'{str(distance)} {str(unit_from)} equals {str(convert_output(x))} {str(unit_to)}')
 main()
