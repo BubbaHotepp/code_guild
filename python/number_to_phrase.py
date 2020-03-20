@@ -37,21 +37,37 @@ tens = {2:'twenty',
 
 def main():
         
-        num_input = int(input('Please enter a number up to 3 digits long: '))
+        while True:
+                try:
+                        num_input = int(input('Please enter a number up to 2 digits long: '))
 
-        a = num_input % 10
-        b = (num_input // 10) % 10
-        
-        first = ones[a]
+                        a = num_input % 10
+                        b = (num_input // 10) % 10
+                               
+                        if b > 1:
+                                second = tens[b]
+                                if a > 0:
+                                        first = ones[a]                
+                                        print(f'{num_input} is {second} {first}.')
+                                
+                                else:
+                                        print(f'{num_input} is {second}.')
+
+                        elif b == 1:
+                                if a > 0:
+                                        x = (str(b),str(a))
+                                        y = int(''.join(x))
+                                        z = teens[y]
+                                        print(f'{num_input} is {z}.')
+                                else:
+                                        print(f'{num_input} is ten.')                        
+                        else:
+                                first = ones[a]
+                                print(f'{num_input} is {first}.')
+                                
+                        break
                 
-        if b > 1:
-                second = tens[b]
-                print(f'{num_input} is {second} {first}.')
-                
-        elif b == 1:
-                x = (str(b),str(a))
-                y = int(''.join(x))
-                z = teens[y]
-                print(f'{num_input} is {z}.')
+                except ValueError:
+                        print('Please enter numbers only.')
                 
 main()
