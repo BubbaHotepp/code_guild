@@ -5,7 +5,7 @@ def main():
     file_input = open('61654.txt', encoding='utf8')
     book_file = file_input
     exclude = set(string.punctuation)
-    book_file = ''.join(ch for ch in book_file if ch not in exclude)
+    book_file = ''.join(chr for chr in book_file if chr not in exclude)
     book_file = book_file.lower()
     book_file = book_file.split()
     length = len(book_file)
