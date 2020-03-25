@@ -6,12 +6,9 @@ def peaks(x):
     
     while y < length:
     
-        print(y)
         a = y + 1
-        print(a)
         b = y + 2
-        print(b)
-    
+            
         if x[y] < x[a]:
     
             if x[a] > x [b]:

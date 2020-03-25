@@ -88,7 +88,7 @@ def main():
     print(f'You have matched 4 number {match_4} times.')
     print(f'You have matched 5 number {match_5} times.')
     print(f'You have matched 6 number {match_6} times.')
-    print(f'\nYou\'re return on invest is {roi(total_winnings, ticket_cost)}.')
+    print(f'\nYou\'re return on investment is {roi(total_winnings, ticket_cost)}.')
 
 main()
 
