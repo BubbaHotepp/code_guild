@@ -10,7 +10,7 @@ def main():
     word_list = book_file.split()
 
     for i in range(len(word_list) - 1):
-        word_pair = str(word_list[i] + ' ' + word_list[i+1])
+        word_pair = str(word_list[i] + ' ' + word_list[i + 1])
         if word_pair not in dict1:
             dict1[word_pair] = 1
         else:
