@@ -56,7 +56,7 @@ def main():
                         c = (num_input // 100)
                                                         
                         if c == 0:
-                                
+                    
                                 if b > 1:
                                         second = tens[b]
                                         if a > 0:

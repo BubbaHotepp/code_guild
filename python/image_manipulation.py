@@ -1,17 +1,17 @@
-# import PIL
 from PIL import Image
+
 def main():
-    image_input = Image.open('lena.png')
-    width, height = image_input.size
-    pixels = image_input.load()
+
+    img = Image.open("lenna.png") # must be in same folder
+    width, height = img.size
+    pixels = img.load()
 
     for i in range(width):
         for j in range(height):
-            (r, g, b) = pixels[i, j]
-            y = 0.299 * float(r) + 0.587 * float(g) + 0.114 * float(b)
-            pixels[i, j] = (r, g, b)
-            
-    image_input.show()
+            r, g, b = pixels[i, j]
+            y = 0.299*r + 0.587*g + 0.114*b
+            pixels[i, j] = int(y)
 
+    img.show()
+    img.save('lenna2.png')
 main()
-

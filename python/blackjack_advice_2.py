@@ -52,7 +52,7 @@ def main():
         
         card_total = user_card1 + user_card2
                   
-    while card_total < 21:
+    while card_total <= 21:
 
         if card_total > 21:
             print(f'{card_total} You\'ve busted.')
