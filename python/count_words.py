@@ -2,7 +2,7 @@ import string
 
 def main():
     dict1 = {}
-    file_input = open('61654.txt', encoding='utf8')
+    file_input = open('pg61664.txt', encoding='utf8')
     book_file = file_input
     exclude = set(string.punctuation)
     book_file = ''.join(chr for chr in book_file if chr not in exclude)
