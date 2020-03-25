@@ -11,7 +11,7 @@ def main():
     
     for i in word_list:
         if i not in dict1:
-            dict1[i] = 0
+            dict1[i] = 1
         else:
             dict1[i] += 1
 
