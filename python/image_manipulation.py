@@ -14,6 +14,8 @@ def main():
             g = int(y)
             b = int(y)
             pixels[i, j] = (r,g,b)
+    
     # img.save('lenna4.png')
     img.show()    
+
 main()
