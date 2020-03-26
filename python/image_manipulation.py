@@ -2,7 +2,7 @@ from PIL import Image
 
 def main():
 
-    img = Image.open("lenna.png") # must be in same folder
+    img = Image.open("lenna.png")
     width, height = img.size
     pixels = img.load()
 
