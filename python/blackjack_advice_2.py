@@ -39,7 +39,7 @@ def main():
         if card_total == 11:
             print('Blackjack, you win.')
 
-        if user_card1 == 1 and user_card2 == 1:
+        elif user_card1 == 1 and user_card2 == 1:
             card_total = 12
                     
         elif user_card1 == 1:
