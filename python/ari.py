@@ -8,14 +8,12 @@ def sentence_count(x):
     x = x.replace(':','.')
     x = x.replace(';','.')
     sentence_file = x.split('.')
-    # print(sentence_file)
     return len(sentence_file)
         
 def word_count(x):
     exclude = set(string.punctuation)
     word_list = ''.join(chr for chr in x if chr not in exclude)
     word_list = word_list.split()
-    # print(word_list)
     return len(word_list)    
     
 def character_count(x):
@@ -24,7 +22,6 @@ def character_count(x):
     character_list = character_list.replace(' ','')
     character_list = character_list.replace('\'','')
     character_list = list(character_list)
-    # print(character_list)
     return len(character_list)
     
 ari_scale = {1: {'ages':   '5-6', 'grade_level': 'Kindergarten'},
@@ -47,14 +44,24 @@ ari_scale = {1: {'ages':   '5-6', 'grade_level': 'Kindergarten'},
 
 def main():
     text_input = input('Please enter the text name to be evaluated: ')
+    
     sentence_file = open(text_input, encoding='utf8')
     word_file = open(text_input, encoding='utf8')
     character_file = open(text_input, encoding='utf8')
+    
     x = sentence_count(sentence_file)
     y = word_count(word_file)
     z = character_count(character_file)
-    ari = 4.71 * z/y + 0.5 * y/x - 21.43
-    ari = int(round(ari))
+    ari_temp = 4.71 * z/y + 0.5 * y/x - 21.43
+    ari_remainder = ari_temp%1
+    
+    if ari_remainder > 0:
+        ari_remainder = 1
+    else:
+        ari_remainder = 0
+    
+    ari = int(ari_temp + ari_remainder)
+    
     print(f'The Automated Readability Index (ARI) for: {text_input}  \n is {ari_scale[ari]}.')  
         
 main()
