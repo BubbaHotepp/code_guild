@@ -1,6 +1,6 @@
 import string
 
-def sentence_count(x):
+def sentence_count(x):     
     x = ''.join(chr for chr in x)
     x = x.replace(' ', '')
     x = x.replace('?','.')
@@ -50,9 +50,13 @@ def main():
     character_file = open(text_input, encoding='utf8')
     
     x = sentence_count(sentence_file)
+    print(x)
     y = word_count(word_file)
+    print(y)
     z = character_count(character_file)
-    ari_temp = 4.71 * z/y + 0.5 * y/x - 21.43
+    print(z)
+    ari_temp = (4.71 * (z/y)) + (0.5 * (y/x)) - 21.43
+    print(ari_temp)
     ari_remainder = ari_temp%1
     
     if ari_remainder > 0:
