@@ -29,10 +29,11 @@ def retrieve(x):
                     email = item['email']
                     phone = item['Phone Number']
                     print(f'Contact info:\nLast name: {lname}\nFirst name: {fname}\nemail: {email}\nPhone number: {phone}')
+                    break
                 else:
-                    print('Person with that last name and first name not found.')
+                    continue
             else:
-                print('Person with that last name not found.')
+                continue
         
         cont_input = input('Would you like to retrieve another contact? Y/N: ')
         if cont_input in ('Y','y'):
