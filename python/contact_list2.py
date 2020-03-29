@@ -63,6 +63,7 @@ def retrieve(x):
 
 def update(x):
     while True:
+        cont_input = ''
         print('Enter the last name and first name of the contact to update: ')
         last_name = input('Last Name: ')
         first_name = input('First Name: ')
@@ -78,15 +79,15 @@ def update(x):
                     fname = item['First Name']
                     update_choice = input('Which part of contact do you wish to update?\n[F]irst name, [L]ast name, [e]mail, or [P]hone number? : ')
         
-                    if update_choice.lower == 'f':
+                    if update_choice.lower() == 'f':
                         update_edit = input(f'Please enter new first name: ')
                         item['First Name'] = update_edit
         
-                    elif update_choice.lower == 'l':
+                    elif update_choice.lower() == 'l':
                         update_edit = input(f'Please enter new last name: ')
                         item['Last Name'] = update_edit
         
-                    elif update_choice.lower == 'e':
+                    elif update_choice.lower() == 'e':
                         update_edit = input(f'Please enter new email address: ')
                         item['email'] = update_edit
         
@@ -94,22 +95,31 @@ def update(x):
                         update_edit = input(f'Please enter new phone number: ')
                         item['Phone Number'] = update_edit
         
+                elif fname == '':
+                    print('Contact by that name not found.')
+                
                 else:
                     continue
         
             else:
                 continue
         
-        if fname == '':
-            print('Contact by that name not found.')
-        else:
-            continue
-
-        cont_input = input('Would you like to update another contact? Y/N: ')
-        if cont_input in ('Y','y'):
-            continue
-        else:
+        while True:
+            
+            cont_input = input('Would you like to update another contact? Y/N: ')
+            if cont_input.lower() == 'y':
+                break
+            elif cont_input.lower() == 'n':
+                break
+            else:
+                print('Please enter Y or N only.')
+        
+        if cont_input.lower() == 'y':
+            continue 
+        elif cont_input.lower() == 'n':
             break
+        else:
+            continue
     
 def delete(x):
     while True:
@@ -182,10 +192,9 @@ def main():
                 print('Please enter only C/c, R/r, U/u, or D/d.')
         
         cont_input = input('Do you wish to continue? Y/N: ')
-        print(dict_list)
         if cont_input in ('Y','y'):
             continue 
         else:
             break
    
-main()
+main()        print(dict_list)
