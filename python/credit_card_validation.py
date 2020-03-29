@@ -11,13 +11,9 @@ def main():
             print('Please enter only Y/N, y/n or Yes/No.')
           
     card_number = [int(i) for i in user_input]
-    
     check_digit = card_number[-1]
-    
     del card_number[-1]
-    
     card_number.reverse()
-    
         
     for i in card_number[::2]:
         x = card_number.index(i)
@@ -30,9 +26,11 @@ def main():
     
     total = sum(card_number)
     total_check_digit = total%10
+    
     if check_digit == total_check_digit:
         print('That is a valid credit card number.')
     else:
         print('That is NOT a valid credit card number.')
+
 main()
 
