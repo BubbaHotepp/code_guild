@@ -3,21 +3,13 @@ def main():
     user_input = []
 
     while True:
-        try:
-            user_input = input('Please enter credit card number to verify: ')
-            
-        except ValueError:
-                print('Please enter numbers only.')
-
-        try:
-            affirmation = input(f'{user_input} \nIs this correct? Y/N: ')
-            if affirmation not in ('y','Y','Yes','yes','YES','n','N','No','no','NO'):
-                raise ValueError
-        except ValueError:
-                print('Please enter only Y/N, y/n or Yes/No.')
-        else:
+        user_input = input('Please enter credit card number to verify: ')
+        affirmation = input(f'{user_input} \nIs this correct? Y/N: ')
+        if affirmation in ('y','Y','Yes','yes','YES','n','N','No','no','NO'):
             break
-   
+        else:
+            print('Please enter only Y/N, y/n or Yes/No.')
+          
     card_number = [int(i) for i in user_input]
     
     check_digit = card_number[-1]
