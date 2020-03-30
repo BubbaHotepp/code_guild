@@ -77,6 +77,11 @@ def update(x):
         
                 if contact_fname.lower() == first_name.lower():
                     fname = item['First Name']
+                    lname = item['Last Name']
+                    email = item['email']
+                    phone = item['Phone Number']
+                    print(f'Contact info:\nLast name: {lname}\nFirst name: {fname}\nemail: {email}\nPhone number: {phone}')
+                    
                     update_choice = input('Which part of contact do you wish to update?\n[F]irst name, [L]ast name, [e]mail, or [P]hone number? : ')
         
                     if update_choice.lower() == 'f':
@@ -122,6 +127,7 @@ def update(x):
             continue
     
 def delete(x):
+    
     while True:
         print('Enter the last name and first name of the contact to delete: ')
         last_name = input('Last Name: ')
@@ -131,27 +137,31 @@ def delete(x):
         for item in x:
             lname_temp = item['Last Name']
             fname_temp = item['First Name']
-        
+            list_indice = 0
+            
             if lname_temp.lower() == last_name.lower():
         
                 if fname_temp.lower() == first_name.lower():
-                    affirm = input(f'Are you sure you want to delete contact {lname_temp} {fname_temp}? ')
+                    fname = item['First Name']
+                    y = x.index(item)
+                    affirm = input(f'Are you sure you want to delete contact\n{item}\nY or N? ')
+                    
                     if affirm.lower() == 'y':
-                        del dict_list[item]
+                        del x[y]
+                    
                     else:
                         continue
-
                 else:
+                    list_indice += 1
                     continue
-        
+
             else:
+                list_indice += 1
                 continue
         
         if fname == '':
             print('Contact by that name not found.')
-        else:
-            continue
-
+        
         cont_input = input('Would you like to delete another contact? Y/N: ')
         if cont_input in ('Y','y'):
             continue
@@ -175,6 +185,7 @@ def main():
     
     while True:
         while True:            
+            print(dict_list)
             user_input1 = input('Would you like to [C]reate, [R]etrieve, [U]pdate, or [D]elete a record?: ')
             if user_input1 == 'C' or user_input1 == 'c':
                 create(dict_list)
