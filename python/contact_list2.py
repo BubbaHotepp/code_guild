@@ -10,14 +10,20 @@ def create(x):
         phone_number = input('Phone number: ')
         x.append({'Last Name': last_name,'First Name': first_name, 'email': email, 'Phone Number': phone_number})
         
-        cont_input = input('Would you like to create another contact? Y/N: ')
+        while True:
+            cont_input = input('Would you like to create another contact? Y/N: ')
+
+            if cont_input.lower() == 'y':
+                continue
+            elif cont_input.lower() == 'n':
+                break
+            else:
+                print('Please enter only y or n')
         
-        if cont_input.lower() == 'y':
-            continue
-        elif cont_input.lower() == 'n':
+        if cont_input.lower() == 'n':
             break
         else:
-            print('Please enter only y or n')
+            continue
 
 def retrieve(x):
     while True:
@@ -49,17 +55,22 @@ def retrieve(x):
             print('Contact by that name not found.')
         
         else:
-            break# continue
+            continue
 
-        # try:
-        #     cont_input = input('Would you like to retrieve another contact? Y/N: ')
-        #     while True:
-        #         if cont_input in ('Y','y'):
-        #             continue
-        #         elif cont_input in ('N','n'):
-        #             break
-        #         else:
-        #             print('Please enter only y or n.')
+        while True:
+            cont_input = input('Would you like to retrieve another contact? Y/N: ')
+
+            if cont_input.lower() == 'y':
+                continue
+            elif cont_input.lower() == 'n':
+                break
+            else:
+                print('Please enter only y or n')
+        
+        if cont_input.lower()== 'n':
+            break
+        else:
+            continue
 
 def update(x):
     while True:
@@ -112,6 +123,7 @@ def update(x):
         while True:
             
             cont_input = input('Would you like to update another contact? Y/N: ')
+
             if cont_input.lower() == 'y':
                 break
             elif cont_input.lower() == 'n':
@@ -137,7 +149,6 @@ def delete(x):
         for item in x:
             lname_temp = item['Last Name']
             fname_temp = item['First Name']
-            list_indice = 0
             
             if lname_temp.lower() == last_name.lower():
         
@@ -161,13 +172,22 @@ def delete(x):
         
         if fname == '':
             print('Contact by that name not found.')
-        
-        cont_input = input('Would you like to delete another contact? Y/N: ')
-        if cont_input in ('Y','y'):
-            continue
-        else:
-            break
 
+        while True:
+            cont_input = input('Would you like to delete another contact? Y/N: ')
+            
+            if cont_input.lower() == 'y':
+                continue
+            elif cont_input.lower() == 'n':
+                break
+            else:
+                print('Please enter only y or n')
+
+        if cont_input.lower() == 'n':
+            break
+        else:
+            continue
+        
 def main():
     dict_list = []
 
