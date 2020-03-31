@@ -33,12 +33,13 @@ def main():
         
     deposit_amount = 200.00
     account1.deposit(deposit_amount)
-        
+    account1.check_balance()
+
     withdrawel_amount = 50.00
-    
     if account1.check_withdrawel(withdrawel_amount) == True:
-                account1.withdrawel(withdrawel_amount, transactions)
+                account1.withdrawel(withdrawel_amount)
     else:
         print('Insufficient funds.')
+    account1.check_balance()
         
 main()

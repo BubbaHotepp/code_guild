@@ -29,7 +29,7 @@ class ATM:
         transactions.append(f'Interest applied = {interest}')
 
 def main():
-    account1 = ATM('John Doe', '321456', '200.00')
+    account1 = ATM('John Doe', '321456', '0.00')
     transactions = []
 
     while True:
