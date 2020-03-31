@@ -10,10 +10,15 @@ def create(x):
         phone_number = input('Phone number: ')
         x.append({'Last Name': last_name,'First Name': first_name, 'email': email, 'Phone Number': phone_number})
 
+        with open('contacts.csv', 'w') as csv_file:
+                writer = csv.writer(csv_file)
+                row = [f'{last_name}',f'{first_name}',f'{email}',f'{phone_number}']
+                writer.writerows(row)
+        
         # with open('contacts.csv') as csv_file:
-        writer = csv.writer(csv_file, 'wb')
-        row = [f'{last_name}',f'{first_name}',f'{email}',f'{phone_number}']
-        writer.writerow(row)
+        #     writer = csv.writer(csv_file)
+        #     row = [f'{last_name}',f'{first_name}',f'{email}',f'{phone_number}']
+        #     writer.writerows(row)
 
         while True:
             cont_input = input('Would you like to create another contact? Y/N: ')
