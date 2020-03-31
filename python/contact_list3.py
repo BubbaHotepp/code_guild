@@ -10,10 +10,10 @@ def create(x):
         phone_number = input('Phone number: ')
         x.append({'Last Name': last_name,'First Name': first_name, 'email': email, 'Phone Number': phone_number})
 
-        with open('contacts.csv', 'w') as csv_file:
-                writer = csv.writer(csv_file)
+        with open('contacts.csv', 'a') as csv_file:
+                writer = csv.writer(csv_file, delimiter = ',')
                 row = [f'{last_name}',f'{first_name}',f'{email}',f'{phone_number}']
-                writer.writerows(row)
+                writer.writerow(row)
         
         # with open('contacts.csv') as csv_file:
         #     writer = csv.writer(csv_file)
