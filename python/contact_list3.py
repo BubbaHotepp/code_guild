@@ -15,11 +15,6 @@ def create(x):
                 row = [f'{last_name}',f'{first_name}',f'{email}',f'{phone_number}']
                 writer.writerow(row)
         
-        # with open('contacts.csv') as csv_file:
-        #     writer = csv.writer(csv_file)
-        #     row = [f'{last_name}',f'{first_name}',f'{email}',f'{phone_number}']
-        #     writer.writerows(row)
-
         while True:
             cont_input = input('Would you like to create another contact? Y/N: ')
 
