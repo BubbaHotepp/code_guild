@@ -10,12 +10,11 @@ def main():
         for j in range(height):
             (r, g, b) = pixels[i, j]
             y = 0.299*r + 0.587*g + 0.114*b
-            # r = int(y)
+            r = int(y)
             g = int(y)
             b = int(y)
             pixels[i, j] = (r,g,b)
     
-    # img.save('lenna4.png')
     img.show()    
 
 main()

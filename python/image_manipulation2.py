@@ -20,6 +20,6 @@ def main():
             b = int(b*255)
             pixels[i, j] = (r,g,b)
     
-    img.save('lennahsv.png')
+    img.show()
 
 main()
