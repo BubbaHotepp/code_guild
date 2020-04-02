@@ -12,7 +12,7 @@ def rain_mean(list_input):
     return total
 
 def variance(mean_input):
-    output_variance = statistics.variance(mean_input)
+    pass
 
 
 
