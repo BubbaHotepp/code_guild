@@ -1,13 +1,20 @@
+import statistics
+
 def rain_mean(list_input):
     sub_total = 0
     total_days = (len(list_input))
+    print(total_days)
     for item in range(total_days):
-        indice = x[item]
+        indice = list_input[item]
         daily = indice[1]
-        print(daily)
         sub_total += int(daily)
     total = sub_total / total_days
     return total
+
+def variance(mean_input):
+    output_variance = statistics.variance(mean_input)
+
+
 
 def main():
 
@@ -25,9 +32,8 @@ def main():
         x = i.split()
         y = tuple(x)
         rain_data.append(y)
-    print(len(rain_data))
-    print(rain_data)
-    print(rain_data[0][1])
-    print(rain_mean(rain_data))
-
+    
+    print(f'The mean rain day value is {rain_mean(rain_data)}.')
+    mean_value = float(rain_mean(rain_data))
+    print(variance(mean_value))
 main()
