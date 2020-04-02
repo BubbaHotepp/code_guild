@@ -50,13 +50,9 @@ def main():
     character_file = open(text_input, encoding='utf8')
     
     x = sentence_count(sentence_file)
-    print(x)
     y = word_count(word_file)
-    print(y)
     z = character_count(character_file)
-    print(z)
     ari_temp = (4.71 * (z/y)) + (0.5 * (y/x)) - 21.43
-    print(ari_temp)
     ari_remainder = ari_temp%1
     
     if ari_remainder > 0:

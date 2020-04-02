@@ -1,18 +1,14 @@
-import datetime
-# class rain_data:
+def rain_mean(list_input):
+    sub_total = 0
+    total_days = (len(list_input))
+    for item in range(total_days):
+        indice = x[item]
+        daily = indice[1]
+        print(daily)
+        sub_total += int(daily)
+    total = sub_total / total_days
+    return total
 
-#     def __init__(self, location, date, daily_total):
-#         self.location = location
-#         self.date = date
-#         self.daily_total = daily_total
-
-#     def date():
-#         date = datetime.datetime.strptime(y, '%d-%b-%Y')
-#         print(date.year)   # 2016
-#         print(date.month)  # 3
-#         print(date.day)    # 25
-#         print(date)  # 2016-03-25 00:00:00
-#         print(date.strftime('%d-%b-%Y'))  # 25-Mar-2016
 def main():
 
     data_list = []
@@ -23,13 +19,15 @@ def main():
     del raw_data[-1]
     
     for i in raw_data:
-        data_list.append(i[0:22])
+        data_list.append(i[0:17])
 
     for i in data_list:
         x = i.split()
         y = tuple(x)
         rain_data.append(y)
-        
+    print(len(rain_data))
     print(rain_data)
+    print(rain_data[0][1])
+    print(rain_mean(rain_data))
 
 main()
