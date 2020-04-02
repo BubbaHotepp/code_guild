@@ -15,15 +15,21 @@ import datetime
 #         print(date.strftime('%d-%b-%Y'))  # 25-Mar-2016
 def main():
 
-    raw_data = []
     data_list = []
+    rain_data = []
 
     data_file =''.join(open('columbia_ips.txt').readlines()[11:])
     raw_data = data_file.split('\n')
     del raw_data[-1]
+    
     for i in raw_data:
         data_list.append(i[0:22])
-    rain_data = tuple(data_list)
-    print(rain_data)
 
+    for i in data_list:
+        x = i.split()
+        y = tuple(x)
+        rain_data.append(y)
+        
+    print(rain_data)
+    
 main()
