@@ -1,4 +1,4 @@
-import statistics
+import numpy as np
 
 def rain_mean(list_input):
     sub_total = 0
@@ -11,8 +11,9 @@ def rain_mean(list_input):
     total = sub_total / total_days
     return total
 
-def variance(mean_input):
-    pass
+def variance(variance_input, mean_input):
+    variance_result = sum((xi - mean_input) ** 2 for xi in variance_input) / len(variance_results)
+    return variance_result
 
 
 
@@ -35,5 +36,6 @@ def main():
     
     print(f'The mean rain day value is {rain_mean(rain_data)}.')
     mean_value = float(rain_mean(rain_data))
-    print(variance(mean_value))
+    variance_input = int(rain_data)
+    print(variance(variance_input, mean_value))
 main()
