@@ -4,7 +4,7 @@ import datetime
 def rain_mean(list_input):
     sub_total = 0
     total_days = (len(list_input))
-    print(total_days)
+    
     for item in range(total_days):
         indice = list_input[item]
         daily = indice[1]
@@ -22,6 +22,7 @@ def max_rain_year(data_input):
     count = 0
     year_list = []
     year_averages = {}
+    average_values = []
 
     for elem in data_input:
         elem_date = elem[0]
@@ -45,11 +46,17 @@ def max_rain_year(data_input):
                 count += 1
             else:
                 continue
+        
         average = year_sum / count
+        average_values.append(average)
         year_averages[f'{elem_year}'] = average
+        average_values.sort(reverse = True)
     
-    print(year_list)
-    print(year_averages)
+    for value in year_averages.values():
+        if value == average_values[0]:
+            year_max = average_values[value]
+    print(average_values)
+    print(year_max)
 
 
 
@@ -78,7 +85,7 @@ def main():
     
     print(f'The mean rain day value is {rain_mean(rain_data)}.')
     mean_value = float(rain_mean(rain_data))
-    print(variance(variance_list))
+    print(f'The variance value of the data is {variance(variance_list)}')
 
     max_rain_year(rain_data)
 
