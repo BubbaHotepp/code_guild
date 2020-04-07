@@ -55,6 +55,7 @@ def max_rain_year(data_input):
     for value in year_averages.values():
         if value == average_values[0]:
             year_max = average_values[value]
+
     print(average_values)
     print(year_max)
 

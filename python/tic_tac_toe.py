@@ -5,90 +5,103 @@ class Player:
         self.player_name = player_name
         self.player_token = player_token
     
-    def name(self):  #Defines user input of name.
-        name = input('Please enter your name: ')
-        return name
+    # def name(self):  #Defines user input of name.
+    #     return self.player_name
     
-    def token(self): #Defines user choice of X or O
-        token = input('Would you like X\'s or O\'s? : ')
-        if token.lower == 'o':
-            return 'O'
-        else:
-            token.lower == 'x':
-            return 'X'
+    # def token(self): #Defines user choice of X or O
+    #     return self.player_token
 
-
+#[['x', 'o', 'o'], ['o', 'x', 'o'], ['o', 'x', 'o']] --> some visual representation with a normal tic-tac-to layout
 class Game:
-    board_layout = [] # working on board layout
-    def __init__(self, board):
-        self.board = []
-   
-    def __repr__(self): #Returns a pretty string representation of the game board
-        self.board_layout = [ 
-                             [" ","|"," ",'|'," "],  #referenced above in line 22
-                             ["-","-","-","-","-"],
-                             [" ","|"," ","|"," "],
-                             ["-","-","-","-","-"],
-                             [" ","|"," ","|"," "]
-                            ]
-   
-# """
-# if we want "x" in the middle: 
+    # board_layout = [['', '', ''], ['', '', ''], ['', '', '']] # working on board layout
+    def __init__(self, board, player1, player2):
+        
+        self.board = [['', '', ''], ['', '', ''], ['', '', '']]   
+        self.player1 = player1
+        self.player2 = player2
 
-# user_input = "x"
-# user_positon = ?,?
-# in_play_board[2][2] = user_position
-
-# reprint the board with the replacement. in_play_board = board
-
-# # for i in board:
-# #     print(i[0], i[1], i[2])
+    def __repr__(self, visual_board): #Returns a pretty string representation of the game board
+        
+        self.visual_board = [ 
+                        [" ","|"," ",'|'," "],  #Printable board
+                        ["-","-","-","-","-"],
+                        [" ","|"," ","|"," "],
+                        ["-","-","-","-","-"],
+                        [" ","|"," ","|"," "]
+                       ]
+        
+        
+             
+        # for i in play_board:                         # for loop that prints the play board into a nice visual representation
+        #     print(i[0], i[1], i[2], i[3], i[4])
     
-    def move(self, playable_board, player_input): #Place a player's token character string at a given coordinate (top-left is 0, 0), x is horizontal position, y is vertical position.
-        self.playable_board = 
-        self.player_input = input('Please enter the position to place your piece (1-9): ')
-        space = []        
+    def move(self): #Place a player's token character string at a given coordinate (top-left is 0, 0), x is horizontal position, y is vertical position.
+     
+        possible_moves = {
+                          1 : board[0][0],
+                          2 : board[0][1],
+                          3 : board[0][2],
+                          4 : board[1][0],
+                          5 : board[1][1], 
+                          6 : board[1][2],
+                          7 : board[2][0],
+                          8 : board[2][1],
+                          9 : board[2][2]
+                         }
+        
         coordinates = {
-                        "1" : playable_board[0][0]
-                        "2" : playable_board[0][2]
-                        "3" : playable_board[0][4] 
-                        "4" : playable_board[2][0] 
-                        "5" : playable_board[2][2] 
-                        "6" : playable_board[2][4]
-                        "7" : playable_board[4][0]
-                        "8" : playable_board[4][2]
-                        "9" : playable_board[4][4]
-                       }
-                
-        position = coordinates[player_input]
+                       board[0][0] : play_board[0][0],  # coordinates that translate the entries into the board (logical representation)
+                       board[0][1] : play_board[0][2],  # into the visual board to be printed
+                       board[0][2] : play_board[0][4], 
+                       board[1][0] : play_board[2][0], 
+                       board[1][1] : play_board[2][2], 
+                       board[1][2] : play_board[2][4],
+                       board[2][0] : play_board[4][0],
+                       board[2][1] : play_board[4][2]
+                      }
+
+            player_move = possible_moves[player_input]
+            board_position = coordinates[player_input]
         
-        space.append(player_input) #keeps track of what positions have been filled
-        
-        """
-        if player_input not in space:
-            position = coordinates[player_input] (?)
-        else:
-            loop back to input
-        """
-        
-        
-        return position
-        
+            if self.board(player_move) == '':
+                self.board.append(player_move) #can you append to board if it's inside a different function? -LN
+                self.visual_board.append(board_position)
+            else:
+                print('That position is has been played.')
+
+
     def calc_winner(self): #What token character string has won or None if no one has.
-        if #something is in (123, 456, 789, 147, 258, 369, 159, 357):
-            #then winning result
-        else:
-            #continue playing
+        
+        winning_combos = [
+                          ['1','2','3']
+                          ['4','5','6']
+                          ['7','8','9']
+                          ['1','4','7']
+                          ['2','5','8']
+                          ['3','6','9']
+                          ['1','5','9']
+                          ['3','5','7']
+                         ]
+        
+#             if:
+#                 pass
+#             #then winning result
+        
+#             else:
+#                 pass
+#                 #continue playing
        
     
-    def is_full(self): #Returns true if the game board is full.
-        if count == 9:
-            print("It's a tie!")
+#     def is_full(self): #Returns true if the game board is full.
+#           count = 0
+#           if count == 9:
+#             count += 1
+#             print("It's a tie!")
     
-    def is_game_over(self): #Returns true if the game board is full or a player has won.
-        if count == 9:
-            print("Game over")
-            print("It's a tie!")
+#     def is_game_over(self): #Returns true if the game board is full or a player has won.
+#         if count == 9:
+#             print("Game over")
+#             print("It's a tie!")
 
 
 
@@ -104,34 +117,57 @@ def main():
             continue
         elif play == 'no':
             break
-            
-    player1_name = Player.name(self)
-    player1_token = Player.token(self)
-    player1 = Player(player1_name, player1_token)
+        
+        input_name1 = input('Player 1 please enter your name: ')
+        input_token1 = input('Would you like X\'s or O\'s? : ').lower()
+        if token == 'o':
+            return 'O'
+        else:
+            token == 'x'
+            return 'X'
+        
+        
+        input_name2 = input('Player 2 please enter your name: ')
+        input_token2 = input('Would you like X\'s or O\'s? : ').lower()
+        if token == 'o':
+            return 'O'
+        else:
+            token == 'x'
+            return 'X'
 
-    player2_name = Player.name(self)
-    player2_token = Player.token(self)
-    player2 = Player(player2_name, player2_token)
-    
+        player1 = Player(input_name1, input_token)
+        player1_moves = []
+        
+        player2 = Player(input_name2, input_token2)
+        player2_moves = []
 
-    
-    main function to start the game
-    def play_game():
-         board, winner,counter = creat_board (), 0,1
-         print(board)
-         sleep(2)  # the sleep(2) suspends the fuction a given amount of seconds
+        game = Game(player1, player2)
 
-        while winner == 0:
-            for player in [1,2]:
-                board = random_place(board,playeR)  #come back to this(because there is a player1_name and player2_name)
-                print('board after'+ str(counter) + "move")
-                print(board)
-                sleep(2) 
-                counter += 1
-                winner = evaluate(board)
-                if winner != 0:
-                    break
-        return(winner)
+        while True:
+            print('1|2|3')
+            print('4|5|6')
+            print('7|8|9')
+            player_input = input('Please enter the position to place your piece (1-9): ')
+            self.
+
+
+#    # main function to start the game
+#     def play_game():
+#          board, winner,counter = creat_board (), 0,1
+#          print(board)
+#          sleep(2)  # the sleep(2) suspends the fuction a given amount of seconds
+
+#         while winner == 0:
+#             for player in [1,2]:
+#                 board = random_place(board,playeR)  #come back to this(because there is a player1_name and player2_name)
+#                 print('board after'+ str(counter) + "move")
+#                 print(board)
+#                 sleep(2) 
+#                 counter += 1
+#                 winner = evaluate(board)
+#                 if winner != 0:
+#                     break
+#         return(winner)
     
     
 
@@ -152,3 +188,8 @@ def col_win(board,player):
     
 #Determines who the winner is a.k.a. "Driver Code"
 print("The winner is:"+ str(play_game()))
+
+# for i in play_board:
+    # print(i[0],i[1],i[2],i[3],i[4])
+
+main()
