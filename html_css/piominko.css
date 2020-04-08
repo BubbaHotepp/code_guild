@@ -1,17 +1,33 @@
 h1 {
-    color: darkred;
+    text-align: center;
+    color: rgb(19, 1, 53);
     font-weight: bold;
     text-decoration: overline;
     text-decoration: underline;
     }
 h2 {
-    color: rgba(87, 38, 0, 0.74);
+    text-align: center;
+    color: rgba(5, 2, 17, 0.74);
     font-weight: bold;            
 }
 h3 {
+    text-align: center;
     color: rgb(88, 49, 4);
-    font-weight: bold;
+    font-weight: bolder;
     }
+p {
+    text-align: center;
+    font-weight: bold;
+    padding-right: 225px;
+    padding-left: 225px;
+    padding-top: 25px;
+}
+
 blockquote {
-            font-weight: bold;
+    text-align: center;        
+    font-weight: bold;
+    font-style: italic;
             }
+* {
+    background-color: rgb(149, 149, 150);
+}
