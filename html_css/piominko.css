@@ -1,0 +1,17 @@
+h1 {
+    color: darkred;
+    font-weight: bold;
+    text-decoration: overline;
+    text-decoration: underline;
+    }
+h2 {
+    color: rgba(87, 38, 0, 0.74);
+    font-weight: bold;            
+}
+h3 {
+    color: rgb(88, 49, 4);
+    font-weight: bold;
+    }
+blockquote {
+            font-weight: bold;
+            }
