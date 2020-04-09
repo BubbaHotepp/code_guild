@@ -1,5 +1,6 @@
 h1 {
     text-align: center;
+    justify-content: center;
     color: rgb(19, 1, 53);
     font-weight: bold;
     text-decoration: overline;
@@ -12,14 +13,21 @@ h2 {
 }
 h3 {
     text-align: center;
-    color: rgb(88, 49, 4);
+    color: rgb(31, 6, 122);
     font-weight: bolder;
+    padding-top: 50px;
     }
+h4{
+    text-align: center;
+    color: rgb(29, 3, 70);
+    font-weight: bolder;
+    padding-top: 50px;
+}
 p {
     text-align: center;
     font-weight: bold;
-    padding-right: 225px;
-    padding-left: 225px;
+    padding-right: 200px;
+    padding-left: 200px;
     padding-top: 25px;
 }
 
@@ -34,10 +42,23 @@ blockquote {
 img.floatRight {
     float: right;
     margin: 10px;
-}
-img.resize {
     height: auto; 
     width: auto; 
     max-width: 200px; 
     max-height: 200px;
 }
+img.floatLeft {
+    float: left;
+    margin: 10px;
+    height: auto; 
+    width: auto; 
+    max-width: 200px; 
+    max-height: 200px;
+}
+img {
+    border-radius: 20%;
+  }
+  ul.a {
+    list-style-type: disc;
+  }
+  
