@@ -5,23 +5,15 @@ class Player:
         self.player_name = player_name
         self.player_token = player_token
     
-    # def name(self):  #Defines user input of name.
-    #     return self.player_name
     
-    # def token(self): #Defines user choice of X or O
-    #     return self.player_token
-
 #[['x', 'o', 'o'], ['o', 'x', 'o'], ['o', 'x', 'o']] --> some visual representation with a normal tic-tac-to layout
 class Game:
-    # board_layout = [['', '', ''], ['', '', ''], ['', '', '']] # working on board layout
     def __init__(self, board, player1, player2):
-        
         self.board = [['', '', ''], ['', '', ''], ['', '', '']]   
         self.player1 = player1
         self.player2 = player2
 
     def __repr__(self, visual_board): #Returns a pretty string representation of the game board
-        
         self.visual_board = [ 
                         [" ","|"," ",'|'," "],  #Printable board
                         ["-","-","-","-","-"],
@@ -29,14 +21,8 @@ class Game:
                         ["-","-","-","-","-"],
                         [" ","|"," ","|"," "]
                        ]
-        
-        
              
-        # for i in play_board:                         # for loop that prints the play board into a nice visual representation
-        #     print(i[0], i[1], i[2], i[3], i[4])
-    
     def move(self): #Place a player's token character string at a given coordinate (top-left is 0, 0), x is horizontal position, y is vertical position.
-     
         possible_moves = {
                           1 : board[0][0],
                           2 : board[0][1],
@@ -69,9 +55,7 @@ class Game:
             else:
                 print('That position is has been played.')
 
-
     def calc_winner(self): #What token character string has won or None if no one has.
-        
         winning_combos = [
                           ['1','2','3']
                           ['4','5','6']
@@ -102,12 +86,6 @@ class Game:
 #         if count == 9:
 #             print("Game over")
 #             print("It's a tie!")
-
-
-
-
-    
-
 
 def main():
 
@@ -148,48 +126,24 @@ def main():
             print('4|5|6')
             print('7|8|9')
             player_input = input('Please enter the position to place your piece (1-9): ')
-            self.
+            
+            
 
 
-#    # main function to start the game
-#     def play_game():
-#          board, winner,counter = creat_board (), 0,1
-#          print(board)
-#          sleep(2)  # the sleep(2) suspends the fuction a given amount of seconds
+# def col_win(board,player):
+#     for x in range (len(board)):
+#         win = True
 
-#         while winner == 0:
-#             for player in [1,2]:
-#                 board = random_place(board,playeR)  #come back to this(because there is a player1_name and player2_name)
-#                 print('board after'+ str(counter) + "move")
-#                 print(board)
-#                 sleep(2) 
-#                 counter += 1
-#                 winner = evaluate(board)
-#                 if winner != 0:
-#                     break
-#         return(winner)
-    
-    
-
-#checking for whether the player has three in a row
-def col_win(board,player):
-    for x in range (len(board)):
-        win = True
-
-        for y in range(len(board)):
-            if board [y][x] != player:
-                win = False 
-                continue
+#         for y in range(len(board)):
+#             if board [y][x] != player:
+#                 win = False 
+#                 continue
         
-        if win == True: 
-            return(win)
+#         if win == True: 
+#             return(win)
     
-    return(win)
+#     return(win)
     
-#Determines who the winner is a.k.a. "Driver Code"
-print("The winner is:"+ str(play_game()))
-
-# for i in play_board:
-    # print(i[0],i[1],i[2],i[3],i[4])
+# print("The winner is:"+ str(play_game()))
 
 main()
