@@ -1,25 +1,32 @@
-.container-1 {
+#container-1 {
     border-radius: 10;
     border-color: #ecceb2;
     background-color: rgb(228, 206, 177);
     height: 200px;
     margin: auto;
+    
 }
-.container-2 {
+#container-2 {
     justify-content: center;
     background-color: rgb(228, 206, 177);
     height: 75px;
 }
-.container-3 {
+#container-3 {
+    flex-direction: column;
+    height: 200px;
+    width: 600px;
+}
+#item {
+    vertical-align: 1fr 1fr 1fr;
     border-color: rgb(36, 36, 36);
     border-top: rgb(36, 36, 36);
     border-bottom: rgb(36, 36, 36);
     border-left: rgb(36, 36, 36);
     border-right: rgb(36, 36, 36);
-    flex-direction: initial;
     border-radius: 10;
-    height: 200px;
-    width: 600px;
+    font: serif;
+    font-weight: bold;
+    background-color: lightgrey;
 }
 img.floatRight {
     float: right;
