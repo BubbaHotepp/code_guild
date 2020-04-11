@@ -1,11 +1,42 @@
 .container-1 {
     border-radius :10;
-    border-color: #bb7f46;
-    justify-content: center;
-    text-align: center;
-    background-color: rgb(216, 177, 127);
-    background-image: url("BH-background.jpg");
+    border-color: #ecceb2;
+    background-color: rgb(228, 206, 177);
+    height: 200px;
+    margin: auto;
 }
 .container-2 {
     justify-content: center;
+    background-color: rgb(228, 206, 177);
+    height: 100px;
+}
+img.floatRight {
+    float: right;
+    margin: 10px;
+    height: auto; 
+    width: auto; 
+    max-width: 50px; 
+    max-height: 50px;
+    
+}
+img.floatLeft {
+    float: left;
+    margin: 10px;
+    height: auto; 
+    width: auto; 
+    max-width: 50px; 
+    max-height: 50px;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding-bottom: 300px;
+}
+header {
+    font-weight: bolder;
+    font: serif;
+    font-size: xx-large;
+    text-align: center;
 }
