@@ -1,5 +1,5 @@
 .container-1 {
-    border-radius :10;
+    border-radius: 10;
     border-color: #ecceb2;
     background-color: rgb(228, 206, 177);
     height: 200px;
@@ -8,7 +8,18 @@
 .container-2 {
     justify-content: center;
     background-color: rgb(228, 206, 177);
-    height: 100px;
+    height: 75px;
+}
+.container-3 {
+    border-color: rgb(36, 36, 36);
+    border-top: rgb(36, 36, 36);
+    border-bottom: rgb(36, 36, 36);
+    border-left: rgb(36, 36, 36);
+    border-right: rgb(36, 36, 36);
+    flex-direction: initial;
+    border-radius: 10;
+    height: 200px;
+    width: 600px;
 }
 img.floatRight {
     float: right;
@@ -39,4 +50,7 @@ header {
     font: serif;
     font-size: xx-large;
     text-align: center;
+}
+p {
+    padding-top: 50;
 }
