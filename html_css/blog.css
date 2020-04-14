@@ -1,10 +1,32 @@
+body{
+    background-color: rgb(36, 36, 36);
+}
+.topnav {
+  background-color: rgb(44, 40, 40);
+  overflow: hidden;
+}
+.topnav a {
+  float: left;
+  color: rgb(223, 217, 217);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: rgb(223, 217, 217);
+  color: black;
+}
+.topnav a.active {
+  background-color: rgb(243, 224, 140);
+  color: white;
+}
 #container-1 {
     border-radius: 10;
     border-color: #ecceb2;
-    background-color: rgb(228, 206, 177);
+    background-color: rgb(180, 154, 120);
     height: 200px;
     margin: auto;
-    
 }
 #container-2 {
     justify-content: center;
@@ -35,7 +57,6 @@ img.floatRight {
     width: auto; 
     max-width: 50px; 
     max-height: 50px;
-    
 }
 img.floatLeft {
     float: left;
@@ -45,7 +66,6 @@ img.floatLeft {
     max-width: 50px; 
     max-height: 50px;
 }
-
 h1 {
     margin: 0;
     padding: 0;
