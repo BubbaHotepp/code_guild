@@ -34,21 +34,19 @@ body{
     height: 75px;
 }
 #container-3 {
+    background-color: rgb(180, 154, 120);
     flex-direction: column;
-    height: 200px;
+    height: 800px;
     width: 600px;
 }
-#item {
-    vertical-align: 1fr 1fr 1fr;
-    border-color: rgb(36, 36, 36);
-    border-top: rgb(36, 36, 36);
-    border-bottom: rgb(36, 36, 36);
-    border-left: rgb(36, 36, 36);
-    border-right: rgb(36, 36, 36);
-    border-radius: 10;
+#text-area {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
     font: serif;
-    font-weight: bold;
-    background-color: lightgrey;
+    font-weight: 600;
+    background-color: rgb(224, 210, 189);
 }
 img.floatRight {
     float: right;
