@@ -1,0 +1,12 @@
+body {
+    background-color:  rgb(36, 36, 36);
+}
+.form-group {
+    background-color: peachpuff;
+    padding-top: 300px;
+    padding-left: 400px; 
+    padding-right: 400px;
+    height: 1000px;
+    position: relative;
+    border: 3px solid rgb(219, 181, 110);
+}
