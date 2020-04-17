@@ -1,7 +1,14 @@
 /* html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit} */
 
 /* html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:00} */
+body { 
+    background-color: rgb(233, 232, 232)!important;
+    background-attachment: fixed;
+}
+.topbar-color{
+    color:#000!important;background-color:rgb(157, 142, 165)!important
 
+}
 .berkshire-logo{
     font-family: "Times New Roman", Times, serif;
     font-size: 14px;
@@ -34,12 +41,32 @@
 .center-inline{
     display: inline-block;
 }
+.centered{
+    text-align: center;
+    justify-content: center;
+}
+.row{
+    flex-direction: row;
+}
+.background-image-right{
+    float: right;
+}
+.background-image-left{
+    float: left;
+}
+.white-background{
+    background-color: #ffffff;
+}
+.dark-grey-background{
+    background-color: rgb(116, 116, 116);
+}
 /* #activewear{
     background-image: url("/berkshire-activewearlogo.jpg");
     background-position: center;
     background-size: 75%;
     background-repeat: no-repeat;
 } */
+
 .col.m6{width:49.99999%}
 .col.l3{width:24.99999%} 
 .margin-bottom{margin-bottom:16px!important;padding-bottom: 32px;}
