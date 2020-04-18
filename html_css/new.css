@@ -41,8 +41,8 @@ body{
      }
 .center{
         text-align:center!important;
-        display:block;
-        width:auto;
+        display:inline-block;
+        width:auto
        }
 .center-inline{
                display: inline-block;
@@ -63,10 +63,14 @@ body{
                      background-color: rgb(121, 121, 121);
                      }        
 .display-container{
-                  position:inherit;
-                  display:inline-block;
-                  width:auto;
+                  position:relative
                   }
+.display-container:hover{
+                        display:block
+                        }
+.display-container:hover{
+                        display:inline-block
+                        }
 .display-middle{
                 position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)
                }
@@ -173,10 +177,9 @@ body{
                 }
 #text-container{
                 border-bottom:1px solid #ccc!important;
-                border: 2px solid grey!important;
-                padding-top:20px!important;padding-bottom:20px!important;
+                border-color:#f1f1f1!important;
+                padding-top:32px!important;padding-bottom:32px!important;
                 justify-content: center;
-                border-radius: 10px;
                }        
 .topbar-color{
              color:#000!important;background-color:rgb(157, 142, 165)!important
