@@ -1,3 +1,8 @@
+.align-items-center{
+        display: flex;
+        align-items: center;
+}
+
 body{ 
     background-color: rgb(255, 255, 255)!important;
     background-attachment: fixed;
@@ -71,10 +76,11 @@ body{
                 position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)
                }
 .justify{
+        display: flex;
         text-align:justify!important
         }
 .light-grey-background{
-                      background-color: rgb(240, 240, 240);
+                      background-color: rgb(204, 204, 204);
                       }
 .left{
      float:left!important
@@ -138,6 +144,9 @@ body{
             padding-top:64px!important;
             padding-bottom:64px!important
             }
+.padding-left{
+              padding-left:30%!important;
+}
 .right{
        float:right!important
        }
@@ -179,19 +188,14 @@ body{
                 border-radius: 10px;
                }        
 .topbar-color{
-             color:#000!important;background-color:rgb(157, 142, 165)!important
+             color:#000!important;background-color:rgb(118, 76, 141)!important
              }
 
 
 .white-background{
                  background-color: #ffffff;
                  }
-#activewear{
-            background-image: url("/berkshire-activewearlogo.jpg");
-            background-position: center;
-            background-size: 75%;
-            background-repeat: no-repeat;
-            } 
+
 .tiny{
      font-size:10px!important
      }
