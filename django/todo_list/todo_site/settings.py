@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'k$@-hp42=uq5p)b%=sfd!xfq*bfcmwsd_54b1k2yu0%ozz)=yz'
+SECRET_KEY = 'ns(5-b7_v=a!#p)25&ryxq3pg1wc9vpd#--qau0w7ti_=sw$ja'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.heroku.com']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'todo_list',
+    'todo',
 ]
 
 MIDDLEWARE = [
@@ -106,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'America/Los_Angeles'
+TIME_ZONE = 'US/Pacific'
 
 USE_I18N = True
 
