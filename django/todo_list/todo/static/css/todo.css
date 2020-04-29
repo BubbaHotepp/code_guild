@@ -1,6 +1,15 @@
-h1 a, h2 a {
-    color: rgb(255, 102, 0);
+body {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.top-bar{
+    justify-content: center;
+    background-color: rgb(18, 73, 95);
+    margin-top: 0;
+    padding: 40px 40px 40px 40px;
 }
 h1{
+    color: rgb(163, 17, 17);
     font-weight: bolder;
 }
