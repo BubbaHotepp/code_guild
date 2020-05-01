@@ -1,25 +1,14 @@
-{% load static %}
+{% extends 'todoapp/base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TODO LIST</title>
-</head>
-<body>
-    
-    <div>
-        <h1><a href="/">To Do List</a></h1>
-    </div>
-    
-    {% for task in tasks %}
-        <div>
-            <h2><a href="">To Do Task: {{ task.task_title }}</a></h2>
-            <p>Posted: {{ task.posted_date }}</p>
-            <p>Task Details: {{ task.task_text|linebreaksbr }}</p>
+{% block content %}
+{% for task in tasks %}
+    <div class="task">
+        <div class="date">
+            {{ task.posted_date }}
         </div>
-    {% endfor %}
-
-</body>
-</html>
+        <h2><a href="">{{ task.task_title }}</a></h2>
+        <p>{{ task.task_text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+{% endblock %}
+         
