@@ -3,13 +3,17 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'b-054z2p^$sj!h^(160rfdbw6)41i(*uv01$c=71ynak%j!)9l'
+SECRET_KEY = 'o1)z*d&*2rf1jrf1^%hn+d21c#b4d#4%jh$aqc4o(lf^9i2k0h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -21,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'todoapp',
+    'todoapp'
 ]
 
 MIDDLEWARE = [
