@@ -11,7 +11,7 @@ class Task(models.Model):
     completed_date = models.DateField(blank=True, null=True)
 
     def complete_check(self):
-        if checkbox == True:
+        if self.checkbox == True:
             self.completed_date = timezone.now()
             self.save()
         else:

@@ -1,31 +1,37 @@
 h1 a, h2 a {
-    color: #C25100;
+    color: rgb(68, 41, 22);
 }
 body {
     padding-left: 15px;
+    padding-right: 15px;
+    background-color: burlywood;
 }
 .page-header {
-    background-color: #C25100;
+    background-color: rgb(68, 41, 22);
     margin-top: 0;
     padding: 20px 20px 20px 40px;
+    text-align: center;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
-    font-size: 36pt;
+    font-size: 48pt;
+    font-weight: 900;
     text-decoration: none;
 }
 
 .content {
-    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Open Sans';
+    font-weight: bold;
 }
 
 .date {
-    color: #828282;
+    color: #032205;
 }
 
 .save {
@@ -39,12 +45,15 @@ h1, h2, h3, h4 {
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
     float: right;
-    font-size: 26pt;
-    margin-right: 20px;
+    font-size: 14pt;
+    margin-right: 10px;
+    align-self: flex-end;
+    
 }
 
 .task {
     margin-bottom: 70px;
+    justify-content: center;
 }
 
 .task h2 a, .task h2 a:visited {

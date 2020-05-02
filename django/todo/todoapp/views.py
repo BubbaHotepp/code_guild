@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Task
 from .forms import TaskForm
@@ -38,7 +38,16 @@ def task_edit(request, pk):
         form = TaskForm(instance=task)
     return render(request, 'todoapp/task_edit.html', {'form': form})
 
-# def task_complete(request, pk):
-#     task = get_object_or_404(Task, pk=pk)
-#     if 
-
+def checkbox(request, pk):
+        task = get_object_or_404(Task, pk=pk)
+        data = request.POST
+        if data['status'] == 'on':
+            task.checkbox = True
+            print(task.checkbox)
+            print(task.completed_date)
+            task.complete_check()
+            task.save()
+            return redirect('task_detail', pk=task.pk)
+        else:
+            pass
+        return render(request, 'todoapp/task_detail.html', {'form': form})

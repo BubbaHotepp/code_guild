@@ -14,10 +14,15 @@
         <p>{{ task.task_text|linebreaksbr }}</p>
         <p>Completed date: {{ task.completed_date }}</p>
         {% if user.is_authenticated %}
-        <div class="custom-control custom-checkbox">
-            <input type="checkbox" value="" class="custom-control-input" id="defaultUnchecked">
-            <label class="custom-control-label" for="defaultUnchecked">Check if Task is Complete</label>
-        </div>
+        <form action="http://127.0.0.1:8000/task/checkbox/{{ task.id }}/" method="POST"> 
+            {% csrf_token %}
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" name="status" class="custom-control-input" id="defaultUnchecked">
+                <label class="custom-control-label" for="defaultUnchecked">Check if Task is Complete</label>
+                <button type="submit" class="save btn btn-default">Save</button>
+            </div>
+
+        </form>
         {% endif %}
     
     </div>
