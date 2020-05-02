@@ -12,11 +12,13 @@
         {% endif %}
         <h2>{{ task.task_title }}</h2>
         <p>{{ task.task_text|linebreaksbr }}</p>
+        <p>Completed date: {{ task.completed_date }}</p>
         {% if user.is_authenticated %}
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-                <label class="custom-control-label" for="defaultUnchecked">Check if Task is Complete</label>
-            </div>
-        {% endif %}    
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" value="" class="custom-control-input" id="defaultUnchecked">
+            <label class="custom-control-label" for="defaultUnchecked">Check if Task is Complete</label>
+        </div>
+        {% endif %}
+    
     </div>
 {% endblock %}

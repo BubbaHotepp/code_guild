@@ -7,7 +7,7 @@ class Task(models.Model):
     task_title = models.CharField(max_length=100)
     task_text = models.TextField()
     posted_date = models.DateField(default=timezone.now)
-    checkbox = models.BooleanField(blank=True, null=True)
+    checkbox = models.BooleanField(default=False)
     completed_date = models.DateField(blank=True, null=True)
 
     def complete_check(self):

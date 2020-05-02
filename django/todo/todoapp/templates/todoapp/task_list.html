@@ -7,6 +7,7 @@
             {{ task.posted_date }}
         </div>
         <h2><a href="{% url 'task_detail' pk=task.pk %}">{{ task.task_title }}</a></h2>
+        <p>Completed date: {{ task.completed_date }}</p>
     </div>
 {% endfor %}
 {% endblock %}

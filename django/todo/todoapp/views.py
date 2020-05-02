@@ -37,3 +37,8 @@ def task_edit(request, pk):
     else:
         form = TaskForm(instance=task)
     return render(request, 'todoapp/task_edit.html', {'form': form})
+
+# def task_complete(request, pk):
+#     task = get_object_or_404(Task, pk=pk)
+#     if 
+
