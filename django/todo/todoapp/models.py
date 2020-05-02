@@ -14,6 +14,8 @@ class Task(models.Model):
         if checkbox == True:
             self.completed_date = timezone.now()
             self.save()
+        else:
+            pass
     
     def __str__(self):
         return self.task_title

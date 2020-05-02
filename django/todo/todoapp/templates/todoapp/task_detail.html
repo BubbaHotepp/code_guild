@@ -7,8 +7,16 @@
                 {{ task.posted_date }}
             </div>
         {% endif %}
-        <a class="btn btn-default" href="{% url 'task_edit' pk=task.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% if user.is_authenticated %}    
+            <a class="btn btn-default" href="{% url 'task_edit' pk=task.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
         <h2>{{ task.task_title }}</h2>
         <p>{{ task.task_text|linebreaksbr }}</p>
+        {% if user.is_authenticated %}
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                <label class="custom-control-label" for="defaultUnchecked">Check if Task is Complete</label>
+            </div>
+        {% endif %}    
     </div>
 {% endblock %}

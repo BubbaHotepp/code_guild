@@ -27,7 +27,7 @@ def task_new(request):
 def task_edit(request, pk):
     task = get_object_or_404(Task, pk=pk)
     if request.method == "POST":
-        form = TaskForm(request.POST, instance=post)
+        form = TaskForm(request.POST, instance=task)
         if form.is_valid():
             post = form.save(commit=False)
             post.created_by = request.user
@@ -35,5 +35,5 @@ def task_edit(request, pk):
             post.save()
             return redirect('task_detail', pk=task.pk)
     else:
-        form = TaskForm(instance=post)
+        form = TaskForm(instance=task)
     return render(request, 'todoapp/task_edit.html', {'form': form})

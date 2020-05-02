@@ -5,5 +5,5 @@ class TaskForm(forms.ModelForm):
 
     class Meta:
         model = Task
-        fields = ('task_title', 'task_text', 'checkbox')
+        fields = ('task_title', 'task_text',)
         
