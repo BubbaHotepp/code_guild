@@ -19,7 +19,7 @@ def task_new(request):
             task.created_by = request.user
             task.posted_date = timezone.now()
             task.save()
-            return redirect('todoapp/task_detail', pk=task.pk)
+            return redirect('task_detail', pk=task.pk)
     else:
         form = TaskForm()
     return render(request, 'todoapp/task_edit.html', {'form': form})
@@ -33,21 +33,18 @@ def task_edit(request, pk):
             task.created_by = request.user
             task.posted_date = timezone.now()
             task.save()
-            return redirect('todoapp/task_detail', pk=task.pk)
+            return redirect('task_detail', pk=task.pk)
     else:
-        form = TaskForm(instance=task)
+        form = TaskForm()
     return render(request, 'todoapp/task_edit.html', {'form': form})
 
 def checkbox(request, pk):
         task = get_object_or_404(Task, pk=pk)
-        data = request.POST
-        if data['status'] == 'on':
+        data = request.POST.get('status')
+        if data == 'on':
             task.checkbox = True
-            print(task.checkbox)
-            print(task.completed_date)
             task.complete_check()
             task.save()
-            return redirect('todoapp/task_detail', pk=task.pk)
+            return redirect('task_detail', pk=task.pk)
         else:
-            pass
-        return render(request, 'todoapp/task_detail.html', {'form': form})
+            return render(request, 'todoapp/task_detail.html', {'task':task})

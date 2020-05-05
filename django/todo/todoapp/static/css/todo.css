@@ -2,12 +2,12 @@ h1 a, h2 a {
     color: rgb(68, 41, 22);
 }
 body {
-    padding-left: 15px;
-    padding-right: 15px;
-    background-color: burlywood;
+    padding-left: 180px;
+    padding-right: 180px;
+    background-color: rgb(230, 219, 203);
 }
 .page-header {
-    background-color: rgb(68, 41, 22);
+    background-color: rgb(117, 15, 15);
     margin-top: 0;
     padding: 20px 20px 20px 40px;
     text-align: center;
@@ -20,9 +20,13 @@ body {
     text-decoration: none;
 }
 
-.content {
-    margin-top: 20px;
-    margin-bottom: 20px;
+.content-container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-top: black;
+    border-bottom: black;
+    border-left: black;
+    border-right: black;
 }
 
 h1, h2, h3, h4 {
@@ -52,8 +56,11 @@ h1, h2, h3, h4 {
 }
 
 .task {
+    margin-top: 20px;
     margin-bottom: 70px;
-    justify-content: center;
+    align-self: flex-start;
+    border-top: black;
+    border-bottom: black;
 }
 
 .task h2 a, .task h2 a:visited {

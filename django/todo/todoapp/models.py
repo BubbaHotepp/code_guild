@@ -3,7 +3,7 @@ from django.db import models
 from django.utils import timezone
 
 class Task(models.Model):
-    posted_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    posted_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
     task_title = models.CharField(max_length=100)
     task_text = models.TextField()
     posted_date = models.DateField(default=timezone.now)
