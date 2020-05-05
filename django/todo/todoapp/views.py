@@ -15,11 +15,11 @@ def task_new(request):
     if request.method == "POST":
         form = TaskForm(request.POST)
         if form.is_valid():
-            post = form.save(commit=False)
-            post.created_by = request.user
-            post.posted_date = timezone.now()
-            post.save()
-            return redirect('task_detail', pk=task.pk)
+            task = form.save(commit=False)
+            task.created_by = request.user
+            task.posted_date = timezone.now()
+            task.save()
+            return redirect('todoapp/task_detail', pk=task.pk)
     else:
         form = TaskForm()
     return render(request, 'todoapp/task_edit.html', {'form': form})
@@ -27,13 +27,13 @@ def task_new(request):
 def task_edit(request, pk):
     task = get_object_or_404(Task, pk=pk)
     if request.method == "POST":
-        form = TaskForm(request.POST, instance=task)
+        form = TaskForm(request.POST, instance=task.pk)
         if form.is_valid():
-            post = form.save(commit=False)
-            post.created_by = request.user
-            post.posted_date = timezone.now()
-            post.save()
-            return redirect('task_detail', pk=task.pk)
+            task = form.save(commit=False)
+            task.created_by = request.user
+            task.posted_date = timezone.now()
+            task.save()
+            return redirect('todoapp/task_detail', pk=task.pk)
     else:
         form = TaskForm(instance=task)
     return render(request, 'todoapp/task_edit.html', {'form': form})
@@ -47,7 +47,7 @@ def checkbox(request, pk):
             print(task.completed_date)
             task.complete_check()
             task.save()
-            return redirect('task_detail', pk=task.pk)
+            return redirect('todoapp/task_detail', pk=task.pk)
         else:
             pass
         return render(request, 'todoapp/task_detail.html', {'form': form})
