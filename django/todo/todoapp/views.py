@@ -22,7 +22,7 @@ def task_new(request):
             return redirect('task_detail', pk=task.pk)
     else:
         form = TaskForm()
-    return render(request, 'todoapp/task_edit.html', {'form': form})
+    return render(request, 'todoapp/task_new.html', {'form': form})
 
 def task_edit(request, pk):
     task = get_object_or_404(Task, pk=pk)
