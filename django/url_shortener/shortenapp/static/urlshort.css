@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(56, 81, 97);
+}
+
+h1{
+    font-family: 'Open Sans';
+    font-size: xx-large;
+    font-weight: bolder;
+}
+h2{
+    font-family: 'Open Sans';
+    font-weight: normal;
+    font-size: small;
+}
