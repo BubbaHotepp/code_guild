@@ -4,10 +4,13 @@ import random, string
 from django.conf import settings
 from .models import Shorten
 
+def main_page(request):
+    return render(request, 'shortenapp/main_page.html')
+
 def short_list(request):
     short_list = {}
     short_list.update(request)
-    return render(request, 'Shorten/short_list')
+    return render(request, 'shortenapp/short_list.html')
 
 def redirect_original(request, short_url):
     url = get_object_or_404(Shorten, pk=short_url)
@@ -23,7 +26,7 @@ def url_short(request):
         short_db = {}
         short_db['url'] = settings.SITE_URL + '/' + short_url
         return redirect('main_page.html')
-    return render(request, 'shortenapp/url_input.html')
+    return render(request, 'shortenapp/main_page.html')
 
 def url_encode():
     char = string.ascii_lowercase + string.ascii_uppercase + string.digits
