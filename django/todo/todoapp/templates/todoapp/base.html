@@ -13,13 +13,17 @@
     <body>
         <div class="page-header">
             {% if user.is_authenticated %}
+                <p class="top-menu">{{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+                /br
+                /br 
                 <a href="{% url 'task_new' %}" class="top-menu"><span>Add New Task</span></a>
+            {% else %}
+                <a href="{% url 'login' %}" class="top-menu new-task">Login <span class="glyphicon glyphicon-lock"></span></a>
             {% endif %}
             <h1><a href="/">To Do List</a></h1>
         </div>
         <div class="content-container">
             <div class="row">
-                <div class="col-md-8">
                 {% block content %}
                 {% endblock %}
                 </div>

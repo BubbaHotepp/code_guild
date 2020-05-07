@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from .models import Task
 from .forms import TaskForm
@@ -11,6 +12,7 @@ def task_detail(request, pk):
     task = get_object_or_404(Task, pk=pk)
     return render(request, 'todoapp/task_detail.html', {'task':task})
 
+@login_required
 def task_new(request):
     if request.method == "POST":
         form = TaskForm(request.POST)
@@ -24,6 +26,7 @@ def task_new(request):
         form = TaskForm()
     return render(request, 'todoapp/task_new.html', {'form': form})
 
+@login_required
 def task_edit(request, pk):
     task = get_object_or_404(Task, pk=pk)
     if request.method == "POST":
@@ -49,6 +52,8 @@ def checkbox(request, pk):
         else:
             return render(request, 'todoapp/task_detail.html', {'task':task})
 
+@login_required
 def task_delete(request, pk):
-    # fill in delete code
-    pass
+    task = get_object_or_404(Task, pk=pk)
+    task.delete()
+    return redirect('task_list')
