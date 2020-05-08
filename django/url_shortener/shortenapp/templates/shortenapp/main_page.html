@@ -1,28 +1,16 @@
-{% load static %}
+{% extends 'shortenapp/base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="{% static 'css/urlshort.css' %}">        
-        <title>URL Shortener</title>
-    </head>
-    <body>
-        <div class='page-header'>
-            <h1><a href='/'>URL Shortener</a></h1>
-        </div>
+{% block content %}
         <div>
             <h2>With this URL shortener you can quickly and easily short a long URL down to a short quick easy to remember or copy URL.</h2>
             <br>
             <br>
             <p>Enter full URL you wish to shorten.</p>
-            <a href='url_encode' ><input type="text" class="form-control" id="URL" placeholder="URL Input" aria-label="URL Input" aria-describedby="basic-addon2">
+            <form action='http://localhost:8000/url_short' method="POST" class="task-form"><input type="text" class="form-control" id="URL" placeholder="URL Input" name="url" aria-label="URL Input" aria-describedby="basic-addon2">
+            {% csrf_token %}
             <div class="input-group-append">
-                <button type='submit' class="btn btn-secondary" type="button">Convert</button>
+                <button type="submit" class="btn btn-secondary" type="button">Convert</button>
             </div>
-            </a>
+            </form>
         </div>
-    </body>
-</html>
+{% endblock %}

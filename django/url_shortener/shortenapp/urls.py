@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.main_page, name='main_page'),
-    path('shortenapp/url_encode/', views.url_encode, name='url_encode'),
+    path('', views.short_list, name='short_list'),
+    path('url_short', views.url_short, name='url_short'),
 ]
