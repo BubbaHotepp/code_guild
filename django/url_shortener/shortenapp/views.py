@@ -32,7 +32,9 @@ def redirect_original(request, short_url):
     url.save()
     return redirect(url.original_url)
 
-def short_list(request, short_url):
+def short_url(request, short_url):
     url = get_object_or_404(Shorten, pk=short_url)
+    original = Shorten.original_url
+    return original
 
     
