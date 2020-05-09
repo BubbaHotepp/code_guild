@@ -1,0 +1,101 @@
+h1 a, h2 a {
+    color: rgb(255, 255, 255);
+}
+body {
+    padding-left: 180px;
+    padding-right: 180px;
+    background-color: rgb(196, 196, 196);
+}
+.page-header {
+    background-color: rgb(212, 139, 56);
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+    text-align: center;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 48pt;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.content-container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.center-content-container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-top: black;
+    border-bottom: black;
+    border-left: black;
+    border-right: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+h1, h2, h3, h4 {
+    font-family: 'Open Sans';
+    font-weight: bold;
+}
+
+.date {
+    color: #032205;
+}
+
+.save {
+    float: right;
+}
+
+.task-form textarea, .task-form input {
+    width: 100%;
+}
+
+.task-container{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 25%;
+    padding-right: 40%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-top: black;
+    border-bottom: black;
+    border-color: black;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 14pt;
+    margin-right: 10px;
+    align-self: flex-end;
+    
+}
+
+.task {
+    size: inherit;
+    align-self: flex-start;
+    border-top: black;
+    border-bottom: black;
+}
+
+.task h2 a, .task h2 a:visited {
+    color: #000000;
+}
+.login{
+    margin-top: 40px;
+    align-items: center;
+}
+
+#delete-button{
+    float: right;
+    margin-top: 30px;
+}
+
+.row{
+    size: 200px;
+}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class='url_dict'>
+        {% for item in url_data %}
+        <p>http://127.0.0.1:8000/{{ item.short_url }} = {{ item.original_url }}</p>
+        
+        {% endfor %}
+    </div>
+{% endblock %}

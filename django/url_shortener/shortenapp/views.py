@@ -7,34 +7,34 @@ from .models import Shorten
 def main_page(request):
     return render(request, 'shortenapp/main_page.html')
 
+def short_list(request):
+    url_data = Shorten.objects.all()
+    return render(request, 'shortenapp/short_list.html', {'url_data':url_data})
+
 def url_short(request):
-    short_url = url_encode()
+    shorturl = url_encode()
     url = request.POST.get('url')
-    shorty = Shorten(original_url=url, short_url=short_url)
+    shorty = Shorten(original_url=url, short_url=shorturl)
     shorty.save()
     short_db = {}
-    short_db['url'] = settings.SITE_URL + '/' + short_url
-    return redirect('main_page')
+    short_db['url'] = settings.SITE_URL + '/redirect_original/' + shorturl
+    return redirect('short_list')
 
 def url_encode():
     length = 8
     char = string.ascii_lowercase + string.ascii_uppercase + string.digits
-    short_url = ""
+    shorturl = ""
     x = 0
     while x <= 8:
-        short_url += random.choice(char)
+        shorturl += random.choice(char)
         x += 1
-    return short_url
+    return shorturl
 
-def redirect_original(request, short_url):
-    url = get_object_or_404(Shorten, pk=short_url)
+def redirect_original(request, slug):
+    url = Shorten.objects.get(short_url=slug)
     url.visits += 1
     url.save()
     return redirect(url.original_url)
 
-def short_url(request, short_url):
-    url = get_object_or_404(Shorten, pk=short_url)
-    original = Shorten.original_url
-    return original
 
     

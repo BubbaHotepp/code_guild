@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <div>
+            <h2>With this URL shortener you can quickly and easily short a long URL down to a short quick easy to remember or copy URL.</h2>
+            <br>
+            <br>
+            <p>Enter full URL you wish to shorten.</p>
+            <form action='http://127.0.0.1:8000/url_short' method="POST" class="task-form">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="URL" placeholder="URL Input" name="url" aria-label="URL Input" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-secondary" type="button">Convert</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+{% endblock %}
