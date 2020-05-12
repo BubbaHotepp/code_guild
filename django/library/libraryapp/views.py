@@ -13,3 +13,7 @@ def home(request):
         'available_book_count':available_book_count,
         'authors_count':authors_count,
     }
+
+    return render(request, 'home.html', context=context)
+
+
