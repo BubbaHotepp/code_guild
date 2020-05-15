@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from django.contrib.auth import get_user_model, login_user, logout_user, authenticate
+from django.shortcuts import render, redirect
+from django.contrib.auth import get_user_model, login, logout, authenticate
+from django.contrib.auth.decorators import login_required
 User = get_user_model()
 
 def register(request):
@@ -11,12 +12,12 @@ def register(request):
             last_name = request.POST['last_name'],
         )
         new_user.set_password(request.POST['password'])
-        new_user.save
+        new_user.save()
         return redirect('login')    
     else:
-        return render(request, 'accounts/register.html')
+        return render(request, 'accounts/register.html', {'register': register})
 
-def login(request):
+def login_user(request):
     if request.method == 'POST':
         user = authenticate(
             request,
@@ -29,8 +30,9 @@ def login(request):
         else:
             pass
     else:
-        return render(request, 'accounts/login.html')
+        return render(request, 'accounts/login.html', {'login_user': login_user})
 
-def logout(request):
-    loqout_user(request)
+@login_required
+def logout_user(request):
+    logout(request)
     return redirect('home')

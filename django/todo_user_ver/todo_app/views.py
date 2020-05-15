@@ -12,7 +12,6 @@ def todo_list(request):
 
     return render(request, 'todos/list.html', context)
 
-@login_required
 def details(request, id):
     todo = Todo.objects.get(id = id)
 

@@ -45,7 +45,12 @@ class Book_status(models.Model):
     book_status = models.BooleanField(default=False)
     checked_in = models.DateField(default=timezone.now)
     checked_out = models.DateField(default=timezone.now)
-    availability = models.TextField()
+    
+    # AVAILABILITY = (
+    #     ('a', 'available')
+    #     ('o', 'checked out')
+    #     ('r', 'reserverd')
+    # )
 
     def status_check(self):
         if book_status == True:

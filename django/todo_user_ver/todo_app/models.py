@@ -8,7 +8,7 @@ class Todo(models.Model):
     created_at = models.DateTimeField(auto_now_add = True)
     completed_at = models.DateTimeField(blank = True, null = True)
     task_duration = models.DecimalField(max_digits = 4, decimal_places = 2, blank = True, null = True)
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True)
     
     TODO_TYPE = (
         ('p', 'personal'),
