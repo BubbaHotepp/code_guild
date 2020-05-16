@@ -28,7 +28,7 @@ def add_todo(request):
             status = False
         else:
             status = True
-        todo = Todo.objects.create(title = title, text = text, status = status)
+        todo = Todo.objects.create(user = request.user, title = title, text = text, status = status)
         return redirect('list')
 
 @login_required
