@@ -18,6 +18,8 @@
 ​
     - Django - Will be used for backend web framework.
     - Bootstrap4 - Will be used for frontend HTML formatting.
+    - Amazon AWS - Will be used for hosting services.
+
 #
 ​
 ## **FUNCTIONALITY**
@@ -101,6 +103,11 @@ research center archives.
 ​
 - FORUM MODEL is many to many
 
+- ARCHIVE MODEL:
+    - Staff scan upload
+    - User scan upload
+    - User database search
+
 - User MODEL:
     - Username 
     - Password
@@ -114,6 +121,15 @@ research center archives.
     - Username
     - User First and Last name
 
+- Elder Model:
+    - Name
+    - bio
+    - photos
+
+- Forum Model:
+    - Thread creation
+    - Thread posting
+
 - Messages MODEL: django user-to-user system
     - Private messages 
     - Forum messages.
@@ -121,13 +137,22 @@ research center archives.
 #
 ## **SCHEDULE**
 1. WEEK:
-
+    Setup Django backend framework
+    Setup templates
+    Setup AWS database service
+    Setup User Model
+    
 2. WEEK:
+    Setup Profile Model
+    Setup Archive Model
+    Setup Forum Model
 
 3. WEEK:
-
+    Setup Elder Model
+    Setup Messages Model
+    Example Data creation and inclusion
 4. WEEK:
-​
+​    Testing
 After Presentation
 ​
 5. WEEK:

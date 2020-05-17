@@ -1,26 +1,26 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/site.css' %}">
-        <title>LIBRARY</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+        <title>LOCAL LIBRARY</title>
     </head>
     <body>
-        <div class="page-header">
+        <div class='page-header'>
             {% if user.is_authenticated %}
-                <p class="top-menu">{{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
-            {% else %}
-                <a href="{% url 'login' %}" class="top-menu">Login</a>
-                <a href="{% url 'register' %}" class="top-menu">Register</a>
+                <a href='http://127.0.0.1:8000/book_list'><button type="button" class="btn btn-secondary btn-sm">Book List</button></a>
             {% endif %}
-            <h1><a href="/">Local Library</a></h1>
+            <h1><a href='/'>Local Library</a></h1>
         </div>
-        {% block content %}
-        {% endblock %}
+        <div class="content-container">
+            <div class="row">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
     </body>
 </html>

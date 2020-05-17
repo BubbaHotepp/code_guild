@@ -1,0 +1,12 @@
+h1  {
+    color: rgb(241, 235, 235);
+}
+.page-header{
+    background-color:grey;
+}
+body{
+    background-color: lightgrey;
+    padding-left: 40px;
+    padding-right: 40px;
+
+}
