@@ -36,9 +36,10 @@ class Author(models.Model):
     def __str__(self):
         return f'{self.last_name}, {self.first_name}'
 
-class Book_loan(models.Model):
+class Catalog(models.Model):
     catalog_id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    book = models.ForeignKey('Books', on_delete=models.SET_NULL, null=True)
+    book = models.ForeignKey('Book', on_delete=models.SET_NULL, null=True)
+    checkout_date = models.DateField(null=True, default=timezone.now)
     due_date = models.DateField(null=True, blank=True)
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True)
 
