@@ -36,7 +36,7 @@ class Author(models.Model):
     def __str__(self):
         return f'{self.last_name}, {self.first_name}'
 
-class Catalog(models.Model):
+class Catalog_record(models.Model):
     catalog_id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     book = models.ForeignKey('Book', on_delete=models.SET_NULL, null=True)
     checkout_date = models.DateField(null=True, default=timezone.now)
@@ -44,17 +44,17 @@ class Catalog(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True)
 
     LOAN_STATUS = (
-        ('a', 'Available'),
-        ('o', 'Checked Out'),
-        ('r', 'Reserved'),
-    )
+                   ('a', 'Available'),
+                   ('o', 'Checked Out'),
+                   ('r', 'Reserved'),
+                  )
 
     status = models.CharField(
-        max_length=1,
-        choices=LOAN_STATUS,
-        blank=True,
-        default='a',        
-    )
+                              max_length=1,
+                              choices=LOAN_STATUS,
+                              blank=True,
+                              default='a',        
+                             )
 
     class Meta:
         ordering = ['due_date']
