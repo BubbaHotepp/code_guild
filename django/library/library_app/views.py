@@ -21,6 +21,15 @@ def home_page(request):
 def book_list(request):
     return render(request, 'library_app/book_list.html')
 
+def author_list(request):
+    return render(request, 'library_app/author_list.html')
+
+def author_info(request):
+    return render(request, 'library_app/author_info_page.html')
+
+def book_details(request):
+    return render(request, 'library_app/book_details_page.html')
+
 def checkout_book(request):
     pass
 
