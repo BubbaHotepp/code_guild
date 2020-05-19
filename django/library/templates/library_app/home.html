@@ -2,6 +2,12 @@
 
 {% block content %}
         <div>
-            <h1>Home Page</h1>
+            <h1>Library Home Page</h1>
+            <ul>
+              <li><strong>Books:</strong> {{ book_count }}</li>
+              <li><strong>Total Copies:</strong> {{ total_copies_count }}</li>
+              <li><strong>Available Books:</strong> {{ available_book_count }}</li>
+              <li><strong>Authors:</strong> {{ authors_count }}</li>
+            </ul>
         </div>
 {% endblock %}
