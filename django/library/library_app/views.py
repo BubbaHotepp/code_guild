@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from .models import Category, Book, Author, Catalog_record
+from .models import Category, Book, Book_copies, Author, Catalog_record
+from django.views import generic
 
 def home_page(request):
     book_count = Book.objects.all().count()
-    total_copies_count = Catalog_record.objects.all().count()
+    total_copies_count = Book_copies.objects.all().count()
     available_book_count = Catalog_record.objects.filter(status='a').count()
     author_count = Author.objects.count()
 
@@ -37,5 +38,11 @@ def checkin_book(request):
     pass
 
 def catalog_search(request):
-    pass
+    return render(request, 'library_app/catalog_search.html')
 
+class BookListView(generic.ListView):
+    model = Book
+    context_object_name = 'library_book_list'
+    
+class BookDetailView(generic.DetailView):
+    model = Book
