@@ -12,7 +12,12 @@
     <body>
         <div class='page-header'>
             {% if user.is_authenticated %}
+                <p class="top-menu">{{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
 
+                <a href="{% url 'staff_page' %}" class="top-menu"><span>Staff Page</span></a>
+            {% else %}
+                <a href="{% url 'login' %}" class="top-menu">Login</a>
+                <a href="{% url 'register' %}" class="top-menu">Register</a>
             {% endif %}
             <h1>Local Library</h1>
         </div>

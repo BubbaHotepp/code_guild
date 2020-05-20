@@ -13,8 +13,10 @@ class Category(models.Model):
         return self.name
 
 class Book(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=100)
     author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
+    summary = models.TextField(null=True, blank=True)
+    published_date = models.CharField(max_length=100)
     category = models.ManyToManyField(Category)
 
     def display_category(self):
@@ -81,3 +83,12 @@ class Catalog_record(models.Model):
 
     def __str__(self):
         return f'{self.catalog_id} ({self.book.title})'
+
+class User_flag(models.Model):
+        user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True, blank=True)
+        USER_TYPE = [
+            ('Staff', 'Staff'),
+            ('User', 'User'),
+        ]
+        user_type = models.CharField(max_length=50, choices=USER_TYPE, blank=True, null=True)
+

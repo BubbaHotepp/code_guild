@@ -25,8 +25,8 @@ def login_user(request):
             password = request.POST['password'],
         )
         if user is not None:
-            login_user(request, user)
-            return redirect('home')
+            login(request, user)
+            return redirect('home_page')
         else:
             pass
     else:
