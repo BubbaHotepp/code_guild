@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import get_user_model, login, logout, authenticate
 from django.contrib.auth.decorators import login_required
+from django.views import generic
+from library_app.views import User_flag
 User = get_user_model()
 
 def register(request):
@@ -36,3 +38,16 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     return redirect('home')
+
+def user_list(request):
+    user=request.user.id
+    id_check = User_flag.objects.get(id=user).user_type
+    if id_check == 'Staff':
+        all_users = get_user_model().objects.all()
+        context={'all_users':all_users} 
+        return render(request, 'user_accounts/user_list.html', context)
+    else:
+        return render(request, 'library_app/home.html')
+
+class UserDetailView(generic.DetailView):
+    model = get_user_model

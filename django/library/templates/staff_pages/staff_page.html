@@ -2,6 +2,8 @@
 
 {% block content %}
         <div>
-            <h1>Staff Page</h1>
+            <a href="{% url 'user_list' %}" class="top-menu"><span>List of Library Users</span></a>
+            <br> 
+            <a href="{% url 'catalog_status' %}" class="top-menu"><span>Status of Library Catalog</span></a>
         </div>
 {% endblock %}

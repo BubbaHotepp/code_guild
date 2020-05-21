@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
@@ -22,7 +22,9 @@ def home_page(request):
     return render(request, 'library_app/home.html', context=context)
 
 def book_list(request):
-    return render(request, 'library_app/book_list.html')
+    all_books = Book().objects.all()
+    context = {'all_books':all_books}    
+    return render(request, 'library_app/book_list.html', context)
 
 def author_list(request):
     return render(request, 'library_app/author_list.html')
@@ -44,17 +46,9 @@ def catalog_search(request):
 
 def catalog_status(request):
     user=request.user.id 
-    id_check = User_flag.objects.get(id=id).user_type
+    id_check = User_flag.objects.get(id=user).user_type
     if id_check == 'Staff':
         return render(request, 'staff_pages/catalog_status.html')
-    else:
-        return render(request, 'library_app/home.html')
-
-def user_list(request):
-    user=request.user.id
-    id_check = User_flag.objects.get(id=id).user_type
-    if id_check == 'Staff':
-        return render(request, 'staff_pages/user_list.html')
     else:
         return render(request, 'library_app/home.html')
 
@@ -66,13 +60,15 @@ def staff_page(request):
     else:
         return render(request, 'library_app/home.html')
 
+def book_detail_view(request, primary_key):
+    book = get_object_or_404(Book, pk=primary_key)
+    return render(request, 'library_app/book_details_page.html', context={'book': book})
+
 class BookListView(generic.ListView):
     model = Book
-    context_object_name = 'library_book_list'
+    context_object_name = 'book_list'
     
-class BookDetailView(generic.DetailView):
-    model = Book
 
-class UserDetailView(generic.DetailView):
-    model = get_user_model
+
+
 
