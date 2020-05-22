@@ -3,5 +3,14 @@
 {% block content %}
         <div>
             <h1>Author Info</h1>
+            <p>{{ author_info.first_name }} {{ author_info.last_name }}</p>
+            <br>
+            <p>{{ author_info.bio }}</p>
+            <br>
+            {% for book in authors_books %}
+            <li>
+                <a href="http://localhost:8000/book_details/{{ book.id }}/">{{ book.title }}</a> <button type="submit" class="btn btn-primary">Check out book</button>       
+            </li>
+            {% endfor %}
         </div>
 {% endblock %}

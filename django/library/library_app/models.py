@@ -28,12 +28,25 @@ class Book(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('book-details', args[str(self.id)])
+        return reverse('book-details')
 
 class Book_copies(models.Model):
     library_id = models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True)
     book_title = models.ForeignKey('Book', on_delete=models.SET_NULL, null=True, blank=True)
 
+    LOAN_STATUS = (
+                ('a', 'Available'),
+                ('o', 'Checked Out'),
+                ('r', 'Reserved'),
+                )
+
+    status = models.CharField(
+                              max_length=1,
+                              choices=LOAN_STATUS,
+                              blank=True,
+                              default='a',        
+                             )
+    
     def __str__(self):
         return f'{self.library_id} ({self.book_title})'
 
@@ -57,19 +70,6 @@ class Catalog_record(models.Model):
     checkout_date = models.DateField(null=True, default=timezone.now, blank=True)
     due_date = models.DateField(null=True, blank=True)
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True, blank=True)
-
-    LOAN_STATUS = (
-                   ('a', 'Available'),
-                   ('o', 'Checked Out'),
-                   ('r', 'Reserved'),
-                  )
-
-    status = models.CharField(
-                              max_length=1,
-                              choices=LOAN_STATUS,
-                              blank=True,
-                              default='a',        
-                             )
 
     @property
     def overdue(self):

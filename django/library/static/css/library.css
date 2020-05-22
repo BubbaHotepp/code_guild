@@ -19,3 +19,7 @@ body{
     font-weight: bolder;
     color: white;
 }
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+}

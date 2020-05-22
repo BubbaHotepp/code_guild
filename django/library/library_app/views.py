@@ -9,8 +9,8 @@ from django.views import generic
 def home_page(request):
     book_count = Book.objects.all().count()
     total_copies_count = Book_copies.objects.all().count()
-    available_book_count = Catalog_record.objects.filter(status='a').count()
-    author_count = Author.objects.count()
+    available_book_count = Book_copies.objects.filter(status='a').count()
+    author_count = Author.objects.all().count()
 
     context = {
         'book_count' : book_count,
@@ -19,21 +19,28 @@ def home_page(request):
         'author_count' : author_count,
     }
 
-    return render(request, 'library_app/home.html', context=context)
+    return render(request, 'library_app/home.html', context)
 
 def book_list(request):
-    all_books = Book().objects.all()
+    all_books = Book.objects.all()
     context = {'all_books':all_books}    
     return render(request, 'library_app/book_list.html', context)
 
 def author_list(request):
-    return render(request, 'library_app/author_list.html')
+    all_authors = Author.objects.all()
+    context = {'all_authors':all_authors}
+    return render(request, 'library_app/author_list.html', context)
 
-def author_info(request):
-    return render(request, 'library_app/author_info_page.html')
+def author_info(request, id):
+    author_info = Author.objects.get(id=id)
+    authors_books = Book.objects.filter(author=id)
+    context = {'author_info':author_info, 'authors_books':authors_books}
+    return render(request, 'library_app/author_info_page.html', context)
 
-def book_details(request):
-    return render(request, 'library_app/book_details_page.html')
+def book_details(request, id):
+    book_info = Book.objects.get(id=id)
+    context = {'book_info':book_info}
+    return render(request, 'library_app/book_details_page.html', context)
 
 def checkout_book(request):
     pass
@@ -60,13 +67,6 @@ def staff_page(request):
     else:
         return render(request, 'library_app/home.html')
 
-def book_detail_view(request, primary_key):
-    book = get_object_or_404(Book, pk=primary_key)
-    return render(request, 'library_app/book_details_page.html', context={'book': book})
-
-class BookListView(generic.ListView):
-    model = Book
-    context_object_name = 'book_list'
     
 
 

@@ -13,13 +13,15 @@
     <body>
         <div class='page-header'>
             {% if user.is_authenticated %}
-                <p class="top-menu">{{ user.username }} <small>(<a href="{% url 'logout' %}" class="top-menu">Log out</a>)</small></p>
-
-                <a href="{% url 'staff_page' %}" class="top-menu"><span>Staff Page</span></a>
+                {% if User_flag == Staff %}
+                    <a href="{% url 'staff_page' %}" class="flex-container"><span>Staff Page</span></a>
+                {% endif %}
+                <h2 class="flex-container">{{ user.username }}  <small><a href="{% url 'logout' %}" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Log out</a></small></h2>
             {% else %}
-                <a href="{% url 'login' %}" class="top-menu">Login</a>
-                <a href="{% url 'register' %}" class="top-menu">Register</a>
+                <a href="{% url 'login' %}" class="flex-container">Login</a>
+                <a href="{% url 'register' %}" class="flex-container">Register</a>
             {% endif %}
+            
             <h1>Local Library</h1>
         </div>
         <div class="container-fluid">

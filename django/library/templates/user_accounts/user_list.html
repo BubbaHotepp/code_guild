@@ -4,11 +4,11 @@
         <div>
             <h1>User List</h1>
             
-            {% if user_list %}
+            {% if all_users %}
                 <ul>
-                {% for user in user_list %}
+                {% for user in all_users %}
                     <li>
-                    <a href="{{ user.get_absolute_url }}">{{ book.title }}</a>
+                    <a href="" >{{user.last_name}}, {{ user.first_name }}</a>
                     </li>
                 {% endfor %}
                 </ul>

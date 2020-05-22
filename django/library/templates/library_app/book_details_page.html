@@ -1,24 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Title: {{ book.title }}</h1>
+  <h1>Title: {{ book_info.title }}</h1>
 
-  <p><strong>Author:</strong> <a href="">{{ book.author }}</a></p>
-  <p><strong>Summary:</strong> {{ book.summary }}</p>
-  <p><strong>Category:</strong> {{ book.category.all|join:", " }}</p>  
-
-  <div style="margin-left:20px;margin-top:20px">
-    <h4>Copies</h4>
-
-    {% for copy in book.catalog_record.all %}
-      <hr>
-      <p class="{% if copy.status == 'a' %}text-success{% elif copy.status == 'r' %}text-danger{% else %}text-warning{% endif %}">
-        {{ copy.get_status_display }}
-      </p>
-      {% if copy.status != 'a' %}
-        <p><strong>Due to be returned:</strong> {{ copy.due_date }}</p>
-      {% endif %}
-      <p class="text-muted"><strong>Id:</strong> {{ copy.id }}</p>
-    {% endfor %}
+  <div>
+      <button type="submit" class="btn btn-primary">Check out book</button>
+      <p>Author: {{ book_info.author }}</p>
+      <p>Category: {{ book_info.category}}</p>
+      <p>Date Published: {{ book_info.published_date }}</p>
+      <p>Summary:</p>
+      <p>{{ book_info.summary }}</p>
   </div>
 {% endblock %}
