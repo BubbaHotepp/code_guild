@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.utils import timezone
 from django.http import HttpResponse
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
@@ -42,14 +43,26 @@ def book_details(request, id):
     context = {'book_info':book_info}
     return render(request, 'library_app/book_details_page.html', context)
 
-def checkout_book(request):
-    pass
+def checkout_book(request, id):
+    checkout = Book_copies.object.get(id=id)
+    user = request.user
+    checkout.due_date = timezone.now() + timedelta(weeks=2)
+    checkout.checkout_date = timezone.now()
+    checkout.status = 'o'
+    record = Catalog_record.catalog_id
+    return render(request, 'library_app/home.html')
 
-def checkin_book(request):
-    pass
+def checkin_book(request, id):
+    book = Book_copies.object.get(id=id)
+    book.status = 'a'
+    return render(request, 'library_app/home.html')
 
-def catalog_search(request):
-    return render(request, 'library_app/catalog_search.html')
+
+def catalog_search(request, user_input):
+    print(user_input)
+    result = Book.object.filter(title=user_input)
+    context = {'result':result}
+    return render(request, 'library_app/catalog_search.html', context)
 
 def catalog_status(request):
     user=request.user.id 

@@ -33,6 +33,9 @@ class Book(models.Model):
 class Book_copies(models.Model):
     library_id = models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True)
     book_title = models.ForeignKey('Book', on_delete=models.SET_NULL, null=True, blank=True)
+    checkout_date = models.DateField(null=True, default=timezone.now, blank=True)
+    due_date = models.DateField(null=True, blank=True)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True, blank=True)
 
     LOAN_STATUS = (
                 ('a', 'Available'),
@@ -46,7 +49,14 @@ class Book_copies(models.Model):
                               blank=True,
                               default='a',        
                              )
-    
+                             
+    @property
+    def overdue(self):
+        if self.due_date > date.today():
+            return True
+        else:
+            return False
+   
     def __str__(self):
         return f'{self.library_id} ({self.book_title})'
 
@@ -66,20 +76,7 @@ class Author(models.Model):
 
 class Catalog_record(models.Model):
     catalog_id = models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True)
-    book = models.ForeignKey('Book', on_delete=models.SET_NULL, null=True)
-    checkout_date = models.DateField(null=True, default=timezone.now, blank=True)
-    due_date = models.DateField(null=True, blank=True)
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True, blank=True)
-
-    @property
-    def overdue(self):
-        if self.due_date > date.today():
-            return True
-        else:
-            return False
-
-    class Meta:
-        ordering = ['due_date']
+    book = models.ForeignKey('Book_copies', on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return f'{self.catalog_id} ({self.book.title})'
@@ -91,4 +88,3 @@ class User_flag(models.Model):
             ('User', 'User'),
         ]
         user_type = models.CharField(max_length=50, choices=USER_TYPE, blank=True, null=True)
-

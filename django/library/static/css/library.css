@@ -1,14 +1,22 @@
-h1  {
-    color: rgb(241, 235, 235);
+h1{
+    color: white;
+}
+h2{
+    color: rgb(49, 49, 49);
 }
 .page-header{
-    background-color:grey;
+    background-color:rgb(87, 87, 87);
+    padding-top: 40px;
 }
 body{
     background-color: lightgrey;
     padding-left: 40px;
     padding-right: 40px;
 
+}
+.name{
+    text-align: center;
+    align-items: center;
 }
 .sidebar-nav {
     margin-top: 20px;
@@ -20,6 +28,21 @@ body{
     color: white;
 }
 .flex-container{
-    display: flex;
+    float: right;
     justify-content: space-between;
 }
+.username-logout{
+    float: right;
+    align-items: center;
+ }
+ .staff{
+     float: left;
+     align-items: center;
+ }
+ .content-container{
+     padding-left: 40px;
+     padding-top: 60px;
+ }
+ .info-bar{
+     text-align: center;
+ }
