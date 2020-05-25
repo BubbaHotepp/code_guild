@@ -33,11 +33,11 @@ body{
 }
 .username-logout{
     float: right;
-    align-items: center;
+    align-items: bottom;
  }
  .staff{
-     float: left;
-     align-items: center;
+     text-align: left;
+     align-items: top;
  }
  .content-container{
      padding-left: 40px;
@@ -46,3 +46,14 @@ body{
  .info-bar{
      text-align: center;
  }
+.nav-link{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.home-page{
+    justify-content: center;
+}
+.login{
+}
+.staff-pages{
+}

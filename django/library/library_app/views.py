@@ -5,6 +5,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from .models import Category, Book, Book_copies, Author, Catalog_record, User_flag
 from django.views import generic
+from django.db import models
 
 
 def home_page(request):
@@ -19,12 +20,11 @@ def home_page(request):
         'available_book_count' : available_book_count,
         'author_count' : author_count,
     }
-
     return render(request, 'library_app/home.html', context)
 
 def book_list(request):
     all_books = Book.objects.all()
-    context = {'all_books':all_books}    
+    context = {'all_books':all_books}
     return render(request, 'library_app/book_list.html', context)
 
 def author_list(request):
@@ -58,11 +58,14 @@ def checkin_book(request, id):
     return render(request, 'library_app/home.html')
 
 
-def catalog_search(request, user_input):
-    print(user_input)
-    result = Book.object.filter(title=user_input)
-    context = {'result':result}
-    return render(request, 'library_app/catalog_search.html', context)
+def catalog_search(request, user_search):
+    result = Book.objects.filter(title_icontains=user_search)
+    if result != null:
+        context = {'result':result}
+        return render(request, 'catalog_search.html', context)
+    else:
+        context = {'result':'No book in the library with that name.'}
+        return render(request, 'catalog_search.html', )
 
 def catalog_status(request):
     user=request.user.id 
@@ -79,9 +82,3 @@ def staff_page(request):
         return render(request, 'staff_pages/staff_page.html')
     else:
         return render(request, 'library_app/home.html')
-
-    
-
-
-
-
