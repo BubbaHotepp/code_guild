@@ -68,7 +68,7 @@ def catalog_search(request, user_search):
         return render(request, 'catalog_search.html', )
 
 def catalog_status(request):
-    user=request.user.id 
+    user=request.user.id
     id_check = User_flag.objects.get(id=user).user_type
     if id_check == 'Staff':
         return render(request, 'staff_pages/catalog_status.html')
