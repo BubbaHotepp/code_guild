@@ -8,6 +8,12 @@ h2{
     background-color:rgb(87, 87, 87);
     padding-top: 40px;
 }
+.library{
+    display: flex;
+    max-width: 100%;
+    text-align: center;
+    justify-content: center;
+}
 body{
     background-color: lightgrey;
     padding-left: 40px;
@@ -32,8 +38,9 @@ body{
     justify-content: space-between;
 }
 .username-logout{
+    max-width: 200px;
     float: right;
-    align-items: bottom;
+    align-items: top;
  }
  .staff{
      text-align: left;
@@ -55,5 +62,6 @@ body{
 }
 .login{
 }
-.staff-pages{
+.staff-page{
+    max-width: 100px;
 }

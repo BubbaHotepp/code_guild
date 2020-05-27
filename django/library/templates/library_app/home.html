@@ -1,13 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-        <div>
-            <h2 class="home-page">Library Home Page</h2>
-            <ul class="info-bar">
-              <li><strong>Books:</strong> {{ book_count }}</li>
-              <li><strong>Total Copies:</strong> {{ total_copies_count }}</li>
-              <li><strong>Available Books:</strong> {{ available_book_count }}</li>
-              <li><strong>Authors:</strong> {{ author_count }}</li>
-            </ul>
-        </div>
+  
+  <div class="container">
+      <h2 class="home-page">Library Home Page</h2>
+      <ul class="info-bar">
+        <li><strong>Books:</strong> {{ book_count }}</li>
+        <li><strong>Total Copies:</strong> {{ total_copies_count }}</li>
+        <li><strong>Available Books:</strong> {{ available_book_count }}</li>
+        <li><strong>Authors:</strong> {{ author_count }}</li>
+      </ul>
+  </div>
+  {% if user.is_authenticated %}
+  <div class="user-sidebar">
+    <h3 class="user-container">Books currently checked out:</h3>
+      {% if books_out %}
+      <ul class="user-info">
+        {% for books in books_out %}
+          <li>
+            <a href="http://localhost:8000/book_details/{{ book.id }}/">{{ Book.title }}</a> 
+          </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+        <p>No books checked out.</p>
+      {% endif %} 
+  </div>
+  {% endif %}
 {% endblock %}

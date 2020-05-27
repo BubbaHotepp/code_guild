@@ -59,13 +59,15 @@ def checkin_book(request, id):
 
 
 def catalog_search(request, user_search):
-    result = Book.objects.filter(title_icontains=user_search)
-    if result != null:
+    book_name = user_search
+    result = Book.objects.filter(title__icontains=book_name)
+    if result != None:
+        print(result.query)
         context = {'result':result}
-        return render(request, 'catalog_search.html', context)
+        return render(request, 'library_app/catalog_search.html', context)
     else:
         context = {'result':'No book in the library with that name.'}
-        return render(request, 'catalog_search.html', )
+        return render(request, 'library_app/catalog_search.html', context)
 
 def catalog_status(request):
     user=request.user.id
@@ -82,3 +84,21 @@ def staff_page(request):
         return render(request, 'staff_pages/staff_page.html')
     else:
         return render(request, 'library_app/home.html')
+
+def books_checked_out(request, id):
+    books_out = Book_copies.objects.filter(user=id)
+    context = {'books_out':books_out}
+    return render(request, 'library_app/home.html', context)
+
+def book_copy_status(request, id):
+    book_copy = Book_copies.objects.filter(id=id)
+    status = book_copy.status
+    context = {'status':status}
+    return render(request, 'library_app/book_list.html', context)
+
+def reserve_book(request, id):
+    book_copy = Book_copies.objects.filter(id=id)
+    status = book_copy.status
+    status = 'Reserved'
+    context = {'status':status}
+    return render(request, 'library_app/book_list.html', context)

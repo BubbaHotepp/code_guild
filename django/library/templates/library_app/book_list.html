@@ -6,7 +6,10 @@
   <ul>
     {% for book in all_books %}
       <li>
-        <a href="http://localhost:8000/book_details/{{ book.id }}/">{{ book.title }}</a> ({{ book.author }}) <button type="submit" class="btn btn-primary">Check out book</button>
+        <a href="http://localhost:8000/book_details/{{ book.id }}/">{{ book.title }}</a> ({{ book.author }}) ({{ status }}) 
+          <button type="submit" action="{% url 'checkout_book' %}" class="btn btn-primary">Check out book</button> 
+          <button type="submit" action="{% url 'reserve_book' %}" class="btn btn-primary">Reserve book</button> 
+        <br>
       </li>
     {% endfor %}
   </ul>
