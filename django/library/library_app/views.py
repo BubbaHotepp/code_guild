@@ -6,7 +6,8 @@ from django.contrib.auth.decorators import login_required
 from .models import Category, Book, Book_copies, Author, Catalog_record, User_flag
 from django.views import generic
 from django.db import models
-
+from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.cache import cache_page
 
 def home_page(request):
     book_count = Book.objects.all().count()
@@ -57,17 +58,21 @@ def checkin_book(request, id):
     book.status = 'a'
     return render(request, 'library_app/home.html')
 
-
-def catalog_search(request, user_search):
-    book_name = user_search
-    result = Book.objects.filter(title__icontains=book_name)
-    if result != None:
-        print(result.query)
-        context = {'result':result}
-        return render(request, 'library_app/catalog_search.html', context)
+@cache_page(60 * 15)
+@csrf_protect
+def catalog_search(request):
+    if request.method == 'POST':
+        book_name = request.POST.get('user_input')
+        print(request)
+        print(book_name)
+        if book_name != None:
+            result = Book.objects.filter(title__icontains=book_name)
+            context = {'result':result}
+            return render(request, 'library_app/catalog_search.html', context)
+        else:
+            return render(request, 'library_app/catalog_search.html')
     else:
-        context = {'result':'No book in the library with that name.'}
-        return render(request, 'library_app/catalog_search.html', context)
+        return render(request, 'library_app/catalog_search.html')
 
 def catalog_status(request):
     user=request.user.id
@@ -91,13 +96,12 @@ def books_checked_out(request, id):
     return render(request, 'library_app/home.html', context)
 
 def book_copy_status(request, id):
-    book_copy = Book_copies.objects.filter(id=id)
-    status = book_copy.status
+    book_copy = Book_copies.objects.get(id=id)
     context = {'status':status}
     return render(request, 'library_app/book_list.html', context)
 
 def reserve_book(request, id):
-    book_copy = Book_copies.objects.filter(id=id)
+    book_copy = Book_copies.objects.get(id=id)
     status = book_copy.status
     status = 'Reserved'
     context = {'status':status}
