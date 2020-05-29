@@ -5,7 +5,6 @@ function pickSix(arrayName){
 };
 
 function ticketCompare(arrayName1,arrayName2, tickets, totalWinnings){
-    let utArrayLength = 6;
 
     for(let run = 0; run < tickets; run++){
         pickSix(arrayName1);
