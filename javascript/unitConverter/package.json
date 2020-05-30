@@ -1,0 +1,14 @@
+{
+  "name": "unitconverter",
+  "version": "1.0.0",
+  "description": "Unit Converter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stephen Simonsen",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

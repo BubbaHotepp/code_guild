@@ -4,17 +4,22 @@ function pickSix(arrayName){
     };
 };
 
-function ticketCompare(arrayName1,arrayName2, tickets, totalWinnings){
+function ticketCompare(arrayName1, arrayName2, tickets){
+
+    let totalWinnings = 0;
 
     for(let run = 0; run < tickets; run++){
-        pickSix(arrayName1);
+        pickSix(arrayName2);
         console.log(arrayName1);
+        console.log(arrayName2)
+        console.log('\n')
         let matchCount = 0;
         let winningAmount = 0;
     
         for (let i=0; i < arrayName1.length; i++){
             if (arrayName1[i] === arrayName2[i]){
                 matchCount +=1
+                console.log(matchCount)
             };
         };
     
@@ -45,9 +50,11 @@ function ticketCompare(arrayName1,arrayName2, tickets, totalWinnings){
 
             default:
                 winningAmount = 0;
+                break;
             }
        totalWinnings += winningAmount;
     };
+    return(totalWinnings)
 };
 
 function roi(winnings,costs){
@@ -56,22 +63,20 @@ function roi(winnings,costs){
 
 function main(){
 
-console.log('Welcome to Pick 6.','\n', 'Winning picks are the following:','\n', '1 number matched wins $4.','\n', '2 numbers matched wins $7.','\n', '3 numbers matched wins $100.', '\n', '4 numbers matched wins $50,000.', '\n', '5 numbers matched wins $1,000,000.','\n', '6 numbers matched wins $25,000,000.');
+    console.log('Welcome to Pick 6.','\n', 'Winning picks are the following:','\n', '1 number matched wins $4.','\n', '2 numbers matched wins $7.','\n', '3 numbers matched wins $100.', '\n', '4 numbers matched wins $50,000.', '\n', '5 numbers matched wins $1,000,000.','\n', '6 numbers matched wins $25,000,000.');
 
-let pickAmount = 10;
-let totalTicketCost = (pickAmount * 2);
-let balance = 0;
-let winningNumbers = [0,0,0,0,0,0];
-let userTicket = [0,0,0,0,0,0];
+    let ticketAmount = 100;
+    let totalTicketCost = (ticketAmount * 2);
+    let winningNumbers = [0,0,0,0,0,0];
+    let userTicket = [0,0,0,0,0,0];
 
-let wnArrayLength = 6;
-pickSix(winningNumbers);
-console.log(winningNumbers);
+    let wnArrayLength = 6;
+    pickSix(winningNumbers);
 
-ticketCompare(userTicket, winningNumbers, pickAmount, balance)
+    balance = ticketCompare(winningNumbers, userTicket, ticketAmount,) 
 
-console.log('You have won $',balance,'\n','You have spent $',totalTicketCost,'\n',
-            'And your return on investment is ', roi(balance,totalTicketCost),'%.');
+    console.log('You have won $', balance,'\n','You have spent $',totalTicketCost,'\n',
+                'And your return on investment is ', roi(balance,totalTicketCost),'%.');
 };
 
 main()
