@@ -22,47 +22,36 @@ function meter(unit, distance){
 
 } // Converts inputed unit to meters
 
-function mi(meters){
-    convert = meters / 1609.34
-    return(convert)
-} // Converts meters to miles
-
-function yd(meters){
-    convert = meters / 0.9144
-    return(convert)
-} // Converts meters to yards
-
-function in(meters){
-    convert = meters / 0.0254
-    return(convert)
-} // Converts meters to inches
-
-function ft(meters){
-    convert = meters / 0.3048
-    return(convert)
-} // Converts meters to feet
-
-function km(meters){
-    convert = meters / 1000
-    return(convert) 
-} // Converts meters to kilometers
-
 function main(){
 
     let rl = require('readline');
     let unit = "";
     let distance = "";
+    const miles = (meters) => meters / 1609.34;
+    const yards = (meters) => meters / 0.9144;
+    const inches = (meters) => meters / 0.0254;
+    const feet = (meters) => meters / 0.3048;
+    const kilometers = (meters) => meters / 1000;
+
+    const ops = {
+        'mi': miles,
+        'yd': yards,
+        'in': inches,
+        'ft': feet,
+        'km': kilometers,
+    };
 
     let prompts = rl.createInterface(process.stdin, process.stdout);
+
     prompts.question("Please enter the unit to convert from'\n'(Kilometers = 'km', Miles = 'mi', Meters = 'm', Yard = 'yd', Feet = 'ft', Inches = 'in'):", function(unit_from){
-        
+
         prompts.question("Please enter the unit to convert to'\n'(Kilometers = 'km', Miles = 'mi', Meters = 'm', Yard = 'yd', Feet = 'ft', Inches = 'in'):",function(unit_to){
 
-            prompts.question("Please enter the distance in", unit_from,"to convert to", unit_to,": ", function(distance){
-                let meters = meter(unit_from, distance)
-                let distance_ouput = (meters)
-                console.log(distance, unit_from, "=", distance_ouput, unit_to)
-                process.exit();
+            prompts.question("Please enter the distance: ", function(distance){
+
+                let interim = meter(unit_from, distance)
+                console.log(distance, unit_from, "=", ops[unit_to](interim), ",", unit_to)
+                process.exit()
             });
         });
     });
