@@ -1,16 +1,26 @@
-function addTodo(text, tasks){
-    let item = {
-        text,
-        checked: false,
-        id: Date.now()
-    };
-
-    tasks.push(item);
-    console.log(tasks);
+function addTodo() {
+    let li = document.createElement("li");
+    let addTask = document.getElementById("addTask").value;
+    let taskText = document.createTextNode(addTask);
+    li.appendChild(taskText);
+    if (addTask === "") {
+        alert("Please enter task details!")
+    }
+    else {
+        document.getElementById("taskUL").appendChild(li);
+    }
+    document.getElementById("addTask").value = "";   
 }
 
-function delTodo(text){
-    // have to remove items by value
+function delTodo() {
+    let remove = document.getElementsByClassName("remove");
+    const item;
+    for (item = 0, i < remove.length; item++) {
+        remove[item].onclick = function() {
+            let div = this.parentElement;
+            div.style.display = "none";
+        }
+    }
 }
 
 

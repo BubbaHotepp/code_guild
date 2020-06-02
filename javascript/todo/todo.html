@@ -9,10 +9,21 @@
 </head>
 <body>
     <header>
-
+        <h1 class="title">To Do List</h1>
     </header>
         <div>
-            <p>Hello</p>
+            <h2>Add New Task:</h2>
+            <div class="input-group mb-3">
+                <input type="text" id="addTask" class="form-control" placeholder="Task text" aria-label="Add Task" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="button" id="button-addon2">Add</button>
+                </div>
+              </div>
+            <h2>To Do Tasks:</h2>
+            <div>
+                <ul id="taskUL">
+                </ul>
+            </div>
         </div>
 
 
