@@ -23,8 +23,8 @@ todoItem.addEventListener('submit', event => {
     };
 });
 
-list.addEventListener('click', event => {
-    if (event.target.tagName === 'LI') {
-        event.target.classList.toggle('crossedOut')
-    };
+list.addEventListener('click', function(ev) {
+    if (ev.target.tagName === 'LI') {
+        ev.target.classList.toggle('crossedOut')
+    }
 }, false);   
