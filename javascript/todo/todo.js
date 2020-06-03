@@ -9,7 +9,10 @@ function addTodo() {
     else {
         document.getElementById("taskUL").appendChild(li);
     }
-    document.getElementById("addTask").value = "";   
+    document.getElementById("addTask").value = "";
+    
+    let span = document.createElement("SPAN");
+
 }
 
 function delTodo() {
@@ -25,9 +28,17 @@ function delTodo() {
 
 
 function main(){
+    let list = document.querySelector('ul');
     let tasks = [];
     let todoItem = document.querySelector('.js-form');
-    todoItem.addEventListener('', event => {
+    
+    list.addEventListener('click', function(event) {
+        if (event.target.tagName === 'LI') {
+            event.target.classList.toggle('crossedOut');
+        }
+    }, false);
+
+    todoItem.addEventListener('submit', event => {
         event.preventDefault();
         let item = document.querySelector('.js-todo-item');
         let itemText = item.value();
@@ -35,3 +46,4 @@ function main(){
 
     })
 }
+main()

@@ -1,23 +1,57 @@
 * {
     box-sizing: border-box;
 }
+
 header{
     background-color: teal;
     text-align: center;
-    
+    padding: 40px 40px;
+    color: rgb(255, 255, 255);    
 }
+
 body{
     background-color: rgb(196, 241, 241);
 }
+
 .title{
 
 }
+
 h1{
 
 }
+
 h2{
 
 }
-li{
 
+ul li{
+    cursor: pointer;
+    position: relative;
+    padding: 5px 5px 5px 5px;
+    background: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+ul li:hover {
+    background: rgb(129, 129, 129);
+    color: rgb(255, 255, 255);
+}
+
+ul li.checked {
+    background: rgb(129, 129, 129);
+    color: rgb(255, 255, 255);
+    text-decoration: line-through;
+}
+
+.remove {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px, 10px, 10px, 10px;
+}
+
+.remove:hover {
+    background-color: #464646;
+    color: rgb(255, 255, 255);    
 }
