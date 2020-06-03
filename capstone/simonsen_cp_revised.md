@@ -20,9 +20,7 @@
 
       ### Libraries/Frameworks
 
-  ​ - Django - Will be used for backend web framework. - Bootstrap4 - Will be used for frontend HTML formatting. - Amazon AWS - Will be used for hosting services.
-  <span style="color:cadetblue"> if you're going to host this, you should also consider a few things. switch the database to postgres, buy a domain, and figure out if you really want to host through AWS. there are other services and some are easier to use than others.</span>
-
+  ​ - Django - Will be used for backend web framework. - Bootstrap4 - Will be used for frontend HTML formatting. - HostGator - Will be used for hosting services and Domain name. - pCloud - Will be used for cloud storage of files.
 ​
 
 ## **FUNCTIONALITY**
@@ -44,15 +42,13 @@
 
 ### USER Messaging:
 
-3. Direct Message Inbox-- Users will be able to view and send messages to other users via direct messaging through this page as well as staff responses to user archive submission.
-
-- <span style="color:cadetblue"> this is fine, but consider using django channels instead. the kind of in-app mail systems like that aren't very common or popular anymore. using websockets will get you better functionality, and it will teach you how to use a modern technology.</span>
+3. Direct Message Inbox-- Users will be able to view and send messages to other users via direct messaging through this page as well as staff responses to user archive submission.  This will be accomplished using django-postman.
 
 ### USER FORUM:
 
-4. User Forum Page-- Users can post message threads and their repsonses to threads via this page.
+4. User Forum Page-- Users can post message threads and their repsonses to threads via this page.  This will be accomplished with an embedded forum using MyBB software.
 
-- <span style="color:cadetblue"> how are you going to implement the forum? </span>
+
 
 ### ELDER MEMORIAL PAGE:
 
@@ -196,11 +192,3 @@
 ​
 
 # INSTRUCTOR NOTES TO WORK ON
-
-- <span style="color:cadetblue"> interesting project and a good idea for a capstone </span>
-
-- <span style="color:cadetblue"> how are you going to store the files? what types of files will you store? how will you retrieve those files after they're stored so other users can view them?</span>
-
-- <span style="color:cadetblue"> I know nothing of the Chickasaw culture. Can their language be displayed using characters available on keyboards? You'll need to make sure you can correctly display the language in a browser. I'm sure you can, but this isn't a language I'm familiar with, so I'm just putting that out there.</span>
-  ​
-- <span style="color:cadetblue"> are there any apis or other external data sources you can make use of for this project to add additional features or enhance the ones you already have planned?</span>
