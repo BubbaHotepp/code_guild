@@ -12,10 +12,11 @@ function main(){
     let tasks = [];
     let todoItem = document.querySelector('.js-form');
 
-    todoItem.addEventListener('submit', event => {
-        event.preventDefault();
+    todoItem.addEventListener('submit', function() {
+
         let input = document.querySelector('.js-task-input');
         let taskText = input.value();
+        console.log(taskText)
         if (input === '') {
             alert("You must enter a task.")
         }
@@ -25,9 +26,7 @@ function main(){
     })
 
     list.addEventListener('click', event => {
-        if (event.target.tagName === 'LI') {
-            event.target.classList.toggle('crossedOut');
-        }
+
     }, false);
     
 }

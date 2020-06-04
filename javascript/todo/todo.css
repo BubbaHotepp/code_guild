@@ -12,7 +12,9 @@ header{
 body{
     background-color: rgb(196, 241, 241);
 }
-
+.btn2 {
+    float: right;
+}
 .title{
 
 }
@@ -54,4 +56,7 @@ ul li.checked {
 .remove:hover {
     background-color: #464646;
     color: rgb(255, 255, 255);    
+}
+.crossedOut {
+    text-decoration: line-through;
 }
