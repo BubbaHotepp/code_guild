@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(207, 236, 246);
+    padding: 20px 20px;
+}
+#mapid{
+    height: 256px; 
+}
+#page-title{
+    text-align: center;    
+}
+header{
+    background-color: rgb(31, 134, 182);
+    padding: 40px 40px;
+    color: white;
+}

@@ -1,4 +1,5 @@
 let list = document.querySelector('#taskList');
+let completedList = document.querySelector('#completedTaskList')
 let todoItem = document.querySelector('.task-form');
 let btn = document.querySelector('#button-addon2');
 let btn2 = document.querySelector('#button-addon3');
@@ -23,7 +24,6 @@ btn.addEventListener('click', function() {
 
 list.addEventListener('click', function(event) {
     if (event.target.tagName === 'LI') {
-        console.log('L1 works')
         event.target.classList.toggle('crossedOut')
         }
     }, false);  
