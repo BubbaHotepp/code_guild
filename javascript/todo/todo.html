@@ -13,15 +13,18 @@
     </header>
         <div class="conatiner">
             <h2>Add New Task:</h2>
-            <div class="input-group mb-3 js-form">
-                <input type="text" id="addTask" class="form-control js-task-input" placeholder="Task text" aria-label="Add Task" aria-describedby="button-addon2">
+            <div class="input-group mb-3 task-form">
+                <input type="text" id="addTask" class="form-control task-input" placeholder="Task text" aria-label="Add Task" aria-describedby="button-addon2">
                 <div class="input-group-append">
                   <button class="btn btn-primary" action="submit" type="button" id="button-addon2">Add</button>
                 </div>
               </div>
             <h2>To Do Tasks:</h2>
             <div>
-                <ul id="taskList">
+                <ul id="taskList"><p>Incomplete Tasks</p>
+                </ul>
+                <ul id="complete-taskList"><p>Completed Tasks</p>
+
                 </ul>
                 <script src="./todo.js"></script>
             </div>

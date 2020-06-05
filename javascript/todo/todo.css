@@ -11,20 +11,10 @@ header{
 
 body{
     background-color: rgb(196, 241, 241);
+    padding: 40px 40px;
 }
 .btn2 {
     float: right;
-}
-.title{
-
-}
-
-h1{
-
-}
-
-h2{
-
 }
 
 ul li{
@@ -44,13 +34,6 @@ ul li.checked {
     background: rgb(129, 129, 129);
     color: rgb(255, 255, 255);
     text-decoration: line-through;
-}
-
-.remove {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 10px, 10px, 10px, 10px;
 }
 
 .remove:hover {
