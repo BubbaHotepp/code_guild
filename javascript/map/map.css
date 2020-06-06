@@ -3,13 +3,13 @@ body{
     padding: 20px 20px;
 }
 #mapid{
-    height: 256px; 
-}
-#page-title{
-    text-align: center;    
+    height: 512px;
+    width: 512px;
+    justify-content: center; 
 }
 header{
     background-color: rgb(31, 134, 182);
     padding: 40px 40px;
     color: white;
+    text-align: center;
 }
