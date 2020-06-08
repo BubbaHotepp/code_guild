@@ -16,8 +16,8 @@ function ticketCompare(arrayName1, arrayName2, tickets){
         let matchCount = 0;
         let winningAmount = 0;
     
-        for (let i=0; i < arrayName1.length; i++){
-            if (arrayName1[i] === arrayName2[i]){
+        for (let item=0; i < arrayName1.length; item++){
+            if (arrayName1[item] === arrayName2[item]){
                 matchCount +=1
                 console.log(matchCount)
             };
