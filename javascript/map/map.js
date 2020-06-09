@@ -9,41 +9,35 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'pk.eyJ1IjoiYnViYmFob3RlcHAiLCJhIjoiY2tiMnhvN3c3MGczOTJ2bXRyeGQ1cXRzMyJ9.n-HfORkQcVxIYPRgxp5TgA'
 }).addTo(woobMap);
 
-// let marker = marker.bindPopup().openPopup();
+let persons = [[],[],[],[],[],[],[],[],[],[],];
 
-// let popup = L.popup()
-//     .setLatLng([0,0])
-//     .setContent("Test")
-//     .openOn(woobMap);
+axios.get('https://randomuser.me/api/?results=10&format=json&dl').then(response => {
+    let dataLength = response.data.results.length;
+    for (let item = 0; item <= dataLength; item++) {
+        for (let item in response.data.results) {
+            persons[item][0] = person.location.coordinates.latitude;
+            persons[item][1] = person.location.coordinates.longitude;
+            persons[item][2] = person.name.first + ", " + person.name.last;
+            persons[item][3] = person.location.street.number + " " + person.location.street.name;
+            persons[item][4] = person.location.city;   
+            persons[item][5] = person.location.country;
+            persons[item][6] = person.location.postcode;
+        };
+    };
+});
 
 let markerOptions = {
     clickable: true,
     draggable: false,
 };
 
-let axios = require('axios');
-
-axios.get('https://randomuser.me/api/?results=10&format=json&dl').then(response => {
-    let dataLength = response.data.results.length;
-    for (let item = 0; item <= dataLength; item++) {
-        for (let item in response.data.results) {
-            let person = response.data.results[item];
-            let lat = person.location.coordinates.latitude;
-            let long = person.location.coordinates.longitude;
-
-            let popup = L.popup()
-                .setLatLng([lat,long])
-                .setContent("<p>Name: </p>", person.name.first, person.name.last,
-                            "<br><p>Address:</p>", person.location.street.number, person.location.street.name,
-                            "<br><p>City: </p>", person.location.city,
-                            "<br><p>Country: </p>", person.location.country,
-                            "<br><p>Postcode: </p>", person.location.postcode,
-                            )
-                .openOn(woobMap);
-
-            let marker = L.marker([lat, long], markerOptions);
-            marker.bindPopup(popup);
-        }
-    }
-});
-
+for (count = 0; count < locations.length; count++) {
+    marker = new L.marker([persons[count][0], persons[count][1]])
+        .bindPopup(locations[count][2],
+                   locations[count][3],
+                   locations[count][4],
+                   locations[count][5],
+                   locations[count][6],
+                   )
+        .addTo(woobMap);
+};
