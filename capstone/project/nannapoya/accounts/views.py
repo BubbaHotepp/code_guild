@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
+from .forms import CustomUserCreationForm
 
 def registration(request):
     if request.method == 'POST':
@@ -7,7 +8,7 @@ def registration(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Account created successfully')
-            return redirect('register')
+            return redirect('registration')
     else:
         form = CustomUserCreationForm()
 
