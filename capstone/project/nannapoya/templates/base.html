@@ -8,7 +8,21 @@
     <title>NANNAPOYA</title>
 </head>
 <body>
+    {% if user.is_authenticated %}
+    <h1 class="title">Nannapoya</h1>
+    <h2 class="username-logout">{{ user.first_name }} <small><a href="{% url 'logout' %}" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Log out</a></small></h2>
+    {% if User_flag == Staff %}
+        <div class='staff-page'>
+            <a href="{% url 'staff_page' %}" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Staff Page</a>
+        </div>
+        {% endif %}
+    {% else %}
+        <h1 class="name">Nannapoya</h1>
+        <a href="{% url 'login' %}" class="login" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Login</a>
+        <a href="{% url 'registeration' %}" class="register" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Register</a>
+    {% endif %}
     {% block content %}
+
     {% endblock %}
             </div>
         </div>
