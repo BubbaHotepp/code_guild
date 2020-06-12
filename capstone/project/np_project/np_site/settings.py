@@ -65,13 +65,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-        'NAME': 'PostgreSQL-NP',
+        'NAME': 'nannapoy_np_sql.db',
 
-        'USER': 'npadmin',
+        'USER': '',
 
-        'PASSWORD': 'temp12'
+        'PASSWORD': '',
 
-        'HOST': 'localhost'
+        'HOST': ''
 
         'PORT': '5432'
     }
