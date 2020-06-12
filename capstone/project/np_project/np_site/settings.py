@@ -8,12 +8,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '2z(qi8#ecjy$f2kftsai1x(0p^q1_n99$-nk#k8c)c+^o)#wy-'
+SECRET_KEY = 'fh7+6p8y*vloi-8v*mfvvsu#saue*l5zh(&=c_2vk=wf8fmip5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','webhostpython.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'ns55.stableserver.net']
+
+
+# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -60,8 +63,17 @@ WSGI_APPLICATION = 'np_site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'PostgreSQL-NP',
+
+        'USER': 'npadmin',
+
+        'PASSWORD': 'temp12'
+
+        'HOST': 'localhost'
+
+        'PORT': '5432'
     }
 }
 
@@ -102,5 +114,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/'\
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
