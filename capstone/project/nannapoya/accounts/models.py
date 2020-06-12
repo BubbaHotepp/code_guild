@@ -4,6 +4,8 @@ from django.contrib.auth.models import PermissionsMixin
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from .managers import CustomUserManager
+from django.contrib.auth import get_user_model
+
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(_('email address'), unique=True)
@@ -22,10 +24,11 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.username
 
+
 class User_flag(models.Model):
-        user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True, blank=True)
-        USER_TYPE = [
-            ('Staff', 'Staff'),
-            ('User', 'User'),
-        ]
-        user_type = models.CharField(max_length=50, choices=USER_TYPE, blank=True, null=True)``
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True, blank=True)
+    USER_TYPE = [
+        ('Staff', 'Staff'),
+        ('User', 'User'),
+    ]
+    user_type = models.CharField(max_length=50, choices=USER_TYPE, blank=True, null=True)
