@@ -17,7 +17,7 @@ class CustomUserAdmin(UserAdmin):
     inlines = (ProfileInline,)
     list_display = ('username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'get_location')
     list_filter = ('username', 'last_name', 'is_staff', 'is_active')
-    list_select_related = ('profile',)
+    list_select_related = ('userprofile',)
     fieldsets = (
         (None, {'fields': ('username', 'password', 'first_name', 'last_name', 'email',)}),
         ('Persmissions', {'fields': ('is_staff', 'is_active')})
@@ -37,8 +37,9 @@ class CustomUserAdmin(UserAdmin):
         return super(CustomUserAdmin, self).get_inline_instances(request, obj)
     
     def get_location(self, instance):
-        return instance.profile.get_location
+        return instance.userprofile.location
     get_location.short_discription = 'Location'
 
 
 admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(UserProfile)

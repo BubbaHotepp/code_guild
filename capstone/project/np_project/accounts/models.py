@@ -33,12 +33,13 @@ class User_flag(models.Model):
     user_type = models.CharField(max_length=50, choices=USER_TYPE, blank=True, null=True)
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, unique=True)
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    image = models.ImageField(default='default.jpb', upload_to='_profile_pics')
     location = models.CharField(max_length=50, blank=True)
     birthdate = models.DateField(null=True, blank=True)
 
     def __str__(self):
-        return self.user.username
+        return f'{self.user.username} Profile'
 
 @receiver(post_save, sender=CustomUserManager)
 def create_or_update_user_profile(sender, instance, created, **kwargs):

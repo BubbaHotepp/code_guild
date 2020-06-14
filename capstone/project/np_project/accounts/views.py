@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.views import generic
 from django.contrib import auth
 from django.contrib.auth import get_user_model
+from django.contrib import messages
 from django.contrib.messages import success
 
 def registration(request):
@@ -20,7 +21,7 @@ def registration(request):
 
     return render(request, 'accounts/registration.html', {'form':form})
 
-def login(request):
+def user_login(request):
     if request.method == 'POST':
         user = authenticate(
             request,
@@ -31,11 +32,19 @@ def login(request):
             login(request, user)
             return redirect('home')
         else:
-            pass
+            return render(request, 'accounts/login.html', {'login': login})
     else:
         return render(request, 'accounts/login.html', {'login': login})
 
 @login_required
-def logout(request):
+def user_logout(request):
     logout(request)
     return redirect('home')
+
+@login_required
+def profile(request):
+    return render(request, 'accounts/profile.html', {'profile': profile})
+
+@login_required
+def staff_page(request):
+    return render(request, 'accounts/staff_page.html', {'staff_page': staff_page})
