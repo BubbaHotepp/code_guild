@@ -13,7 +13,7 @@ SECRET_KEY = 'l&rg$lro&8#doba&rl_ie+1x9x38#q^xry()a+zbk%i=9454o4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','ns55.stableserver.net']
+ALLOWED_HOSTS = ['127.0.0.1', 'ns55.stableserver.net']
 
 
 # Application definition
@@ -113,7 +113,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
@@ -122,3 +124,7 @@ AUTH_PROFILE_MODULE = "accounts.UserProfile"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = '/'
+
+LOGOUT_REDIRECT_URL = '/'
