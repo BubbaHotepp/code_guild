@@ -10,10 +10,4 @@ urlpatterns = [
     path('logout', views.user_logout, name='logout'),
     path('profile', views.profile, name='profile'),
     path('staff_page', views.staff_page, name='staff_page'),
-    path('inbox', views.inbox, name='inbox'),
-    path('outbox', views.outbox, name='outbox'),
-    path('compose', views.compose, name='compose'),
-    path('trash', views.compose, name='trash'),
-    path('view_message', views.compose, name='view_message'),
-    path('new_message', views.compose, name='new_message'),
 ]

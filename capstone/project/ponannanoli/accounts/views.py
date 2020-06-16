@@ -48,28 +48,3 @@ def profile(request):
 @login_required
 def staff_page(request):
     return render(request, 'accounts/staff_page.html', {'staff_page': staff_page})
-
-@login_required
-def inbox(request):
-    return render(request, 'accounts/messages/inbox.html', {'inbox': inbox})
-
-@login_required
-def compose(request):
-    return render(request, 'accounts/messages/compose.html', {'compose': compose})
-
-@login_required
-def outbox(request):
-    return render(request, 'accounts/messages/outbox.html', {'outbox': outbox})
-
-@login_required
-def trash(request):
-    return render(request, 'accounts/messages/trash.html', {'trash': trash})
-
-@login_required
-def view_message(request):
-    return render(request, 'accounts/messages/view.html', {'view_message': view_message})
-
-@login_required
-def new_message(request):
-    return render(request, 'accounts/messages/new_message.html', {'new_message': new_message})
-
