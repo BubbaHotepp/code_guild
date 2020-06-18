@@ -41,8 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'mainapp',
-    'postman',
 
+     # Installed Package Apps:
+    'postman',
+    'easy_thumbnails',
+    'filer',
     'mptt',
     'haystack',
     'widget_tweaks',
@@ -187,3 +190,5 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
+
+THUMBNAIL_HIGH_RESOLUTION = True

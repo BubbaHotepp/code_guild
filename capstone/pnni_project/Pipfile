@@ -13,6 +13,9 @@ django-machina = "*"
 django-postman = "*"
 six = "*"
 whoosh = "*"
+django-filer = "*"
+django-polymorphic = "*"
+easy-thumbnails = "*"
 
 [requires]
 python_version = "3.8"
