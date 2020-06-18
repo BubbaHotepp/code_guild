@@ -7,6 +7,12 @@ verify_ssl = true
 
 [packages]
 django = "*"
+psycopg2 = "*"
+pillow = "*"
+django-machina = "*"
+django-postman = "*"
+six = "*"
+whoosh = "*"
 
 [requires]
 python_version = "3.8"

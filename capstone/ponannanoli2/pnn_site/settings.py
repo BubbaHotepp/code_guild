@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts.apps.UsersConfig', 
     'accounts',
     'mainapp',
     'postman',
@@ -187,5 +188,3 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
-
-DJANGO_MESSAGES_NOTIFY = False
