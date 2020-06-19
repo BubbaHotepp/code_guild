@@ -16,6 +16,8 @@ whoosh = "*"
 django-filer = "*"
 django-polymorphic = "*"
 easy-thumbnails = "*"
+django-grappelli = "*"
+django-filebrowser = "*"
 
 [requires]
 python_version = "3.8"

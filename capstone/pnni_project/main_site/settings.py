@@ -44,9 +44,9 @@ INSTALLED_APPS = [
 
      # Installed Package Apps:
     'postman',
-    'easy_thumbnails',
-    'filer',
     'mptt',
+    'grappelli',
+    'filebrowser',
     'haystack',
     'widget_tweaks',
 
@@ -111,6 +111,8 @@ CACHES = {
     },
 }
 
+# Haystack Connection settings
+
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
@@ -118,8 +120,32 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 
-WSGI_APPLICATION = 'main_site.wsgi.application'
+# Filebrowser settings
 
+FILEBROWSER_DIRECTORY = ''
+
+FILEBROWSER_EXTENSIONS = {
+    'Image': ['.jpg','.jpeg','.gif','.png','.tif','.tiff'],
+    'Document': ['.pdf','.doc','.rtf','.txt','.xls','.csv'],
+    'Video': ['.mov','.wmv','.mpeg','.mpg','.avi','.rm'],
+    'Audio': ['.mp3','.mp4','.wav','.aiff','.midi','.m4p']
+}
+
+FILEBROWSER_SELECT_FORMATS = {
+    'file': ['Image','Document','Video','Audio'],
+    'image': ['Image'],
+    'document': ['Document'],
+    'media': ['Video','Audio'],
+}
+
+FILEBROWSER_SHOW_PLACEHOLDER = True
+
+FILEBROWSER_NORMALIZE_FILENAME = True
+
+FILEBROWSER_LIST_PER_PAGE = 100
+
+
+WSGI_APPLICATION = 'main_site.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -174,6 +200,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
     MACHINA_MAIN_STATIC_DIR
@@ -192,3 +220,5 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 THUMBNAIL_HIGH_RESOLUTION = True
+
+FILER_CANONICAL_URL = 'sharing/'
