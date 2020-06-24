@@ -18,6 +18,7 @@ django-polymorphic = "*"
 easy-thumbnails = "*"
 django-grappelli = "*"
 django-filebrowser = "*"
+dj-pagination = "*"
 
 [requires]
 python_version = "3.8"

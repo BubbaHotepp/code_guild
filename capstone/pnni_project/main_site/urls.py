@@ -13,7 +13,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('', include('mainapp.urls')),
     path('forum/', include(machina_urls)),
-    path('messages', include('postman.urls', namespace='postman')),
+    path('messages/', include('postman.urls', namespace='postman')),
     path('grappelli/', include('grappelli.urls')),
 ]
 
