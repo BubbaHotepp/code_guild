@@ -1,0 +1,124 @@
+html, body {
+  height: 100%;
+  width: 100%;
+
+}
+h1 {
+  text-align: center;
+  padding-top: 10px;
+}
+
+#logo {
+  color: #fff6f5;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#header {
+  background-image: url("./images/texture.png");
+  background-repeat: repeat-x;
+}
+
+.sticky {
+  font-size: 15px;
+  color: white;
+  border-bottom: 5px solid #983222;
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  transition: all 0.4s ease;
+}
+
+.intro {
+  color: #fff6f5;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: xx-large;
+  font-weight: bolder;
+  text-align: center;
+  display: flex;
+  width: 50%;
+  height: 200px;
+  margin: auto;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+
+}
+
+.btn-primary {
+  padding-left: 10px;
+}
+
+.parallax-container-1 {
+  background-image: url("./images/minko.jpg");
+  height: 1000px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.parallax-container-2 {
+  background-image: url("./images/traditionalvillage.jpg");
+  height: 1000px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-container-3 {
+  background-image: url("./images/stomp-dance2.jpg");
+  height: 1000px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.scrolling-container {
+  padding: 50px 80px;
+  height: 200px;
+}
+
+.btn-primary {
+  background-color: #983222 !important;
+  float: right;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: #983222 !important;
+  align-items: flex-start !important;
+}
+
+.welcome {
+  color: white;
+  text-align: center;
+  align-content: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: xx-large !important;
+  font-weight: bolder;
+}
+
+#text {
+  float:left;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 25px;
+}
+
+#sidenav {
+  margin-top: 10%;
+  position: fixed;
+  height: 400px;
+  width: 100px;
+  right: 0;
+  z-index: 10;
+  background-image: url("./images/bg-texture-trans.png");
+  background-color: #fcedd8;
+  color: white;
+}

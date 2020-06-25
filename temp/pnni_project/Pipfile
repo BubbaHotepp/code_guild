@@ -1,0 +1,24 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django = "*"
+psycopg2 = "*"
+pillow = "*"
+django-machina = "*"
+django-postman = "*"
+six = "*"
+whoosh = "*"
+django-filer = "*"
+django-polymorphic = "*"
+easy-thumbnails = "*"
+django-grappelli = "*"
+django-filebrowser = "*"
+dj-pagination = "*"
+
+[requires]
+python_version = "3.8"
