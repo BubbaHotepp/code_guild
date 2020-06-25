@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'mainapp',
 
      # Installed Package Apps:
-    'dj-pagination',
+    'dj_pagination',
     'postman',
     'mptt',
     'grappelli',
