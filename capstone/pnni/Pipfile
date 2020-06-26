@@ -7,9 +7,14 @@ verify_ssl = true
 
 [packages]
 django = "*"
-pinax-notifications = "*"
+psycopg2 = "*"
+django-postman = "*"
+dj-pagination = "*"
 django-ajax-selects = "*"
+pinax-notifications = "*"
 django-mailer = "*"
+six = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.8"

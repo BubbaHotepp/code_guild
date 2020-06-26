@@ -15,13 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls.static import static
-from ajax_select import urls as ajax_select_urls
-
-admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ajax_select/', include('ajax_select.urls')),
+    path('', include('mainApp.urls')),
+    path('accounts/', include('accounts.urls')),
     path('notifications/', include('pinax.notifications.urls', namespace='pinax_notifications')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('messages/', include('postman.urls', namespace='postman')),
+]
