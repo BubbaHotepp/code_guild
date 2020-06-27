@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>User Registration</h1>
-    <form class='registration-form' action="/accounts/registration" method='post'>
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Submit">
-    </form>
+    <div class='registration-page'>
+        <div>
+            <h1>User Registration</h1>
+        </div>
+        <div class='reg-container'>
+            <form class='registration-form' action="/accounts/registration" method='post'>
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
 {% endblock %}

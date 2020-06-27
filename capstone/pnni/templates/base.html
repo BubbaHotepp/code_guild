@@ -16,7 +16,7 @@
         <a href="{% url 'home' %}" id="left-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Home</a></small></h2>     
         {% if user.is_authenticated %}
             <a href="{% url 'logout' %}" id="right-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Log out</a></small></h2>
-            <a href="{% url 'postman:inbox' %}" id="left-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Messages</a></small></h2>     
+            <a href="{% url 'postman:inbox' %}" id="left-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Message Inbox</a></small></h2>     
             {% if User_flag == Staff %}
                 <a href="{% url 'profile' %}" id="right-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Profile</a>
                 <div class='staff-page'>
@@ -25,8 +25,8 @@
                 </div>
             {% endif %}
         {% else %}
-            <h2 class="login"><small><a href="{% url 'login' %}" id="login" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Login</a></small></h2>
-            <a href="{% url 'registration' %}" id="register" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Register</a>
+            <h2 class="login" id='right-button'><small><a href="{% url 'login' %}" id="login" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Login</a></small></h2>
+            <h2 class="register" id='right-button'><small><a href="{% url 'registration' %}" id="register" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Register</a></small></h2>
         {% endif %}
     </div>
     <div id='page-content'>
