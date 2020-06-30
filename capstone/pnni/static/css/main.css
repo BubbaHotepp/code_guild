@@ -20,6 +20,10 @@ h1 {
 #header {
   background-image: url("./images/texture.png");
   background-repeat: repeat-x;
+  border-bottom: 2px solid #983222;
+  font-size: 15px;
+  height: 70px;
+  width: 100%;
 }
 
 #page-content {
@@ -27,12 +31,7 @@ h1 {
 }
 
 .sticky {
-  font-size: 15px;
-  color: white;
-  border-bottom: 5px solid #983222;
   position: fixed;
-  height: 70px;
-  width: 100%;
   transition: all 0.4s ease;
 }
 
@@ -102,6 +101,20 @@ h1 {
 .scrolling-container {
   padding: 50px 80px;
   height: 200px;
+  background-image: url("./images/texture.png");
+  background-repeat: repeat-y repeat-x;
+  border-top: 2px solid #983222;
+  border-bottom: 2px solid #983222;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  font-family: 'adobe-garamond-pro','eb_garamondregular',serif;
+  width: 80%;
+  align-content: center;
 }
 
 .btn-primary {

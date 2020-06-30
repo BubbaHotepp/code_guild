@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from machina import urls as machina_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -22,4 +23,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('notifications/', include('pinax.notifications.urls', namespace='pinax_notifications')),
     path('messages/', include('postman.urls', namespace='postman')),
+    path('forum/', include(machina_urls)),
+    path('library-archive/', include('library.urls')),
+    path('staff-page/', include('mainApp.urls')),    
 ]
