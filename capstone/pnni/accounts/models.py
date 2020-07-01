@@ -28,10 +28,11 @@ class User_flag(models.Model):
         ('User', 'User'),
     ]
     user_type = models.CharField(max_length=50, choices=USER_TYPE, blank=True, null=True)
+    
 
 class UserProfile(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-    image = models.ImageField(default='profile_default.jpg', upload_to='_profile_pics')
+    image = models.ImageField(default='profile_default.jpg', upload_to='profile_pics/')
     location = models.CharField(max_length=50, blank=True)
     birthdate = models.DateField(null=True, blank=True)
 

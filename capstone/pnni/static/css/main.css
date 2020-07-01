@@ -141,7 +141,7 @@ h1 {
   font-size: 25px;
 }
 
-#sidenav {
+.sidebar {
   margin-top: 10%;
   position: fixed;
   height: 400px;
@@ -151,7 +151,19 @@ h1 {
   background-image: url("./images/bg-texture-trans.png");
   background-color: #fcedd8;
   color: white;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 20px;
 }
+
+.sidebar a {
+
+}
+
+.sidebar a:hover {
+
+}
+
 
 .registration-page {
   background-image: url('./images/stomp-dance2.jpg');

@@ -22,8 +22,7 @@ urlpatterns = [
     path('', include('mainApp.urls')),
     path('accounts/', include('accounts.urls')),
     path('notifications/', include('pinax.notifications.urls', namespace='pinax_notifications')),
-    path('messages/', include('postman.urls', namespace='postman')),
     path('forum/', include(machina_urls)),
     path('library-archive/', include('library.urls')),
-    path('staff-page/', include('mainApp.urls')),    
+    path('messages/', include('postman.urls', namespace='postman')),
 ]

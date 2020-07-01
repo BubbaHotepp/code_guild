@@ -46,6 +46,7 @@ class Record(models.Model):
     category = models.ManyToManyField(Category)
 
 class Photograph(models.Model):
+    photo = models.ImageField(null=True, upload_to='photos/')
     subject = models.CharField(max_length=100)
     taken_by = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
     description = models.TextField(null=True, blank=True)

@@ -8,9 +8,7 @@ verify_ssl = true
 [packages]
 django = "*"
 psycopg2 = "*"
-django-ajax-selects = "*"
 pinax-notifications = "*"
-django-mailer = "*"
 six = "*"
 pillow = "*"
 django-haystack = "*"
@@ -18,7 +16,9 @@ django-mptt = "*"
 django-widget-tweaks = "*"
 markdown2 = "*"
 django-machina = "*"
-pinax-messages = "*"
+django-directmessages = "*"
+django-mailer = "*"
+django-postman = "*"
 
 [requires]
 python_version = "3.8"

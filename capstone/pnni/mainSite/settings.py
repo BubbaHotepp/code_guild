@@ -45,11 +45,9 @@ INSTALLED_APPS = [
     'mainApp',
     'library',
 
-    'dj_pagination',
-    'ajax_select',
     'pinax.notifications',
-    'mailer',
-    'pinax.messages',
+    'postman',
+    'directmessages',
     'haystack',
     'mptt',
     'widget_tweaks',
@@ -77,7 +75,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'dj_pagination.middleware.PaginationMiddleware',
     'machina.apps.forum_permission.middleware.ForumPermissionMiddleware',
 
 ]
@@ -90,6 +87,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             MACHINA_MAIN_TEMPLATE_DIR,
+            os.path.join(BASE_DIR, 'messages/templates')
             ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -196,4 +194,5 @@ LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
 
-POSTMAN_AUTO_MODERATE_AS = True
+POSTMAN_AUTO_MODERATE_AS = True  # default is None
+

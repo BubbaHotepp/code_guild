@@ -1,4 +1,4 @@
-{% extends "./mail.html" %}
+{% extends "postman/postman-base.html" %}
 {% load i18n static %}
 {% block extrahead %}{{ block.super }}
 {% if autocompleter_app.is_active %}{# using the available admin jQuery is enough #}
