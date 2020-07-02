@@ -9,6 +9,10 @@ from django.db import models
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.cache import cache_page
 
+
+def archive(request):
+    return render(request, 'library/archive.html')
+
 def archive_page(request):
     book_count = Book.objects.all().count()
     document_count = Document.objects.all().count()

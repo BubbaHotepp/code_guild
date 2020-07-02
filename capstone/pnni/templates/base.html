@@ -9,33 +9,32 @@
     <title>PONANNANOLI</title>
 </head>
 <body>
-    <div id="header" class="sticky mb-5">
-        <div id="logo">
-            <h1>Ponannanoli' - Our Stories</h1>
-        </div>
-        <a href="{% url 'home' %}" id="left-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Home</a></small></h2>     
+    <header class="header" id="sticky">
+        <h1>Ponannanoli' - Our Stories</h1>
+        
+        <h2><small><a href="{% url 'home' %}" id="left-button-1" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Home</a></small></h2>     
         {% if user.is_authenticated %}
-            <a href="{% url 'logout' %}" id="right-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Log out</a></small></h2>
-            <a href="messages/inbox" id="left-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Message Inbox</a></small></h2>     
-            <a href="{% url 'profile' %}" id="right-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Profile</a>
+            <h3><small><a href="{% url 'logout' %}" id="right-button-1" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Log out</a></small></h3>
+            <h2><small><a href="{% url 'inbox' %}" id="left-button-2" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Message Inbox</a></small></h2>     
+            <h2><small><a href="{% url 'profile' %}" id="right-button-2" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Profile</a></small></h2>
             {% if User_flag == Staff %}
                 <div class='staff-page'>
-                    <a href="accounts/staff_page.html" id="right-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Staff Page</a>
+                    <h3><small><a href="{% url 'staff_page' %}" id="right-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Staff Page</a></small></h3>
 
                 </div>
             {% endif %}
         {% else %}
-            <h2 class="login" id='right-button'><small><a href="{% url 'login' %}" id="login" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Login</a></small></h2>
-            <h2 class="register" id='right-button'><small><a href="{% url 'registration' %}" id="register" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Register</a></small></h2>
+            <h3 class="login" id='right-button-3'><small><a href="{% url 'login' %}" id="login" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Login</a></small></h2>
+            <h3 class="register" id='right-button-4'><small><a href="{% url 'registration' %}" id="register" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Register</a></small></h2>
         {% endif %}
-    </div>
+    </header>
     <div id="mainSidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
-        <ul>
-            <li class="menu-item nav01">Forum Placeholder</li>
-            <li class="menu-item nav02">Archive Placeholder</li>
-            <li class="menu-item nav03">Memorial Placeholder</li>
-        </ul>
+        <div>
+            <div class="menu-item nav01"><a href="{% url 'forum' %}" id="forum-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Forums</a></div>
+            <div class="menu-item nav02">Archive Placeholder</div>
+            <div class="menu-item nav03">Memorial Placeholder</div>
+        </div>
         <div id="navbtn">
             <button type="button" class="btn btn-primary" onclick="openNav()">Menu</button>
         </div>
@@ -47,6 +46,26 @@
         {% block content %}
         {% endblock %}
     </div>
+    <footer>
+        <div class="footer-top">
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="column-1">
+                <a class="logo-nation" href="https://chickasaw.net/" target="_blank"></a>
+                <a class="logo-cultural" href="https://chickasawculturalcenter.com/" target="_blank"></a> 
+            </div>
+            <div class="column-2">       
+                <a class="logo-tv" href="https://chickasaw.tv/" target="blank"></a>     
+                <a class="logo-cc" href="https://chickasawcountry.com/" target="blank"></a>     
+            </div>
+            <div class="column-3">
+                <a class="logo-film" href="https://chickasawfilms.com" target="blank"></a>
+                <a class="logo-travel" href="https://aventureroad.com" target="blank"></a>
+            </div>
+        </div>
+    </footer>
     <script>
         function openNav() {
             document.getElementById("mySidebar").style.width = "250px";

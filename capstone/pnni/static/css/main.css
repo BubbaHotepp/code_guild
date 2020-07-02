@@ -4,7 +4,6 @@ html, body {
 }
 
 h1 {
-  display: flex;
   justify-content: center;
   text-align: center;
   padding-top: 10px;
@@ -12,25 +11,41 @@ h1 {
   font-family: 'adobe-garamond-pro','eb_garamondregular',serif;
 }
 
+h2 {
+  height: 28.8px;
+  align-self: flex-start;
+}
+
+h3 {
+  height: 28.8px;
+  align-self: flex-end;
+}
+
 #logo {
   color: #fff6f5;
   font-family: 'adobe-garamond-pro','eb_garamondregular',serif;
+  font-size: 15px;
+  text-align: center;
+  width: 500px;
+  align-self: center;
+  
 }
 
-#header {
+.header {
+  display: flex;
+  height: 70px;
   background-image: url("./images/texture.png");
   background-repeat: repeat-x;
   border-bottom: 2px solid #983222;
-  font-size: 15px;
-  height: 70px;
   width: 100%;
+  align-items: center;
 }
 
 #page-content {
   padding-top: 70px;
 }
 
-.sticky {
+#sticky {
   position: fixed;
   transition: all 0.4s ease;
 }
@@ -50,19 +65,32 @@ h1 {
   justify-content: center;
 }
 
-.footer {
-
-}
-
-#left-button {
-  float: left;
+#left-button-1 {
   margin-left: 5px;
   padding-left: 10px;
-
 }
 
-#right-button {
-  float: right;
+#left-button-2 {
+  margin-left: 5px;
+  padding-left: 10px;
+}
+
+#right-button-1 {
+  margin-right: 5px;
+  padding-right: 10px;
+}
+
+#right-button-2 {
+  margin-right: 5px;
+  padding-right: 10px;
+}
+
+#right-button-3 {
+  margin-right: 5px;
+  padding-right: 10px;
+}
+
+#right-button-4 {
   margin-right: 5px;
   padding-right: 10px;
 }
@@ -191,4 +219,92 @@ h1 {
 .reg-container {
   display: flex;
   justify-content: center;
+}
+
+.footer {
+  height: 400px;
+  border-top: 2px solid #983222;
+  width: 100%;
+  color: white;
+}
+.footer-top {
+  background-image: url("./images/texture.png");
+  height: 200px;
+  width: 100%;
+}
+.footer-bottom {
+  background-image: url("./images/texture.png");
+  height: 200px;
+  width: 100%;
+}
+
+.logo-nation {
+  background-image: url("./images/Chick-Nation-Logo.png");
+  background-repeat: no-repeat;
+  display: block;
+  height: 64px;
+  padding: 0;
+  margin-right: 60px;
+  opacity: 0.6;
+  width: 147px;
+}
+
+.logo-tv {
+  background-image: url("./images/Chick-Nation-Video-network-Logo.png");
+  background-repeat: no-repeat;
+  background-size: 180px 62px;
+  display: block;
+  height: 62px;
+  opacity: 0.6;
+  padding: 0;
+  width: 180px;
+}
+
+.logo-cultural {
+  background-image: url("./images/logo-transparent.png");
+  background-repeat: no-repeat;
+  display: block;
+  opacity: 0.6;
+  padding: 0;
+}
+
+.logo-film {
+  background-image: url("./images/CNProductionsLogoWhite.png");
+  background-repeat: no-repeat;
+  display: block;
+  opacity: 0.6;
+  padding: 0;
+}
+
+.logo-cc {
+  background-image: url("./images/CC-logo.png");
+  background-repeat: no-repeat;
+  display: block;
+  opacity: 0.6;
+  padding: 0;
+}
+
+.logo-travel {
+  background-image: url("./images/ARTP-logo.png");
+  background-repeat: no-repeat;
+  display: block;
+  opacity: 0.6;
+  padding: 0;
+}
+.column-1 {
+  flex-direction: column;
+  height: 200px;
+  width: 147px;
+}
+
+.column-2 {
+  flex-direction: column;
+  height: 200px;
+  width: 147px;
+}
+
+.column-3 {
+  flex-direction: column;
+  height: 200px;
+  width: 147px;
 }

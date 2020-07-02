@@ -86,8 +86,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
-            MACHINA_MAIN_TEMPLATE_DIR,
-            os.path.join(BASE_DIR, 'messages/templates')
+            os.path.join(BASE_DIR, 'messages/templates'),
+            os.path.join(BASE_DIR, 'templates/machina'),
             ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -179,7 +179,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/'),
-    MACHINA_MAIN_STATIC_DIR, 
+    os.path.join(BASE_DIR, 'static/machina')
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
