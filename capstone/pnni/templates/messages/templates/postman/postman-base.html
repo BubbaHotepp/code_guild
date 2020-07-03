@@ -2,10 +2,10 @@
 {% load i18n static %}{% load postman_tags %}
 {% block title %}{% trans "Messaging" %}{% endblock %}
 {% block extrahead %}{{ block.super }}
-<link type="text/css" media="all" rel="stylesheet" href="{% static 'postman/css/postman.css' %}" />
+<link type="text/css" media="all" rel="stylesheet" href="{% static 'css/main.css' %}" />
 {% endblock %}
 {% block postman_menu %}
-<div id='page-content'>
+<div class="mail-base">
 <ul id="postman_menu">{% postman_unread as unread_count %}
  <li><a href="{% url 'postman:inbox' %}">&raquo;&nbsp;{% trans "Inbox" %}{% if unread_count %} <strong>({{ unread_count }})</strong>{% endif %}</a></li>
  <li><a href="{% url 'postman:sent' %}">&raquo;&nbsp;{% trans "Sent Messages" %}</a></li>

@@ -4,7 +4,6 @@ html, body {
 }
 
 h1 {
-  justify-content: center;
   text-align: center;
   padding-top: 10px;
   color: black;
@@ -13,12 +12,10 @@ h1 {
 
 h2 {
   height: 28.8px;
-  align-self: flex-start;
 }
 
 h3 {
-  height: 28.8px;
-  align-self: flex-end;
+  height: 28.8px
 }
 
 #logo {
@@ -33,21 +30,35 @@ h3 {
 
 .header {
   display: flex;
+  flex-direction: row;
   height: 70px;
   background-image: url("./images/texture.png");
   background-repeat: repeat-x;
   border-bottom: 2px solid #983222;
   width: 100%;
   align-items: center;
+  position: fixed;
+  transition: all 0.4s ease;
+}
+
+
+.main-title {
+  align-self: center;
+}
+
+.header-links {
+  float: right;
+  height: 70px;
+  align-items: center;
+}
+
+.header-button {
+  float: right;
+
 }
 
 #page-content {
   padding-top: 70px;
-}
-
-#sticky {
-  position: fixed;
-  transition: all 0.4s ease;
 }
 
 .intro {
@@ -63,36 +74,6 @@ h3 {
   border-radius: 10px;
   align-items: center;
   justify-content: center;
-}
-
-#left-button-1 {
-  margin-left: 5px;
-  padding-left: 10px;
-}
-
-#left-button-2 {
-  margin-left: 5px;
-  padding-left: 10px;
-}
-
-#right-button-1 {
-  margin-right: 5px;
-  padding-right: 10px;
-}
-
-#right-button-2 {
-  margin-right: 5px;
-  padding-right: 10px;
-}
-
-#right-button-3 {
-  margin-right: 5px;
-  padding-right: 10px;
-}
-
-#right-button-4 {
-  margin-right: 5px;
-  padding-right: 10px;
 }
 
 .parallax-container-1 {
@@ -169,29 +150,57 @@ h3 {
   font-size: 25px;
 }
 
+.side-container {
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+  width: 160;
+  transform: translateX(-80px);
+  transition: transform 250ms ease-in-out;
+  overflow: hidden;
+}
+
 .sidebar {
-  margin-top: 10%;
+  display: flex;
+  margin-top: 72px;
   position: fixed;
-  height: 400px;
-  width: 100px;
-  right: 0;
-  z-index: 10;
+  height: 160px;
+  width: 80px;
+  left: 0;
+  flex-direction: column;
+  justify-content: center;
   background-image: url("./images/bg-texture-trans.png");
   background-color: #fcedd8;
   color: white;
   overflow-x: hidden;
   transition: 0.3s;
   padding-top: 20px;
+  border-top: 3px solid #983222;
+  border-bottom: 3px solid #983222;
+  border-right: 3px solid #983222;
 }
 
-.sidebar a {
-
+.side-button {
+  width: 80px;
+  position: fixed;
+  margin-top: 72px;
+  margin-left: 80px;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: absolute;
+  z-index: 99;
+  
 }
 
-.sidebar a:hover {
-
+.side-menu-item {
+  justify-content: center;
+  padding-bottom: 10px;
 }
 
+.side-menu-btn {
+  width: 80px;
+}
 
 .registration-page {
   background-image: url('./images/stomp-dance2.jpg');
@@ -212,7 +221,7 @@ h3 {
   padding-right: 10px;
   background-image: url('./images/bg-texture-trans.png');
   background-color: #fcedd8;
-  width: 600px;
+  width: 200px;
   height: 400px;
 }
 
@@ -225,6 +234,7 @@ h3 {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  border-top: 3px solid #983222;
   background-image: url("./images/texture.png");
   height: 300px;
   width: 100%;
@@ -325,6 +335,68 @@ h3 {
   width: 160px;
 }
 
-/*         {% if user.is_authenticated %}
-            {% block postman_menu %}{% endblock %}
-        {% endif %} */
+.mail-base {
+  height: 100%;
+  width: 100%;
+
+}
+
+.mail-menu {
+  width: 150px;
+  height: 100%;
+  background-image: url("./images/bg-texture-trans.png");
+  background-color: #fcedd8;
+}
+
+.pm_message.pm_deleted {
+  text-decoration: line-through;
+ }
+ .pm_message.pm_deleted .pm_body{
+  display: none;
+ }
+ .pm_message.pm_archived {
+  font-style: italic;
+  color: grey;
+ }
+ .pm_message.pm_unread .pm_subject {
+  font-weight: bolder;
+ }
+ .pm_message.pm_pending .pm_header {
+  background-color: #FFC;
+ }
+ .pm_message.pm_rejected .pm_header {
+  background-color: #FDD;
+ }
+
+.profile-top {
+  display: flex;
+  height: 200px;
+  width: 100%;
+  background-color: rgb(184, 184, 184);
+}
+
+.profile-bottom {
+  display: flex;
+  height: 400px;
+  width: 100%;
+  background-color: rgb(165, 165, 165);
+}
+
+.profile-list {
+  flex-direction: column;
+  align-self: center;
+}
+
+.profile-picture {
+  width: 100px;
+  height: 100px;
+}
+
+.profile-name {
+  height: 40px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}

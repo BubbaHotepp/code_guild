@@ -9,34 +9,32 @@
     <title>PONANNANOLI</title>
 </head>
 <body>
-    <header class="header" id="sticky">
-        <h1>Ponannanoli' - Our Stories</h1>
-        
-        <h2><small><a href="{% url 'home' %}" id="left-button-1" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Home</a></small></h2>     
-        {% if user.is_authenticated %}
-            <h3><small><a href="{% url 'logout' %}" id="right-button-1" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Log out</a></small></h3>
-            <h2><small><a href="{% url 'messages' %}" id="left-button-2" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Message Inbox</a></small></h2>     
-            <h2><small><a href="{% url 'profile' %}" id="right-button-2" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Profile</a></small></h2>
-            {% if User_flag == Staff %}
-                <div class='staff-page'>
-                    <h3><small><a href="{% url 'staff_page' %}" id="right-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Staff Page</a></small></h3>
-
-                </div>
-            {% endif %}
-        {% else %}
-            <h3 class="login" id='right-button-3'><small><a href="{% url 'login' %}" id="login" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Login</a></small></h2>
-            <h3 class="register" id='right-button-4'><small><a href="{% url 'registration' %}" id="register" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Register</a></small></h2>
-        {% endif %}
-    </header>
-    <div id="mainSidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
-        <div>
-            <div class="menu-item nav01"><a href="{% url 'forum' %}" id="forum-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Forums</a></div>
-            <div class="menu-item nav02">Archive Placeholder</div>
-            <div class="menu-item nav03">Memorial Placeholder</div>
+    <header class="header">
+        <div class="navbar-button">
+            <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+            <label for="openSidebarMenu" class="sidebarIconToggle">
+                <div class="spinner diagonal part-1"></div>
+                <div class="spinner horizontal"></div>
+                <div class="spinner diagonal part-2"></div>
+            </label>
         </div>
-        <div id="navbtn">
-            <button type="button" class="btn btn-primary" onclick="openNav()">Menu</button>
+        <div class="main-title"><h1>Ponannanoli' - Our Stories</h1></div>
+        <div class="header-links">
+            {% if user.is_authenticated %}
+                <div class="header-button"><small><a href="{% url 'logout' %}" id="right-button-1" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Log out</a></small></div>
+                <div class="header-button"><small><a href="{% url 'messages' %}" id="left-button-2" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Message Inbox</a></small></div>
+                <div class="header-button"><small><a href="{% url 'profile' %}" id="right-button-2" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Profile</a></small></div>
+            {% else %}
+                <div class="header-button" id='right-button-3'><small><a href="{% url 'login' %}" id="login" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Login</a></small></div>
+                <div class="header-button" id='right-button-4'><small><a href="{% url 'registration' %}" id="register" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Register</a></small></div>
+            {% endif %}
+        </div>
+    </header>
+    <div class="side-container">
+        <div class='sidebar'>
+            <div class='side-menu-item'><a href="{% url 'home' %}" class="btn btn-primary btn-sm active side-menu-btn" role="button" aria-pressed="true">Home</a></div>
+            <div class='side-menu-item'><a href="{% url 'forum' %}" class="btn btn-primary btn-sm active side-menu-btn" role="button" aria-pressed="true">Forums</a></div>
+            <div class='side-menu-item'><a href="{% url 'archive' %}" class="btn btn-primary btn-sm active side-menu-btn" role="button" aria-pressed="true">Archive</a></div>
         </div>
     </div>
     <div id='page-content'>
@@ -62,14 +60,7 @@
         </div>
     </footer>
     <script>
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-        }
-         function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-            document.getElementById("main").style.marginLeft= "0";
-        }
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

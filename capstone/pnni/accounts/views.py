@@ -8,6 +8,7 @@ from django.contrib import auth
 from django.contrib.auth import get_user_model
 from django.contrib import messages
 from django.contrib.messages import success
+from .models import UserProfile
 
 def registration(request):
     if request.method == 'POST':
@@ -43,6 +44,8 @@ def user_logout(request):
 
 @login_required
 def profile(request):
+    user = request.user
+    profile = UserProfile.objects.get(user=user)
     return render(request, 'accounts/profile.html', {'profile': profile})
 
 @login_required
