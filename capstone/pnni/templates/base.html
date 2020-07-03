@@ -15,7 +15,7 @@
         <h2><small><a href="{% url 'home' %}" id="left-button-1" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Home</a></small></h2>     
         {% if user.is_authenticated %}
             <h3><small><a href="{% url 'logout' %}" id="right-button-1" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Log out</a></small></h3>
-            <h2><small><a href="{% url 'inbox' %}" id="left-button-2" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Message Inbox</a></small></h2>     
+            <h2><small><a href="{% url 'messages' %}" id="left-button-2" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Message Inbox</a></small></h2>     
             <h2><small><a href="{% url 'profile' %}" id="right-button-2" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Profile</a></small></h2>
             {% if User_flag == Staff %}
                 <div class='staff-page'>
@@ -43,27 +43,22 @@
         {% if user.is_authenticated %}
             {% block postman_menu %}{% endblock %}
         {% endif %}
+
         {% block content %}
         {% endblock %}
     </div>
-    <footer>
-        <div class="footer-top">
-
+    <footer class="footer">
+        <div class="column-1">
+            <div class="link-container-top"><a class="logo-nation" href="https://chickasaw.net/" target="_blank"></a></div>
+            <div class="link-container-bottom"><a class="logo-cultural" href="https://chickasawculturalcenter.com/" target="_blank"></a></div>
         </div>
-
-        <div class="footer-bottom">
-            <div class="column-1">
-                <a class="logo-nation" href="https://chickasaw.net/" target="_blank"></a>
-                <a class="logo-cultural" href="https://chickasawculturalcenter.com/" target="_blank"></a> 
-            </div>
-            <div class="column-2">       
-                <a class="logo-tv" href="https://chickasaw.tv/" target="blank"></a>     
-                <a class="logo-cc" href="https://chickasawcountry.com/" target="blank"></a>     
-            </div>
-            <div class="column-3">
-                <a class="logo-film" href="https://chickasawfilms.com" target="blank"></a>
-                <a class="logo-travel" href="https://aventureroad.com" target="blank"></a>
-            </div>
+        <div class="column-2">       
+            <div class="link-container-top"><a class="logo-tv" href="https://chickasaw.tv/" target="blank"></a></div>
+            <div class="link-container-bottom"><a class="logo-cc" href="https://chickasawcountry.com/" target="blank"></a></div>
+        </div>
+        <div class="column-3">
+            <div class="link-container-top"><a class="logo-film" href="https://chickasawfilms.com" target="blank"></a></div>
+            <div class="link-container-bottom"><a class="logo-travel" href="https://aventureroad.com" target="blank"></a></div>
         </div>
     </footer>
     <script>

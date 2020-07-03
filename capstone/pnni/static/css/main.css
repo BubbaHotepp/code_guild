@@ -222,20 +222,43 @@ h3 {
 }
 
 .footer {
-  height: 400px;
-  border-top: 2px solid #983222;
-  width: 100%;
-  color: white;
-}
-.footer-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   background-image: url("./images/texture.png");
-  height: 200px;
+  height: 300px;
   width: 100%;
 }
-.footer-bottom {
-  background-image: url("./images/texture.png");
-  height: 200px;
-  width: 100%;
+
+.column-1 {
+  flex-direction: column;
+  height: 300px;
+  width: 180px;
+}
+
+.column-2 {
+  flex-direction: column;
+  padding-right: 40px;
+  height: 300px;
+  width: 180px;
+}
+
+.column-3 {
+  flex-direction: column;
+  height: 300px;
+  width: 180px;
+}
+
+.link-container-top {
+  padding-top: 40px;
+  height: 80px;
+  width: 180px;
+}
+
+.link-container-bottom {
+  padding-top: 40px;
+  height: 80px;
+  width: 180px;
 }
 
 .logo-nation {
@@ -243,8 +266,6 @@ h3 {
   background-repeat: no-repeat;
   display: block;
   height: 64px;
-  padding: 0;
-  margin-right: 60px;
   opacity: 0.6;
   width: 147px;
 }
@@ -252,9 +273,9 @@ h3 {
 .logo-tv {
   background-image: url("./images/Chick-Nation-Video-network-Logo.png");
   background-repeat: no-repeat;
-  background-size: 180px 62px;
+  background-size: 170px 70px;
   display: block;
-  height: 62px;
+  height: 70px;
   opacity: 0.6;
   padding: 0;
   width: 180px;
@@ -263,48 +284,47 @@ h3 {
 .logo-cultural {
   background-image: url("./images/logo-transparent.png");
   background-repeat: no-repeat;
+  background-size: 147px 80px;
   display: block;
+  height: 110px;
+  margin-right: 60px;
   opacity: 0.6;
-  padding: 0;
+  width: 160px;
 }
 
 .logo-film {
   background-image: url("./images/CNProductionsLogoWhite.png");
   background-repeat: no-repeat;
+  background-size: 147px 80px;
   display: block;
+  height: 110px;
+  margin-right: 60px;
   opacity: 0.6;
-  padding: 0;
+  width: 160px;
 }
 
 .logo-cc {
   background-image: url("./images/CC-logo.png");
   background-repeat: no-repeat;
+  background-size: 147px 80px;
   display: block;
+  height: 110px;
+  margin-right: 60px;
   opacity: 0.6;
-  padding: 0;
+  width: 160px;
 }
 
 .logo-travel {
   background-image: url("./images/ARTP-logo.png");
   background-repeat: no-repeat;
+  background-size: 147px 80px;
   display: block;
+  height: 110px;
+  margin-right: 60px;
   opacity: 0.6;
-  padding: 0;
-}
-.column-1 {
-  flex-direction: column;
-  height: 200px;
-  width: 147px;
+  width: 160px;
 }
 
-.column-2 {
-  flex-direction: column;
-  height: 200px;
-  width: 147px;
-}
-
-.column-3 {
-  flex-direction: column;
-  height: 200px;
-  width: 147px;
-}
+/*         {% if user.is_authenticated %}
+            {% block postman_menu %}{% endblock %}
+        {% endif %} */

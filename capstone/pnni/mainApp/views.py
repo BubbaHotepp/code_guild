@@ -9,8 +9,8 @@ def home(request):
 def forum(request):
     return render(request, 'forum/')
 
-def inbox(request):
-    return render(request, 'messages/inbox')
+def messages(request):
+    return render(request, 'messages/')
 
 def staff_page(request):
     user=request.user.id
