@@ -2,7 +2,7 @@
 
 {% block content %}
   
-  <div class="container">
+  <div class="archive-main">
       <h2 class="home-page">Library Home Page</h2>
       <ul class="info-bar">
         <li><strong>Books:</strong> {{ book_count }}</li>
@@ -11,7 +11,103 @@
         <li><strong>Photographs:</strong> {{ photo_count }}</li>
       </ul>
   </div>
-<p>SEARCH FUNCTION GOES HERE</p>
-</div>
+  <div class="archive-list-links">
+    <div>
+    <h1>Book List</h1>
+    {% if all_books %}
+    <ul>
+      {% for book in all_books %}
+        <li>
+          <a href="http://localhost:8000/book_details/{{ book.id }}/">{{ book.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+      {% else %}
+      <p>There are no books in the library.</p>
+      {% endif %} 
+    </div>
 
+    <div>
+      <h1>Document List</h1>
+      {% if all_documents %}
+      <ul>
+        {% for document in all_documents %}
+          <li>
+            <a href="http://localhost:8000/book_details/{{ document.id }}/">{{ document.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p>There are no documents in the library.</p>
+      {% endif %}       
+    </div>
+
+    <div>
+        <h1>Photo List</h1>
+        {% if all_photos %}
+        <ul>
+          {% for photograph in all_photos %}
+            <li>
+              <a href="http://localhost:8000/book_details/{{ book.id }}/">{{ photograph.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p>There are no Photos in the library.</p>
+        {% endif %} 
+        </div>
+
+        <div>
+          <h1>Record List</h1>
+          {% if all_records %}
+          <ul>
+            {% for record in all_records %}
+              <li>
+                <a href="http://localhost:8000/book_details/{{ book.id }}/">{{ record.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+            {% else %}
+            <p>There are no records in the library.</p>
+            {% endif %} 
+          </div>
+      
+
+
+
+        <p>SEARCH FUNCTION GOES HERE</p>
+
+  <div class="archive-search">
+    <div>
+      <form action="http://localhost:8000/book_search/" method="POST" class="form-inline my-2 my-lg-0">
+        {% csrf_token %}
+        <input class="form-control mr-sm-2" type="text" name="user_input" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Book Search</button>
+      </form>
+    </div>
+    <div>
+      <div class="archive-search">
+        <form action="http://localhost:8000/photo_search/" method="POST" class="form-inline my-2 my-lg-0">
+          {% csrf_token %}
+          <input class="form-control mr-sm-2" type="text" name="user_input" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Photo Search</button>
+        </form>
+    </div>
+    <div>
+      <div class="archive-search">
+        <form action="http://localhost:8000/record_search/" method="POST" class="form-inline my-2 my-lg-0">
+          {% csrf_token %}
+          <input class="form-control mr-sm-2" type="text" name="user_input" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Record Search</button>
+        </form>
+    </div>
+    <div>
+      <div class="archive-search">
+        <form action="http://localhost:8000/document_search/" method="POST" class="form-inline my-2 my-lg-0">
+          {% csrf_token %}
+          <input class="form-control mr-sm-2" type="text" name="user_input" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Document Search</button>
+        </form> 
+    </div>
+  </div>
 {% endblock %}

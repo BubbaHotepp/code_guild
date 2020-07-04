@@ -1,0 +1,169 @@
+<header class="header">
+    <div class="navbar-button">
+        <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+        <label for="openSidebarMenu" class="sidebarIconToggle">
+            <div class="spinner diagonal part-1"></div>
+            <div class="spinner horizontal"></div>
+            <div class="spinner diagonal part-2"></div>
+        </label>
+    </div>
+    <div class="main-title"><h1>Ponannanoli' - Our Stories</h1></div>
+    <div class="header-links">
+        {% if user.is_authenticated %}
+            <div class="header-button"><small><a href="{% url 'logout' %}" id="right-button-1" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Log out</a></small></div>
+            <div class="header-button"><small><a href="{% url 'messages' %}" id="left-button-2" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Message Inbox</a></small></div>
+            <div class="header-button"><small><a href="{% url 'profile' %}" id="right-button-2" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Profile</a></small></div>
+        {% else %}
+            <div class="header-button" id='right-button-3'><small><a href="{% url 'login' %}" id="login" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Login</a></small></div>
+            <div class="header-button" id='right-button-4'><small><a href="{% url 'registration' %}" id="register" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Register</a></small></div>
+        {% endif %}
+    </div>
+</header>
+<div class="sidebar">
+    <div class='sidebarMenuInner'>
+        <div class='side-menu-item'><a href="{% url 'home' %}" class="btn btn-primary btn-sm active side-menu-btn" role="button" aria-pressed="true">Home</a></div>
+        <div class='side-menu-item'><a href="{% url 'forum' %}" class="btn btn-primary btn-sm active side-menu-btn" role="button" aria-pressed="true">Forums</a></div>
+        <div class='side-menu-item'><a href="{% url 'archive' %}" class="btn btn-primary btn-sm active side-menu-btn" role="button" aria-pressed="true">Archive</a></div>
+    </div>
+</div>
+<div id='page-content'>
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        height: 70px;
+        background-image: url("./images/texture.png");
+        background-repeat: repeat-x;
+        border-bottom: 2px solid #983222;
+        width: 100%;
+        align-items: center;
+        position: fixed;
+        transition: all 0.4s ease;
+      }
+
+      .main-title {
+        align-self: center;
+      }
+      
+      .header-links {
+        float: right;
+        height: 70px;
+        align-items: center;
+      }
+      
+      .header-button {
+        float: right;
+      
+      }
+
+
+      <div>
+        <h1>Archive Search</h1>
+        <div class="book-search"></div>
+          <br/>
+          <form action="{% url 'search:searchposts' %}" method="GET" value="{{request.GET.q}}">
+          Search <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search Books"/>
+          <input type="submit" name="submit" value="Search"/>
+          </form>
+      
+      
+          {% if submitbutton == 'Search' and request.GET.q != '' %}
+          {% if results %}
+          <h1>Results for <b>{{ request.GET.q }}</b></h1>
+          <br/><br/>
+      
+          {% for result in results %}
+      
+          {{result.title}}
+          <br/>
+      
+          {{result.content}}
+          <br/>
+      
+          {% endfor %}
+          {% else %}
+          No search results for this query
+          {% endif %}
+          {% endif %}
+        </div>
+        <div class="book-search"></div>
+        <br/>
+        <form action="{% url 'search:searchposts' %}" method="GET" value="{{request.GET.q}}">
+        Search <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search posts"/>
+        <input type="submit" name="submit" value="Search"/>
+        </form>
+      
+      
+        {% if submitbutton == 'Search' and request.GET.q != '' %}
+        {% if results %}
+        <h1>Results for <b>{{ request.GET.q }}</b></h1>
+        <br/><br/>
+      
+        {% for result in results %}
+      
+        {{result.title}}
+        <br/>
+      
+        {{result.content}}
+        <br/>
+      
+        {% endfor %}
+        {% else %}
+        No search results for this query
+        {% endif %}
+        {% endif %}
+      </div>
+      <div class="book-search"></div>
+      <br/>
+      <form action="{% url 'search:searchposts' %}" method="GET" value="{{request.GET.q}}">
+      Search <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search posts"/>
+      <input type="submit" name="submit" value="Search"/>
+      </form>
+      
+      
+      {% if submitbutton == 'Search' and request.GET.q != '' %}
+      {% if results %}
+      <h1>Results for <b>{{ request.GET.q }}</b></h1>
+      <br/><br/>
+      
+      {% for result in results %}
+      
+      {{result.title}}
+      <br/>
+      
+      {{result.content}}
+      <br/>
+      
+      {% endfor %}
+      {% else %}
+      No search results for this query
+      {% endif %}
+      {% endif %}
+      </div>
+      <div class="book-search"></div>
+      <br/>
+      <form action="{% url 'search:searchposts' %}" method="GET" value="{{request.GET.q}}">
+      Search <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search posts"/>
+      <input type="submit" name="submit" value="Search"/>
+      </form>
+      
+      
+      {% if submitbutton == 'Search' and request.GET.q != '' %}
+      {% if results %}
+      <h1>Results for <b>{{ request.GET.q }}</b></h1>
+      <br/><br/>
+      
+      {% for result in results %}
+      
+      {{result.title}}
+      <br/>
+      
+      {{result.content}}
+      <br/>
+      
+      {% endfor %}
+      {% else %}
+      No search results for this query
+      {% endif %}
+      {% endif %}
+      </div>

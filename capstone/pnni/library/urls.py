@@ -17,3 +17,4 @@ urlpatterns = [
         path('record_search', views.record_search, name='record_search'),
         path('photo_search', views.photo_search, name='photo_search'),
 ]
+

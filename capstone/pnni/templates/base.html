@@ -9,64 +9,53 @@
     <title>PONANNANOLI</title>
 </head>
 <body>
-    <header class="header">
-        <div class="navbar-button">
-            <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
-            <label for="openSidebarMenu" class="sidebarIconToggle">
-                <div class="spinner diagonal part-1"></div>
-                <div class="spinner horizontal"></div>
-                <div class="spinner diagonal part-2"></div>
-            </label>
-        </div>
-        <div class="main-title"><h1>Ponannanoli' - Our Stories</h1></div>
-        <div class="header-links">
-            {% if user.is_authenticated %}
-                <div class="header-button"><small><a href="{% url 'logout' %}" id="right-button-1" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Log out</a></small></div>
-                <div class="header-button"><small><a href="{% url 'messages' %}" id="left-button-2" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Message Inbox</a></small></div>
-                <div class="header-button"><small><a href="{% url 'profile' %}" id="right-button-2" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Profile</a></small></div>
-            {% else %}
-                <div class="header-button" id='right-button-3'><small><a href="{% url 'login' %}" id="login" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Login</a></small></div>
-                <div class="header-button" id='right-button-4'><small><a href="{% url 'registration' %}" id="register" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Register</a></small></div>
-            {% endif %}
-        </div>
-    </header>
-    <div class="side-container">
-        <div class='sidebar'>
-            <div class='side-menu-item'><a href="{% url 'home' %}" class="btn btn-primary btn-sm active side-menu-btn" role="button" aria-pressed="true">Home</a></div>
-            <div class='side-menu-item'><a href="{% url 'forum' %}" class="btn btn-primary btn-sm active side-menu-btn" role="button" aria-pressed="true">Forums</a></div>
-            <div class='side-menu-item'><a href="{% url 'archive' %}" class="btn btn-primary btn-sm active side-menu-btn" role="button" aria-pressed="true">Archive</a></div>
+    <div class="header">
+        <div class="header-title"><h1>Ponannanoli' - Our Stories</h1></div>
+        {% if user.is_authenticated %}
+            <div class="header-button-box"><a href="{% url 'logout' %}" id="header-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Log out</a></div>
+        {% else %}
+            <div class="header-button-box"><a href="{% url 'login' %}" id="header-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Login</a></div>
+            <div class="header-button-box"><a href="{% url 'registration' %}" id="header-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Register</a></div>
+        {% endif %}
+    </div>
+    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+    <label for="openSidebarMenu" class="sidebarIconToggle">
+        <a class="btn btn-primary btn-sm active"  id='menu' role="button" aria-pressed="true"><small>Menu</a></small>
+    </label>
+    <div id="sidebarMenu">
+        <div class="sidebar">
+            <div class='sidebarMenuInner'>
+                <div class='side-menu-item'><a href="{% url 'home' %}" id="side-button" class="btn btn-primary btn-sm active side-menu-btn" role="button" aria-pressed="true">Home</a></div>
+                <div class='side-menu-item'><a href="{% url 'forum' %}" id="side-button" class="btn btn-primary btn-sm active side-menu-btn" role="button" aria-pressed="true">Forums</a></div>
+                <div class='side-menu-item'><a href="{% url 'archive' %}" id="side-button" class="btn btn-primary btn-sm active side-menu-btn" role="button" aria-pressed="true">Archive</a></div>
+                {% if user.is_authenticated %}
+                <div class="side-menu-item"><small><a href="{% url 'messages' %}" id="side-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Message Inbox</a></small></div>
+                <div class="side-menu-item"><small><a href="{% url 'profile' %}" id="side-button" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Profile</a></small></div>
+                {% endif %}
+            </div>
         </div>
     </div>
     <div id='page-content'>
-        {% if user.is_authenticated %}
-            {% block postman_menu %}{% endblock %}
-        {% endif %}
+    {% if user.is_authenticated %}
+    {% block postman_menu %}{% endblock %}
+    {% endif %}
 
-        {% block content %}
-        {% endblock %}
+    {% block content %}
+    {% endblock %}
     </div>
     <footer class="footer">
-        <div class="column-1">
-            <div class="link-container-top"><a class="logo-nation" href="https://chickasaw.net/" target="_blank"></a></div>
-            <div class="link-container-bottom"><a class="logo-cultural" href="https://chickasawculturalcenter.com/" target="_blank"></a></div>
-        </div>
-        <div class="column-2">       
-            <div class="link-container-top"><a class="logo-tv" href="https://chickasaw.tv/" target="blank"></a></div>
-            <div class="link-container-bottom"><a class="logo-cc" href="https://chickasawcountry.com/" target="blank"></a></div>
-        </div>
-        <div class="column-3">
-            <div class="link-container-top"><a class="logo-film" href="https://chickasawfilms.com" target="blank"></a></div>
-            <div class="link-container-bottom"><a class="logo-travel" href="https://aventureroad.com" target="blank"></a></div>
-        </div>
+    <div class="column-1">
+        <div class="link-container-top"><a class="logo-nation" href="https://chickasaw.net/" target="_blank"></a></div>
+        <div class="link-container-bottom"><a class="logo-cultural" href="https://chickasawculturalcenter.com/" target="_blank"></a></div>
+    </div>
+    <div class="column-2">       
+        <div class="link-container-top"><a class="logo-tv" href="https://chickasaw.tv/" target="blank"></a></div>
+        <div class="link-container-bottom"><a class="logo-cc" href="https://chickasawcountry.com/" target="blank"></a></div>
+    </div>
+    <div class="column-3">
+        <div class="link-container-top"><a class="logo-film" href="https://chickasawfilms.com" target="blank"></a></div>
+        <div class="link-container-bottom"><a class="logo-travel" href="https://aventureroad.com" target="blank"></a></div>
+    </div>
     </footer>
-    <script>
-
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src=""></script>
 </body>
 </html>
-

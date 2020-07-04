@@ -1,0 +1,402 @@
+html, body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  h1 {
+    text-align: center;
+    padding-top: 10px;
+    color: black;
+    font-family: 'adobe-garamond-pro','eb_garamondregular',serif;
+  }
+  
+  h2 {
+    height: 28.8px;
+  }
+  
+  h3 {
+    height: 28.8px
+  }
+  
+  #logo {
+    color: #fff6f5;
+    font-family: 'adobe-garamond-pro','eb_garamondregular',serif;
+    font-size: 15px;
+    text-align: center;
+    width: 500px;
+    align-self: center;
+    
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    background-image: url("./images/texture.png");
+    background-repeat: repeat-x;
+    border-bottom: 2px solid #983222;
+    width: 100%;
+    align-items: center;
+    position: fixed;
+    transition: all 0.4s ease;
+  }
+  
+  
+  .main-title {
+    align-self: center;
+  }
+  
+  .header-links {
+    float: right;
+    height: 70px;
+    align-items: center;
+  }
+  
+  .header-button {
+    float: right;
+  
+  }
+  
+  #page-content {
+    padding-top: 70px;
+  }
+  
+  .intro {
+    color: #fff6f5;
+    font-family: 'adobe-garamond-pro','eb_garamondregular',serif;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-align: center;
+    display: flex;
+    width: 50%;
+    height: 200px;
+    margin: auto;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .parallax-container-1 {
+    background-image: url("./images/minko.jpg");
+    height: 1000px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .parallax-container-2 {
+    background-image: url("./images/traditionalvillage.jpg");
+    height: 1000px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .parallax-container-3 {
+    background-image: url("./images/stomp-dance.jpg");
+    height: 1000px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .scrolling-container {
+    padding: 50px 80px;
+    height: 200px;
+    background-image: url("./images/texture.png");
+    background-repeat: repeat-y repeat-x;
+    border-top: 2px solid #983222;
+    border-bottom: 2px solid #983222;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .text-container {
+    display: flex;
+    justify-content: center;
+    font-family: 'adobe-garamond-pro','eb_garamondregular',serif;
+    width: 80%;
+    align-content: center;
+  }
+  
+  .btn-primary {
+    background-color: #983222 !important;
+    float: right;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: #983222 !important;
+    align-items: flex-start !important;
+  }
+  
+  .welcome {
+    color: white;
+    text-align: center;
+    align-content: center;
+    font-family: 'adobe-garamond-pro','eb_garamondregular',serif;
+    font-size: xx-large !important;
+    font-weight: bolder;
+  }
+  
+  #text {
+    float:left;
+    font-family: 'adobe-garamond-pro','eb_garamondregular',serif;
+    font-size: 25px;
+  }
+  
+  .side-container {
+    display: flex;
+    flex-direction: row;
+    z-index: 1;
+    width: 160;
+    transform: translateX(-80px);
+    transition: transform 250ms ease-in-out;
+    overflow: hidden;
+  }
+  
+  .sidebar {
+    display: flex;
+    margin-top: 72px;
+    position: fixed;
+    height: 160px;
+    width: 80px;
+    left: 0;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("./images/bg-texture-trans.png");
+    background-color: #fcedd8;
+    color: white;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 20px;
+    border-top: 3px solid #983222;
+    border-bottom: 3px solid #983222;
+    border-right: 3px solid #983222;
+  }
+  
+  .side-button {
+    width: 80px;
+    position: fixed;
+    margin-top: 72px;
+    margin-left: 80px;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    
+  }
+  
+  .side-menu-item {
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+  
+  .side-menu-btn {
+    width: 80px;
+  }
+  
+  .registration-page {
+    background-image: url('./images/stomp-dance2.jpg');
+    height: 1000px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+  
+  .registration-form {
+    border: #983222;
+    border-width: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-image: url('./images/bg-texture-trans.png');
+    background-color: #fcedd8;
+    width: 200px;
+    height: 400px;
+  }
+  
+  .reg-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-top: 3px solid #983222;
+    background-image: url("./images/texture.png");
+    height: 300px;
+    width: 100%;
+  }
+  
+  .column-1 {
+    flex-direction: column;
+    height: 300px;
+    width: 180px;
+  }
+  
+  .column-2 {
+    flex-direction: column;
+    padding-right: 40px;
+    height: 300px;
+    width: 180px;
+  }
+  
+  .column-3 {
+    flex-direction: column;
+    height: 300px;
+    width: 180px;
+  }
+  
+  .link-container-top {
+    padding-top: 40px;
+    height: 80px;
+    width: 180px;
+  }
+  
+  .link-container-bottom {
+    padding-top: 40px;
+    height: 80px;
+    width: 180px;
+  }
+  
+  .logo-nation {
+    background-image: url("./images/Chick-Nation-Logo.png");
+    background-repeat: no-repeat;
+    display: block;
+    height: 64px;
+    opacity: 0.6;
+    width: 147px;
+  }
+  
+  .logo-tv {
+    background-image: url("./images/Chick-Nation-Video-network-Logo.png");
+    background-repeat: no-repeat;
+    background-size: 170px 70px;
+    display: block;
+    height: 70px;
+    opacity: 0.6;
+    padding: 0;
+    width: 180px;
+  }
+  
+  .logo-cultural {
+    background-image: url("./images/logo-transparent.png");
+    background-repeat: no-repeat;
+    background-size: 147px 80px;
+    display: block;
+    height: 110px;
+    margin-right: 60px;
+    opacity: 0.6;
+    width: 160px;
+  }
+  
+  .logo-film {
+    background-image: url("./images/CNProductionsLogoWhite.png");
+    background-repeat: no-repeat;
+    background-size: 147px 80px;
+    display: block;
+    height: 110px;
+    margin-right: 60px;
+    opacity: 0.6;
+    width: 160px;
+  }
+  
+  .logo-cc {
+    background-image: url("./images/CC-logo.png");
+    background-repeat: no-repeat;
+    background-size: 147px 80px;
+    display: block;
+    height: 110px;
+    margin-right: 60px;
+    opacity: 0.6;
+    width: 160px;
+  }
+  
+  .logo-travel {
+    background-image: url("./images/ARTP-logo.png");
+    background-repeat: no-repeat;
+    background-size: 147px 80px;
+    display: block;
+    height: 110px;
+    margin-right: 60px;
+    opacity: 0.6;
+    width: 160px;
+  }
+  
+  .mail-base {
+    height: 100%;
+    width: 100%;
+  
+  }
+  
+  .mail-menu {
+    width: 150px;
+    height: 100%;
+    background-image: url("./images/bg-texture-trans.png");
+    background-color: #fcedd8;
+  }
+  
+  .pm_message.pm_deleted {
+    text-decoration: line-through;
+   }
+   .pm_message.pm_deleted .pm_body{
+    display: none;
+   }
+   .pm_message.pm_archived {
+    font-style: italic;
+    color: grey;
+   }
+   .pm_message.pm_unread .pm_subject {
+    font-weight: bolder;
+   }
+   .pm_message.pm_pending .pm_header {
+    background-color: #FFC;
+   }
+   .pm_message.pm_rejected .pm_header {
+    background-color: #FDD;
+   }
+  
+  .profile-top {
+    display: flex;
+    height: 200px;
+    width: 100%;
+    background-color: rgb(184, 184, 184);
+  }
+  
+  .profile-bottom {
+    display: flex;
+    height: 400px;
+    width: 100%;
+    background-color: rgb(165, 165, 165);
+  }
+  
+  .profile-list {
+    flex-direction: column;
+    align-self: center;
+  }
+  
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .profile-name {
+    height: 40px;
+  }
+  
+  img {
+    width: 100px;
+    height: 100px;
+  }

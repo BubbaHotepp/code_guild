@@ -11,9 +11,6 @@ from django.views.decorators.cache import cache_page
 
 
 def archive(request):
-    return render(request, 'library/archive.html')
-
-def archive_page(request):
     book_count = Book.objects.all().count()
     document_count = Document.objects.all().count()
     record_count = Record.objects.all().count()
@@ -28,7 +25,7 @@ def archive_page(request):
 
         'photo_count' : photo_count,
     }
-    return render(request, 'library/archive-main.html', context)
+    return render(request, 'library/archive.html', context)
 
 def book_list(request):
     all_books = Book.objects.all()
